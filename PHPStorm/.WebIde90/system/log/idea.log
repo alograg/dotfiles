@@ -1,258 +1,125 @@
-2015-09-22 18:01:59,180 [      0]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE STARTED ------------------------------------------------------ 
-2015-09-22 18:01:59,195 [     15]   INFO -        #com.intellij.idea.Main - IDE: PhpStorm (build #PS-141.2462, 18 Aug 2015 00:00) 
-2015-09-22 18:01:59,195 [     15]   INFO -        #com.intellij.idea.Main - OS: Linux (4.1.6-1-arch, amd64) 
-2015-09-22 18:01:59,195 [     15]   INFO -        #com.intellij.idea.Main - JRE: 1.8.0_60-b24 (Oracle Corporation) 
-2015-09-22 18:01:59,195 [     15]   INFO -        #com.intellij.idea.Main - JVM: 25.60-b23 (OpenJDK 64-Bit Server VM) 
-2015-09-22 18:01:59,198 [     18]   INFO -        #com.intellij.idea.Main - JVM Args: -Xbootclasspath/a:./../lib/boot.jar -Xms128m -Xmx750m -XX:MaxPermSize=350m -XX:ReservedCodeCacheSize=225m -XX:+UseConcMarkSweepGC -XX:SoftRefLRUPolicyMSPerMB=50 -ea -Dsun.io.useCanonCaches=false -Djava.net.preferIPv4Stack=true -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Djb.vmOptionsFile=./phpstorm64.vmoptions -XX:ErrorFile=/home/alograg/java_error_in_WEBIDE_%p.log -Djb.restart.code=88 -Didea.paths.selector=WebIde90 -Didea.platform.prefix=PhpStorm -Didea.no.jre.check=true 
-2015-09-22 18:01:59,233 [     53]   INFO -        #com.intellij.idea.Main - JNA library loaded (64-bit) in 35 ms 
-2015-09-22 18:02:27,267 [  28087]   INFO - .intellij.idea.IdeaApplication - WM detected: Openbox 
-2015-09-22 18:02:28,055 [  28875]   INFO - llij.ide.plugins.PluginManager - Cannot find optional descriptor uml-properties-support.xml 
-2015-09-22 18:02:28,067 [  28887]   INFO - llij.ide.plugins.PluginManager - Cannot find optional descriptor uml-java-support.xml 
-2015-09-22 18:02:28,128 [  28948]   INFO - llij.ide.plugins.PluginManager - Cannot find optional descriptor js-nashorn-support.xml 
-2015-09-22 18:02:28,866 [  29686]   INFO - llij.ide.plugins.PluginManager - 51 plugins initialized in 1452 ms 
-2015-09-22 18:02:28,867 [  29687]   INFO - llij.ide.plugins.PluginManager - Loaded bundled plugins: ASP (0.1), Apache config (.htaccess) support (141.2462), Behat Support (141.2462), Blade Support (141.2462), CSS Support, CVS Integration (11), CoffeeScript (2.0), Command Line Tool Support (141.2462), Database Tools and SQL (1.0), Drupal Support (141.2462), File Watchers (141.2462), GNU GetText files support (*.po) (136.SNAPSHOT), Gherkin (999.999), Git Integration (8.1), GitHub, Google App Engine Support for PHP (141.2462), HAML, HTML Tools (2.0), IDEA CORE, Ini4Idea (141.2462), IntelliLang (8.0), Java Server Pages Integration (1.0), JavaScript Debugger (1.0), JavaScript Intention Power Pack (0.9.4), JavaScript Support (1.0), LESS support, PHP (141.2462), PHP Remote Interpreter (141.2462), Perforce Integration (2.0), Performance Testing (1.0), Phing Support (141.2462), QuirksMode, REST Client, ReStructuredText Support (136.SNAPSHOT), Refactor-X (2.01), Remote Hosts Access (0.1), SASS support, SSH Remote Run (0.1), Subversion Integration (1.1), Task Management (1.0), Terminal (0.1), TextMate bundles support (VERSION), Twig Support (141.2462), UML Support (1.0), Vagrant (141.2462), W3C Validators (2.0), WordPress Support (141.2462), XPathView + XSLT Support (4), XSLT-Debugger (1.4), YAML, hg4idea (10.0) 
-2015-09-22 18:02:29,822 [  30642]   INFO - ellij.vfs.persistent.FSRecords - Marking VFS as corrupted 
-2015-09-22 18:02:29,828 [  30648]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=200; buffer=10; max=748027904 
-2015-09-22 18:02:29,925 [  30745]   INFO - api.vfs.impl.local.FileWatcher - Starting file watcher: /usr/share/phpstorm/bin/fsnotifier64 
-2015-09-22 18:02:29,951 [  30771]   INFO - api.vfs.impl.local.FileWatcher - Native file watcher is operational. 
-2015-09-22 18:02:30,863 [  31683]   INFO - .history.utils.LocalHistoryLog - local history version mismatch (was: 0, expected: 5), rebuilding... 
-2015-09-22 18:02:30,863 [  31683]   INFO - .history.utils.LocalHistoryLog - FS has been rebuild, rebuilding local history... 
-2015-09-22 18:02:32,296 [  33116]   INFO - rains.ide.BuiltInServerManager - built-in server started, port 63342 
-2015-09-22 18:02:33,472 [  34292]   INFO - tellij.xml.Html5SchemaProvider - HTML5_SCHEMA_LOCATION = /usr/share/phpstorm/lib/phpstorm.jar!/resources/html5-schema/html5.rnc 
-2015-09-22 18:02:33,473 [  34293]   INFO - tellij.xml.Html5SchemaProvider - XHTML5_SCHEMA_LOCATION = /usr/share/phpstorm/lib/phpstorm.jar!/resources/html5-schema/xhtml5.rnc 
-2015-09-22 18:02:33,473 [  34293]   INFO - tellij.xml.Html5SchemaProvider - CHARS_DTD_LOCATION = /usr/share/phpstorm/lib/phpstorm.jar!/resources/html5-schema/html5chars.ent 
-2015-09-22 18:02:34,262 [  35082]   INFO - ellij.project.impl.ProjectImpl - 19 project components initialized in 758 ms 
-2015-09-22 18:02:34,263 [  35083]   INFO - le.impl.ModuleManagerComponent - 0 module(s) loaded in 0 ms 
-2015-09-22 18:02:34,447 [  35267]   INFO - pl.stores.ApplicationStoreImpl - 78 application components initialized in 5458 ms 
-2015-09-22 18:02:34,453 [  35273]   INFO - .intellij.idea.IdeaApplication - App initialization took 52999 ms 
-2015-09-22 18:03:16,874 [  77694]   INFO - Types.impl.FileTypeManagerImpl - FileTypeManager: 0 auto-detected files
+2015-09-23 16:18:27,407 [      0]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE STARTED ------------------------------------------------------ 
+2015-09-23 16:18:27,437 [     30]   INFO -        #com.intellij.idea.Main - IDE: PhpStorm (build #PS-141.2462, 18 Aug 2015 00:00) 
+2015-09-23 16:18:27,437 [     30]   INFO -        #com.intellij.idea.Main - OS: Linux (4.1.6-1-arch, amd64) 
+2015-09-23 16:18:27,438 [     31]   INFO -        #com.intellij.idea.Main - JRE: 1.8.0_60-b24 (Oracle Corporation) 
+2015-09-23 16:18:27,438 [     31]   INFO -        #com.intellij.idea.Main - JVM: 25.60-b23 (OpenJDK 64-Bit Server VM) 
+2015-09-23 16:18:27,470 [     63]   INFO -        #com.intellij.idea.Main - JVM Args: -Xbootclasspath/a:./../lib/boot.jar -Xms128m -Xmx750m -XX:MaxPermSize=350m -XX:ReservedCodeCacheSize=225m -XX:+UseConcMarkSweepGC -XX:SoftRefLRUPolicyMSPerMB=50 -ea -Dsun.io.useCanonCaches=false -Djava.net.preferIPv4Stack=true -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Djb.vmOptionsFile=./phpstorm64.vmoptions -XX:ErrorFile=/home/alograg/java_error_in_WEBIDE_%p.log -Djb.restart.code=88 -Didea.paths.selector=WebIde90 -Didea.platform.prefix=PhpStorm -Didea.no.jre.check=true 
+2015-09-23 16:18:27,626 [    219]   INFO -        #com.intellij.idea.Main - JNA library loaded (64-bit) in 156 ms 
+2015-09-23 16:19:47,085 [  79678]   INFO - .intellij.idea.IdeaApplication - WM detected: Openbox 
+2015-09-23 16:19:49,768 [  82361]   INFO - llij.ide.plugins.PluginManager - Cannot find optional descriptor uml-java-support.xml 
+2015-09-23 16:19:49,780 [  82373]   INFO - llij.ide.plugins.PluginManager - Cannot find optional descriptor uml-properties-support.xml 
+2015-09-23 16:19:50,121 [  82714]   INFO - llij.ide.plugins.PluginManager - Cannot find optional descriptor js-nashorn-support.xml 
+2015-09-23 16:19:51,376 [  83969]   INFO - llij.ide.plugins.PluginManager - 51 plugins initialized in 3928 ms 
+2015-09-23 16:19:51,378 [  83971]   INFO - llij.ide.plugins.PluginManager - Loaded bundled plugins: ASP (0.1), Apache config (.htaccess) support (141.2462), Behat Support (141.2462), Blade Support (141.2462), CSS Support, CVS Integration (11), CoffeeScript (2.0), Command Line Tool Support (141.2462), Database Tools and SQL (1.0), Drupal Support (141.2462), File Watchers (141.2462), GNU GetText files support (*.po) (136.SNAPSHOT), Gherkin (999.999), Git Integration (8.1), GitHub, Google App Engine Support for PHP (141.2462), HAML, HTML Tools (2.0), IDEA CORE, Ini4Idea (141.2462), IntelliLang (8.0), Java Server Pages Integration (1.0), JavaScript Debugger (1.0), JavaScript Intention Power Pack (0.9.4), JavaScript Support (1.0), LESS support, PHP (141.2462), PHP Remote Interpreter (141.2462), Perforce Integration (2.0), Performance Testing (1.0), Phing Support (141.2462), QuirksMode, REST Client, ReStructuredText Support (136.SNAPSHOT), Refactor-X (2.01), Remote Hosts Access (0.1), SASS support, SSH Remote Run (0.1), Subversion Integration (1.1), Task Management (1.0), Terminal (0.1), TextMate bundles support (VERSION), Twig Support (141.2462), UML Support (1.0), Vagrant (141.2462), W3C Validators (2.0), WordPress Support (141.2462), XPathView + XSLT Support (4), XSLT-Debugger (1.4), YAML, hg4idea (10.0) 
+2015-09-23 16:19:54,639 [  87232]   INFO - ellij.concurrency.JobScheduler - 50 ms execution limit failed for: com.intellij.openapi.progress.impl.CoreProgressManager$1@53587252; elapsed time was 79ms 
+2015-09-23 16:19:54,774 [  87367]   INFO - ellij.vfs.persistent.FSRecords - Marking VFS as corrupted 
+2015-09-23 16:19:54,779 [  87372]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=200; buffer=10; max=748027904 
+2015-09-23 16:19:54,989 [  87582]   INFO - api.vfs.impl.local.FileWatcher - Starting file watcher: /usr/share/phpstorm/bin/fsnotifier64 
+2015-09-23 16:19:55,056 [  87649]   INFO - api.vfs.impl.local.FileWatcher - Native file watcher is operational. 
+2015-09-23 16:19:57,720 [  90313]   INFO - .history.utils.LocalHistoryLog - local history version mismatch (was: 0, expected: 5), rebuilding... 
+2015-09-23 16:19:57,720 [  90313]   INFO - .history.utils.LocalHistoryLog - FS has been rebuild, rebuilding local history... 
+2015-09-23 16:19:59,974 [  92567]   INFO - rains.ide.BuiltInServerManager - built-in server started, port 63342 
+2015-09-23 16:20:03,432 [  96025]   INFO - tellij.xml.Html5SchemaProvider - HTML5_SCHEMA_LOCATION = /usr/share/phpstorm/lib/phpstorm.jar!/resources/html5-schema/html5.rnc 
+2015-09-23 16:20:03,433 [  96026]   INFO - tellij.xml.Html5SchemaProvider - XHTML5_SCHEMA_LOCATION = /usr/share/phpstorm/lib/phpstorm.jar!/resources/html5-schema/xhtml5.rnc 
+2015-09-23 16:20:03,433 [  96026]   INFO - tellij.xml.Html5SchemaProvider - CHARS_DTD_LOCATION = /usr/share/phpstorm/lib/phpstorm.jar!/resources/html5-schema/html5chars.ent 
+2015-09-23 16:20:04,913 [  97506]   INFO - ellij.project.impl.ProjectImpl - 19 project components initialized in 1415 ms 
+2015-09-23 16:20:04,914 [  97507]   INFO - le.impl.ModuleManagerComponent - 0 module(s) loaded in 0 ms 
+2015-09-23 16:20:05,356 [  97949]   INFO - pl.stores.ApplicationStoreImpl - 78 application components initialized in 13626 ms 
+2015-09-23 16:20:05,378 [  97971]   INFO - .intellij.idea.IdeaApplication - App initialization took 142430 ms 
+2015-09-23 16:20:16,420 [ 109013]   WARN - tions.CreateDesktopEntryAction - '/home/alograg/.WebIde90/system/tmp/sudo0.sh' : 127 
+java.lang.RuntimeException: '/home/alograg/.WebIde90/system/tmp/sudo0.sh' : 127
+	at com.intellij.ide.actions.CreateDesktopEntryAction.a(CreateDesktopEntryAction.java:196)
+	at com.intellij.ide.actions.CreateDesktopEntryAction.createDesktopEntry(CreateDesktopEntryAction.java:103)
+	at com.intellij.application.options.InitialConfigurationDialog$8.run(InitialConfigurationDialog.java:429)
+	at com.intellij.openapi.progress.impl.CoreProgressManager$TaskRunnable.run(CoreProgressManager.java:563)
+	at com.intellij.openapi.progress.impl.CoreProgressManager$2.run(CoreProgressManager.java:152)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.a(CoreProgressManager.java:452)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.executeProcessUnderProgress(CoreProgressManager.java:402)
+	at com.intellij.openapi.progress.impl.ProgressManagerImpl.executeProcessUnderProgress(ProgressManagerImpl.java:54)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.runProcess(CoreProgressManager.java:137)
+	at com.intellij.openapi.progress.impl.ProgressManagerImpl$1.run(ProgressManagerImpl.java:126)
+	at com.intellij.openapi.application.impl.ApplicationImpl$8.run(ApplicationImpl.java:400)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+	at org.jetbrains.ide.PooledThreadExecutor$1$1.run(PooledThreadExecutor.java:56)
+2015-09-23 16:20:19,082 [ 111675]   INFO - Types.impl.FileTypeManagerImpl - FileTypeManager: 0 auto-detected files
 Elapsed time on auto-detect: 0 ms 
-2015-09-22 18:03:16,886 [  77706]   INFO - org.jetbrains.io.BuiltInServer - web server stopped 
-2015-09-22 18:03:16,891 [  77711]   INFO - il.indexing.FileBasedIndexImpl - START INDEX SHUTDOWN 
-2015-09-22 18:03:16,938 [  77758]   INFO - il.indexing.FileBasedIndexImpl - END INDEX SHUTDOWN 
-2015-09-22 18:03:16,939 [  77759]   INFO - stubs.SerializationManagerImpl - START StubSerializationManager SHUTDOWN 
-2015-09-22 18:03:16,939 [  77759]   INFO - stubs.SerializationManagerImpl - END StubSerializationManager SHUTDOWN 
-2015-09-22 18:03:16,967 [  77787]   WARN - api.vfs.impl.local.FileWatcher - Watcher terminated with exit code 0 
-2015-09-22 18:03:16,968 [  77788]   INFO - newvfs.persistent.PersistentFS - VFS dispose started 
-2015-09-22 18:03:16,974 [  77794]   INFO - newvfs.persistent.PersistentFS - VFS dispose completed 
-2015-09-22 18:03:16,977 [  77797]   INFO - rocess.CapturingProcessHandler - runProcess: exit value unavailable 
-2015-09-22 18:03:17,006 [  77826]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE SHUTDOWN ------------------------------------------------------ 
-2015-09-22 18:03:19,380 [      0]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE STARTED ------------------------------------------------------ 
-2015-09-22 18:03:19,404 [     24]   INFO -        #com.intellij.idea.Main - IDE: PhpStorm (build #PS-141.2462, 18 Aug 2015 00:00) 
-2015-09-22 18:03:19,405 [     25]   INFO -        #com.intellij.idea.Main - OS: Linux (4.1.6-1-arch, amd64) 
-2015-09-22 18:03:19,405 [     25]   INFO -        #com.intellij.idea.Main - JRE: 1.8.0_60-b24 (Oracle Corporation) 
-2015-09-22 18:03:19,405 [     25]   INFO -        #com.intellij.idea.Main - JVM: 25.60-b23 (OpenJDK 64-Bit Server VM) 
-2015-09-22 18:03:19,408 [     28]   INFO -        #com.intellij.idea.Main - JVM Args: -Xbootclasspath/a:/usr/share/phpstorm/bin/../lib/boot.jar -Xms128m -Xmx750m -XX:MaxPermSize=350m -XX:ReservedCodeCacheSize=225m -XX:+UseConcMarkSweepGC -XX:SoftRefLRUPolicyMSPerMB=50 -ea -Dsun.io.useCanonCaches=false -Djava.net.preferIPv4Stack=true -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Djb.vmOptionsFile=/usr/share/phpstorm/bin/phpstorm64.vmoptions -XX:ErrorFile=/home/alograg/java_error_in_WEBIDE_%p.log -Djb.restart.code=88 -Didea.paths.selector=WebIde90 -Didea.platform.prefix=PhpStorm -Didea.no.jre.check=true 
-2015-09-22 18:03:19,464 [     84]   INFO -        #com.intellij.idea.Main - JNA library loaded (64-bit) in 56 ms 
-2015-09-22 18:03:20,029 [    649]   INFO - .intellij.idea.IdeaApplication - WM detected: Openbox 
-2015-09-22 18:03:21,358 [   1978]   INFO - llij.ide.plugins.PluginManager - Cannot find optional descriptor uml-properties-support.xml 
-2015-09-22 18:03:21,380 [   2000]   INFO - llij.ide.plugins.PluginManager - Cannot find optional descriptor uml-java-support.xml 
-2015-09-22 18:03:21,438 [   2058]   INFO - llij.ide.plugins.PluginManager - Cannot find optional descriptor js-nashorn-support.xml 
-2015-09-22 18:03:22,148 [   2768]   INFO - llij.ide.plugins.PluginManager - 51 plugins initialized in 1664 ms 
-2015-09-22 18:03:22,149 [   2769]   INFO - llij.ide.plugins.PluginManager - Loaded bundled plugins: ASP (0.1), Apache config (.htaccess) support (141.2462), Behat Support (141.2462), Blade Support (141.2462), CSS Support, CVS Integration (11), CoffeeScript (2.0), Command Line Tool Support (141.2462), Database Tools and SQL (1.0), Drupal Support (141.2462), File Watchers (141.2462), GNU GetText files support (*.po) (136.SNAPSHOT), Gherkin (999.999), Git Integration (8.1), GitHub, Google App Engine Support for PHP (141.2462), HAML, HTML Tools (2.0), IDEA CORE, Ini4Idea (141.2462), IntelliLang (8.0), Java Server Pages Integration (1.0), JavaScript Debugger (1.0), JavaScript Intention Power Pack (0.9.4), JavaScript Support (1.0), LESS support, PHP (141.2462), PHP Remote Interpreter (141.2462), Perforce Integration (2.0), Performance Testing (1.0), Phing Support (141.2462), QuirksMode, REST Client, ReStructuredText Support (136.SNAPSHOT), Refactor-X (2.01), Remote Hosts Access (0.1), SASS support, SSH Remote Run (0.1), Subversion Integration (1.1), Task Management (1.0), Terminal (0.1), TextMate bundles support (VERSION), Twig Support (141.2462), UML Support (1.0), Vagrant (141.2462), W3C Validators (2.0), WordPress Support (141.2462), XPathView + XSLT Support (4), XSLT-Debugger (1.4), YAML, hg4idea (10.0) 
-2015-09-22 18:03:23,182 [   3802]   INFO - ellij.concurrency.JobScheduler - 50 ms execution limit failed for: com.intellij.openapi.progress.impl.CoreProgressManager$1@3822b9c9; elapsed time was 61ms 
-2015-09-22 18:03:23,236 [   3856]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=200; buffer=10; max=748027904 
-2015-09-22 18:03:23,314 [   3934]   INFO - api.vfs.impl.local.FileWatcher - Starting file watcher: /usr/share/phpstorm/bin/fsnotifier64 
-2015-09-22 18:03:23,340 [   3960]   INFO - api.vfs.impl.local.FileWatcher - Native file watcher is operational. 
-2015-09-22 18:03:24,764 [   5384]   INFO - lij.diagnostic.DebugLogManager - Set DEBUG for the following categories: [] 
-2015-09-22 18:03:25,671 [   6291]   INFO - rains.ide.BuiltInServerManager - built-in server started, port 63342 
-2015-09-22 18:03:26,781 [   7401]   INFO - pl.stores.ApplicationStoreImpl - 78 application components initialized in 4436 ms 
-2015-09-22 18:03:26,795 [   7415]   INFO - .intellij.idea.IdeaApplication - App initialization took 8337 ms 
-2015-09-22 18:03:49,229 [  29849]   INFO - ellij.project.impl.ProjectImpl - 19 project components initialized in 328 ms 
-2015-09-22 18:03:49,229 [  29849]   INFO - le.impl.ModuleManagerComponent - 0 module(s) loaded in 0 ms 
-2015-09-22 18:04:29,808 [  70428]   INFO -                         github - Request response: Unauthorized - Bad credentials 
-org.jetbrains.plugins.github.exceptions.GithubAuthenticationException: Request response: Unauthorized - Bad credentials
-	at org.jetbrains.plugins.github.api.GithubConnection.checkStatusCode(GithubConnection.java:351)
-	at org.jetbrains.plugins.github.api.GithubConnection.request(GithubConnection.java:225)
-	at org.jetbrains.plugins.github.api.GithubConnection.getRequest(GithubConnection.java:97)
-	at org.jetbrains.plugins.github.api.GithubApiUtil.getCurrentUserDetailed(GithubApiUtil.java:247)
-	at org.jetbrains.plugins.github.util.GithubUtil.testConnection(GithubUtil.java:179)
-	at org.jetbrains.plugins.github.util.GithubUtil.checkAuthData(GithubUtil.java:365)
-	at org.jetbrains.plugins.github.ui.GithubLoginDialog$1.convert(GithubLoginDialog.java:87)
-	at org.jetbrains.plugins.github.ui.GithubLoginDialog$1.convert(GithubLoginDialog.java:83)
-	at org.jetbrains.plugins.github.util.GithubUtil$6.run(GithubUtil.java:376)
-	at com.intellij.openapi.progress.impl.CoreProgressManager$TaskRunnable.run(CoreProgressManager.java:563)
-	at com.intellij.openapi.progress.impl.CoreProgressManager$8.run(CoreProgressManager.java:367)
-	at com.intellij.openapi.progress.impl.CoreProgressManager$2.run(CoreProgressManager.java:152)
-	at com.intellij.openapi.progress.impl.CoreProgressManager.a(CoreProgressManager.java:452)
-	at com.intellij.openapi.progress.impl.CoreProgressManager.executeProcessUnderProgress(CoreProgressManager.java:402)
-	at com.intellij.openapi.progress.impl.ProgressManagerImpl.executeProcessUnderProgress(ProgressManagerImpl.java:54)
-	at com.intellij.openapi.progress.impl.CoreProgressManager.runProcess(CoreProgressManager.java:137)
-	at com.intellij.openapi.application.impl.ApplicationImpl$10$1.run(ApplicationImpl.java:617)
-	at com.intellij.openapi.application.impl.ApplicationImpl$8.run(ApplicationImpl.java:400)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-	at org.jetbrains.ide.PooledThreadExecutor$1$1.run(PooledThreadExecutor.java:56)
-2015-09-22 18:04:54,396 [  95016]   INFO -                         github - Request response: Unauthorized - Bad credentials 
-org.jetbrains.plugins.github.exceptions.GithubAuthenticationException: Request response: Unauthorized - Bad credentials
-	at org.jetbrains.plugins.github.api.GithubConnection.checkStatusCode(GithubConnection.java:351)
-	at org.jetbrains.plugins.github.api.GithubConnection.request(GithubConnection.java:225)
-	at org.jetbrains.plugins.github.api.GithubConnection.getRequest(GithubConnection.java:97)
-	at org.jetbrains.plugins.github.api.GithubApiUtil.getCurrentUserDetailed(GithubApiUtil.java:247)
-	at org.jetbrains.plugins.github.util.GithubUtil.testConnection(GithubUtil.java:179)
-	at org.jetbrains.plugins.github.util.GithubUtil.checkAuthData(GithubUtil.java:365)
-	at org.jetbrains.plugins.github.ui.GithubLoginDialog$1.convert(GithubLoginDialog.java:87)
-	at org.jetbrains.plugins.github.ui.GithubLoginDialog$1.convert(GithubLoginDialog.java:83)
-	at org.jetbrains.plugins.github.util.GithubUtil$6.run(GithubUtil.java:376)
-	at com.intellij.openapi.progress.impl.CoreProgressManager$TaskRunnable.run(CoreProgressManager.java:563)
-	at com.intellij.openapi.progress.impl.CoreProgressManager$8.run(CoreProgressManager.java:367)
-	at com.intellij.openapi.progress.impl.CoreProgressManager$2.run(CoreProgressManager.java:152)
-	at com.intellij.openapi.progress.impl.CoreProgressManager.a(CoreProgressManager.java:452)
-	at com.intellij.openapi.progress.impl.CoreProgressManager.executeProcessUnderProgress(CoreProgressManager.java:402)
-	at com.intellij.openapi.progress.impl.ProgressManagerImpl.executeProcessUnderProgress(ProgressManagerImpl.java:54)
-	at com.intellij.openapi.progress.impl.CoreProgressManager.runProcess(CoreProgressManager.java:137)
-	at com.intellij.openapi.application.impl.ApplicationImpl$10$1.run(ApplicationImpl.java:617)
-	at com.intellij.openapi.application.impl.ApplicationImpl$8.run(ApplicationImpl.java:400)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-	at org.jetbrains.ide.PooledThreadExecutor$1$1.run(PooledThreadExecutor.java:56)
-2015-09-22 18:06:49,728 [ 210348]   INFO -  #git4idea.commands.GitHandler - Cloning into 'sketch-cb-lab'... 
-2015-09-22 18:06:50,684 [ 211304]   INFO -  #git4idea.commands.GitHandler - remote: Counting objects: 16, done. 
-2015-09-22 18:06:50,691 [ 211311]   INFO -  #git4idea.commands.GitHandler - remote: Compressing objects: 100% (11/11), done. 
-2015-09-22 18:06:50,770 [ 211390]   INFO -  #git4idea.commands.GitHandler - remote: Total 16 (delta 2), reused 13 (delta 1), pack-reused 0 
-2015-09-22 18:06:50,804 [ 211424]   INFO -  #git4idea.commands.GitHandler - Checking connectivity... done. 
-2015-09-22 18:06:57,072 [ 217692]   INFO - ellij.project.impl.ProjectImpl - 119 project components initialized in 888 ms 
-2015-09-22 18:06:57,073 [ 217693]   INFO - le.impl.ModuleManagerComponent - 0 module(s) loaded in 0 ms 
-2015-09-22 18:06:57,192 [ 217812]   INFO - i.vcs.changes.ChangeListWorker - default list not found when copy 
-2015-09-22 18:06:57,192 [ 217812]   INFO - i.vcs.changes.ChangeListWorker - default list not found when copy in original object too 
-2015-09-22 18:06:57,747 [ 218367]   WARN - om.intellij.util.ProfilingUtil - Profiling agent is not enabled. Add -agentlib:yjpagent to idea.vmoptions if necessary to profile IDEA. 
-2015-09-22 18:06:58,351 [ 218971]   INFO -              PerformancePlugin - Performance Plugin is in silent mode 
-2015-09-22 18:06:58,741 [ 219361]   INFO - tartup.impl.StartupManagerImpl - /home/alograg/Proyectos/sketch-cb-lab/.idea/misc.xml case-sensitivity: true 
-2015-09-22 18:07:00,673 [ 221293]   INFO - indexing.UnindexedFilesUpdater - Indexable files iterated in 1864 ms 
-2015-09-22 18:07:00,674 [ 221294]   INFO - indexing.UnindexedFilesUpdater - Unindexed files update started: 377 files to update 
-2015-09-22 18:07:01,058 [ 221678]   INFO -         #git4idea.commands.Git - VirtualFile for path [.idea/.name] is null 
-2015-09-22 18:07:02,180 [ 222800]   INFO - tor.impl.FileEditorManagerImpl - Project opening took 6050 ms 
-2015-09-22 18:07:14,465 [ 235085]   INFO - ework.TestFileStructureManager - JsTestDriver: Creating TestFileStructurePack for lib.d.ts took 724.43 ms 
-2015-09-22 18:07:20,774 [ 241394]   INFO - ework.TestFileStructureManager - JsTestDriver: Creating TestFileStructurePack for lib.es6.d.ts took 1011.80 ms 
-2015-09-22 18:07:42,388 [ 263008]   INFO - indexing.UnindexedFilesUpdater - Unindexed files update done in 41714 ms 
-2015-09-22 18:07:42,639 [ 263259]   INFO - lij.tasks.impl.TaskManagerImpl - Updating issues cache (every 20 min) 
-2015-09-22 18:09:42,108 [ 382728]   INFO -              PerformancePlugin - Execution has been finished 
-2015-09-22 18:09:42,176 [ 382796]   INFO - Types.impl.FileTypeManagerImpl - FileTypeManager: 19 auto-detected files
-Elapsed time on auto-detect: 139 ms 
-2015-09-22 18:09:42,196 [ 382816]   INFO - org.jetbrains.io.BuiltInServer - web server stopped 
-2015-09-22 18:09:42,218 [ 382838]   INFO - il.indexing.FileBasedIndexImpl - START INDEX SHUTDOWN 
-2015-09-22 18:09:42,292 [ 382912]   INFO - il.indexing.FileBasedIndexImpl - END INDEX SHUTDOWN 
-2015-09-22 18:09:42,292 [ 382912]   INFO - stubs.SerializationManagerImpl - START StubSerializationManager SHUTDOWN 
-2015-09-22 18:09:42,292 [ 382912]   INFO - stubs.SerializationManagerImpl - END StubSerializationManager SHUTDOWN 
-2015-09-22 18:09:42,336 [ 382956]   WARN - api.vfs.impl.local.FileWatcher - Watcher terminated with exit code 0 
-2015-09-22 18:09:42,337 [ 382957]   INFO - newvfs.persistent.PersistentFS - VFS dispose started 
-2015-09-22 18:09:42,343 [ 382963]   INFO - newvfs.persistent.PersistentFS - VFS dispose completed 
-2015-09-22 18:09:42,357 [ 382977]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE SHUTDOWN ------------------------------------------------------ 
-2015-09-22 18:10:25,052 [      0]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE STARTED ------------------------------------------------------ 
-2015-09-22 18:10:25,081 [     29]   INFO -        #com.intellij.idea.Main - IDE: PhpStorm (build #PS-141.2462, 18 Aug 2015 00:00) 
-2015-09-22 18:10:25,081 [     29]   INFO -        #com.intellij.idea.Main - OS: Linux (4.1.6-1-arch, amd64) 
-2015-09-22 18:10:25,081 [     29]   INFO -        #com.intellij.idea.Main - JRE: 1.8.0_60-b24 (Oracle Corporation) 
-2015-09-22 18:10:25,081 [     29]   INFO -        #com.intellij.idea.Main - JVM: 25.60-b23 (OpenJDK 64-Bit Server VM) 
-2015-09-22 18:10:25,084 [     32]   INFO -        #com.intellij.idea.Main - JVM Args: -Xbootclasspath/a:./../lib/boot.jar -Xms128m -Xmx750m -XX:MaxPermSize=350m -XX:ReservedCodeCacheSize=225m -XX:+UseConcMarkSweepGC -XX:SoftRefLRUPolicyMSPerMB=50 -ea -Dsun.io.useCanonCaches=false -Djava.net.preferIPv4Stack=true -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Djb.vmOptionsFile=./phpstorm64.vmoptions -XX:ErrorFile=/home/alograg/java_error_in_WEBIDE_%p.log -Djb.restart.code=88 -Didea.paths.selector=WebIde90 -Didea.platform.prefix=PhpStorm -Didea.no.jre.check=true 
-2015-09-22 18:10:25,121 [     69]   INFO -        #com.intellij.idea.Main - JNA library loaded (64-bit) in 36 ms 
-2015-09-22 18:10:25,624 [    572]   INFO - .intellij.idea.IdeaApplication - WM detected: Openbox 
-2015-09-22 18:10:27,122 [   2070]   INFO - llij.ide.plugins.PluginManager - Cannot find optional descriptor uml-properties-support.xml 
-2015-09-22 18:10:27,138 [   2086]   INFO - llij.ide.plugins.PluginManager - Cannot find optional descriptor uml-java-support.xml 
-2015-09-22 18:10:27,235 [   2183]   INFO - llij.ide.plugins.PluginManager - Cannot find optional descriptor js-nashorn-support.xml 
-2015-09-22 18:10:27,944 [   2892]   INFO - llij.ide.plugins.PluginManager - 55 plugins initialized in 1822 ms 
-2015-09-22 18:10:27,953 [   2901]   INFO - llij.ide.plugins.PluginManager - Loaded bundled plugins: ASP (0.1), Apache config (.htaccess) support (141.2462), Behat Support (141.2462), Blade Support (141.2462), CSS Support, CVS Integration (11), CoffeeScript (2.0), Command Line Tool Support (141.2462), Database Tools and SQL (1.0), Drupal Support (141.2462), File Watchers (141.2462), GNU GetText files support (*.po) (136.SNAPSHOT), Gherkin (999.999), Git Integration (8.1), GitHub, Google App Engine Support for PHP (141.2462), HAML, HTML Tools (2.0), IDEA CORE, Ini4Idea (141.2462), IntelliLang (8.0), Java Server Pages Integration (1.0), JavaScript Debugger (1.0), JavaScript Intention Power Pack (0.9.4), JavaScript Support (1.0), LESS support, PHP (141.2462), PHP Remote Interpreter (141.2462), Perforce Integration (2.0), Performance Testing (1.0), Phing Support (141.2462), QuirksMode, REST Client, ReStructuredText Support (136.SNAPSHOT), Refactor-X (2.01), Remote Hosts Access (0.1), SASS support, SSH Remote Run (0.1), Subversion Integration (1.1), Task Management (1.0), Terminal (0.1), TextMate bundles support (VERSION), Twig Support (141.2462), UML Support (1.0), Vagrant (141.2462), W3C Validators (2.0), WordPress Support (141.2462), XPathView + XSLT Support (4), XSLT-Debugger (1.4), YAML, hg4idea (10.0) 
-2015-09-22 18:10:27,954 [   2902]   INFO - llij.ide.plugins.PluginManager - Loaded custom plugins: BashSupport (1.4.0_build141), Markdown (0.9.7), Markdown support (8.0.0.20150915), MultiMarkdown (1.1.9) 
-2015-09-22 18:10:28,925 [   3873]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=200; buffer=10; max=748027904 
-2015-09-22 18:10:29,007 [   3955]   INFO - api.vfs.impl.local.FileWatcher - Starting file watcher: /usr/share/phpstorm/bin/fsnotifier64 
-2015-09-22 18:10:29,029 [   3977]   INFO - api.vfs.impl.local.FileWatcher - Native file watcher is operational. 
-2015-09-22 18:10:29,817 [   4765]  ERROR -    #com.intellij.lang.Language - Language with ID 'Markdown' is already registered: class net.nicoulaj.idea.markdown.MarkdownLanguage 
-java.lang.Throwable
-	at com.intellij.openapi.diagnostic.Logger.error(Logger.java:115)
-	at com.intellij.lang.Language.<init>(Language.java:81)
-	at com.intellij.lang.Language.<init>(Language.java:66)
-	at org.intellij.plugins.markdown.lang.MarkdownLanguage.<init>(MarkdownLanguage.java:25)
-	at org.intellij.plugins.markdown.lang.MarkdownLanguage.<clinit>(MarkdownLanguage.java:22)
-	at org.intellij.plugins.markdown.lang.MarkdownFileType.<init>(MarkdownFileType.java:30)
-	at org.intellij.plugins.markdown.lang.MarkdownFileType.<clinit>(MarkdownFileType.java:27)
-	at org.intellij.plugins.markdown.lang.MarkdownFileTypeFactory.createFileTypes(MarkdownFileTypeFactory.java:25)
-	at com.intellij.openapi.fileTypes.impl.FileTypeManagerImpl.initStandardFileTypes(FileTypeManagerImpl.java:270)
-	at com.intellij.openapi.fileTypes.impl.FileTypeManagerImpl.<init>(FileTypeManagerImpl.java:230)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
-	at org.picocontainer.defaults.InstantiatingComponentAdapter.newInstance(InstantiatingComponentAdapter.java:193)
-	at org.picocontainer.defaults.ConstructorInjectionComponentAdapter$1.run(ConstructorInjectionComponentAdapter.java:220)
-	at org.picocontainer.defaults.ThreadLocalCyclicDependencyGuard.observe(ThreadLocalCyclicDependencyGuard.java:53)
-	at org.picocontainer.defaults.ConstructorInjectionComponentAdapter.getComponentInstance(ConstructorInjectionComponentAdapter.java:248)
-	at com.intellij.util.pico.ConstructorInjectionComponentAdapter.getComponentInstance(ConstructorInjectionComponentAdapter.java:58)
-	at com.intellij.openapi.components.impl.ComponentManagerImpl$ComponentConfigComponentAdapter$1.getComponentInstance(ComponentManagerImpl.java:550)
-	at com.intellij.openapi.components.impl.ComponentManagerImpl$ComponentConfigComponentAdapter.getComponentInstance(ComponentManagerImpl.java:610)
-	at com.intellij.util.pico.DefaultPicoContainer.getLocalInstance(DefaultPicoContainer.java:245)
-	at com.intellij.util.pico.DefaultPicoContainer.getComponentInstance(DefaultPicoContainer.java:211)
-	at com.intellij.openapi.components.impl.ComponentManagerImpl.createComponent(ComponentManagerImpl.java:125)
-	at com.intellij.openapi.application.impl.ApplicationImpl.createComponent(ApplicationImpl.java:354)
-	at com.intellij.openapi.components.impl.ComponentManagerImpl.a(ComponentManagerImpl.java:116)
-	at com.intellij.openapi.components.impl.ComponentManagerImpl.init(ComponentManagerImpl.java:87)
-	at com.intellij.openapi.components.impl.stores.ApplicationStoreImpl.load(ApplicationStoreImpl.java:101)
-	at com.intellij.openapi.application.impl.ApplicationImpl.load(ApplicationImpl.java:499)
-	at com.intellij.openapi.application.impl.ApplicationImpl.load(ApplicationImpl.java:481)
-	at com.intellij.idea.IdeaApplication.run(IdeaApplication.java:170)
-	at com.intellij.idea.MainImpl$1$1$1.run(MainImpl.java:62)
-	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:311)
-	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:756)
-	at java.awt.EventQueue.access$500(EventQueue.java:97)
-	at java.awt.EventQueue$3.run(EventQueue.java:709)
-	at java.awt.EventQueue$3.run(EventQueue.java:703)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
-	at java.awt.EventQueue.dispatchEvent(EventQueue.java:726)
-	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:362)
-	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
-	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
-	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
-	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
-	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
-	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
-2015-09-22 18:10:29,823 [   4771]  ERROR -    #com.intellij.lang.Language - PhpStorm 9.0.2  Build #PS-141.2462 
-2015-09-22 18:10:29,823 [   4771]  ERROR -    #com.intellij.lang.Language - JDK: 1.8.0_60 
-2015-09-22 18:10:29,823 [   4771]  ERROR -    #com.intellij.lang.Language - VM: OpenJDK 64-Bit Server VM 
-2015-09-22 18:10:29,823 [   4771]  ERROR -    #com.intellij.lang.Language - Vendor: Oracle Corporation 
-2015-09-22 18:10:29,824 [   4772]  ERROR -    #com.intellij.lang.Language - OS: Linux 
-2015-09-22 18:10:30,460 [   5408]   INFO - lij.diagnostic.DebugLogManager - Set DEBUG for the following categories: [] 
-2015-09-22 18:10:31,483 [   6431]   INFO - rains.ide.BuiltInServerManager - built-in server started, port 63342 
-2015-09-22 18:10:31,609 [   6557]   INFO - il.indexing.FileBasedIndexImpl - Version has changed for index TodoIndex. The index will be rebuilt. 
-2015-09-22 18:10:31,888 [   6836]   INFO - il.indexing.FileBasedIndexImpl - Version has changed for index IdIndex. The index will be rebuilt. 
-2015-09-22 18:10:31,926 [   6874]   INFO - il.indexing.FileBasedIndexImpl - Version has changed for index filetypes. The index will be rebuilt. 
-2015-09-22 18:10:32,218 [   7166]   INFO - il.indexing.FileBasedIndexImpl - Version has changed for index Stubs. The index will be rebuilt. 
-2015-09-22 18:10:33,319 [   8267]   INFO - pl.stores.ApplicationStoreImpl - 82 application components initialized in 5220 ms 
-2015-09-22 18:10:33,326 [   8274]   INFO - .intellij.idea.IdeaApplication - App initialization took 9159 ms 
-2015-09-22 18:10:33,832 [   8780]   WARN - om.intellij.util.ProfilingUtil - Profiling agent is not enabled. Add -agentlib:yjpagent to idea.vmoptions if necessary to profile IDEA. 
-2015-09-22 18:10:37,830 [  12778]   INFO - ellij.project.impl.ProjectImpl - 124 project components initialized in 2539 ms 
-2015-09-22 18:10:37,922 [  12870]   INFO - le.impl.ModuleManagerComponent - 1 module(s) loaded in 92 ms 
-2015-09-22 18:10:38,526 [  13474]   INFO -              PerformancePlugin - Performance Plugin is in silent mode 
-2015-09-22 18:10:39,452 [  14400]   INFO - tartup.impl.StartupManagerImpl - /home/alograg/Proyectos/sketch-cb-lab/.idea/misc.xml case-sensitivity: true 
-2015-09-22 18:10:40,561 [  15509]   INFO - indexing.UnindexedFilesUpdater - Indexable files iterated in 1368 ms 
-2015-09-22 18:10:40,567 [  15515]   INFO - indexing.UnindexedFilesUpdater - Unindexed files update started: 368 files to update 
-2015-09-22 18:10:42,922 [  17870]   INFO - tor.impl.FileEditorManagerImpl - Project opening took 7747 ms 
-2015-09-22 18:10:45,570 [  20518]   INFO - ework.TestFileStructureManager - JsTestDriver: Creating TestFileStructurePack for EcmaScript6.js took 363.33 ms 
-2015-09-22 18:10:47,194 [  22142]   INFO - ework.TestFileStructureManager - JsTestDriver: Creating TestFileStructurePack for WebGL.js took 498.90 ms 
-2015-09-22 18:10:48,992 [  23940]   INFO - ework.TestFileStructureManager - JsTestDriver: Creating TestFileStructurePack for EcmaScript.js took 84.69 ms 
-2015-09-22 18:10:49,642 [  24590]   INFO - ework.TestFileStructureManager - JsTestDriver: Creating TestFileStructurePack for ECMAScript.js2 took 68.53 ms 
-2015-09-22 18:10:51,305 [  26253]   INFO - ework.TestFileStructureManager - JsTestDriver: Creating TestFileStructurePack for lib.d.ts took 805.80 ms 
-2015-09-22 18:10:54,085 [  29033]   INFO - ework.TestFileStructureManager - JsTestDriver: Creating TestFileStructurePack for lib.d.ts took 400.11 ms 
-2015-09-22 18:10:59,328 [  34276]   INFO - ework.TestFileStructureManager - JsTestDriver: Creating TestFileStructurePack for lib.es6.d.ts took 442.54 ms 
-2015-09-22 18:11:03,337 [  38285]   INFO - ework.TestFileStructureManager - JsTestDriver: Creating TestFileStructurePack for DHTML.js took 261.28 ms 
-2015-09-22 18:11:04,767 [  39715]   INFO - ellij.concurrency.JobScheduler - 50 ms execution limit failed for: com.intellij.openapi.progress.impl.CoreProgressManager$1@549dc0a7; elapsed time was 62ms 
-2015-09-22 18:11:10,764 [  45712]   INFO - ellij.concurrency.JobScheduler - 50 ms execution limit failed for: com.intellij.openapi.progress.impl.CoreProgressManager$1@549dc0a7; elapsed time was 53ms 
-2015-09-22 18:11:16,932 [  51880]   INFO - ellij.concurrency.JobScheduler - 50 ms execution limit failed for: com.intellij.openapi.progress.impl.CoreProgressManager$1@549dc0a7; elapsed time was 67ms 
-2015-09-22 18:11:18,262 [  53210]   INFO - indexing.UnindexedFilesUpdater - Unindexed files update done in 37695 ms 
-2015-09-22 18:11:18,376 [  53324]   INFO - lij.tasks.impl.TaskManagerImpl - Updating issues cache (every 20 min) 
-2015-09-22 18:11:24,555 [  59503]   INFO -              PerformancePlugin - Execution has been finished 
-2015-09-22 18:11:24,684 [  59632]   INFO - Types.impl.FileTypeManagerImpl - FileTypeManager: 36 auto-detected files
-Elapsed time on auto-detect: 34 ms 
-2015-09-22 18:11:24,710 [  59658]   INFO - org.jetbrains.io.BuiltInServer - web server stopped 
-2015-09-22 18:11:24,756 [  59704]   INFO - il.indexing.FileBasedIndexImpl - START INDEX SHUTDOWN 
-2015-09-22 18:11:25,171 [  60119]   INFO - il.indexing.FileBasedIndexImpl - END INDEX SHUTDOWN 
-2015-09-22 18:11:25,171 [  60119]   INFO - stubs.SerializationManagerImpl - START StubSerializationManager SHUTDOWN 
-2015-09-22 18:11:25,175 [  60123]   INFO - stubs.SerializationManagerImpl - END StubSerializationManager SHUTDOWN 
-2015-09-22 18:11:25,272 [  60220]   WARN - api.vfs.impl.local.FileWatcher - Watcher terminated with exit code 0 
-2015-09-22 18:11:25,272 [  60220]   INFO - newvfs.persistent.PersistentFS - VFS dispose started 
-2015-09-22 18:11:25,280 [  60228]   INFO - newvfs.persistent.PersistentFS - VFS dispose completed 
-2015-09-22 18:11:25,299 [  60247]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE SHUTDOWN ------------------------------------------------------ 
+2015-09-23 16:20:19,105 [ 111698]   INFO - org.jetbrains.io.BuiltInServer - web server stopped 
+2015-09-23 16:20:19,108 [ 111701]   INFO - il.indexing.FileBasedIndexImpl - START INDEX SHUTDOWN 
+2015-09-23 16:20:19,165 [ 111758]   INFO - il.indexing.FileBasedIndexImpl - END INDEX SHUTDOWN 
+2015-09-23 16:20:19,165 [ 111758]   INFO - stubs.SerializationManagerImpl - START StubSerializationManager SHUTDOWN 
+2015-09-23 16:20:19,166 [ 111759]   INFO - stubs.SerializationManagerImpl - END StubSerializationManager SHUTDOWN 
+2015-09-23 16:20:19,320 [ 111913]   WARN - api.vfs.impl.local.FileWatcher - Watcher terminated with exit code 0 
+2015-09-23 16:20:19,323 [ 111916]   INFO - newvfs.persistent.PersistentFS - VFS dispose started 
+2015-09-23 16:20:19,333 [ 111926]   INFO - newvfs.persistent.PersistentFS - VFS dispose completed 
+2015-09-23 16:20:19,345 [ 111938]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE SHUTDOWN ------------------------------------------------------ 
+2015-09-23 16:20:21,892 [      0]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE STARTED ------------------------------------------------------ 
+2015-09-23 16:20:21,916 [     24]   INFO -        #com.intellij.idea.Main - IDE: PhpStorm (build #PS-141.2462, 18 Aug 2015 00:00) 
+2015-09-23 16:20:21,916 [     24]   INFO -        #com.intellij.idea.Main - OS: Linux (4.1.6-1-arch, amd64) 
+2015-09-23 16:20:21,916 [     24]   INFO -        #com.intellij.idea.Main - JRE: 1.8.0_60-b24 (Oracle Corporation) 
+2015-09-23 16:20:21,916 [     24]   INFO -        #com.intellij.idea.Main - JVM: 25.60-b23 (OpenJDK 64-Bit Server VM) 
+2015-09-23 16:20:21,920 [     28]   INFO -        #com.intellij.idea.Main - JVM Args: -Xbootclasspath/a:/usr/share/phpstorm/bin/../lib/boot.jar -Xms128m -Xmx750m -XX:MaxPermSize=350m -XX:ReservedCodeCacheSize=225m -XX:+UseConcMarkSweepGC -XX:SoftRefLRUPolicyMSPerMB=50 -ea -Dsun.io.useCanonCaches=false -Djava.net.preferIPv4Stack=true -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Djb.vmOptionsFile=/usr/share/phpstorm/bin/phpstorm64.vmoptions -XX:ErrorFile=/home/alograg/java_error_in_WEBIDE_%p.log -Djb.restart.code=88 -Didea.paths.selector=WebIde90 -Didea.platform.prefix=PhpStorm -Didea.no.jre.check=true 
+2015-09-23 16:20:21,976 [     84]   INFO -        #com.intellij.idea.Main - JNA library loaded (64-bit) in 56 ms 
+2015-09-23 16:20:22,536 [    644]   INFO - .intellij.idea.IdeaApplication - WM detected: Openbox 
+2015-09-23 16:20:23,984 [   2092]   INFO - llij.ide.plugins.PluginManager - Cannot find optional descriptor uml-properties-support.xml 
+2015-09-23 16:20:23,998 [   2106]   INFO - llij.ide.plugins.PluginManager - Cannot find optional descriptor uml-java-support.xml 
+2015-09-23 16:20:24,120 [   2228]   INFO - llij.ide.plugins.PluginManager - Cannot find optional descriptor js-nashorn-support.xml 
+2015-09-23 16:20:24,797 [   2905]   INFO - llij.ide.plugins.PluginManager - 51 plugins initialized in 1759 ms 
+2015-09-23 16:20:24,800 [   2908]   INFO - llij.ide.plugins.PluginManager - Loaded bundled plugins: ASP (0.1), Apache config (.htaccess) support (141.2462), Behat Support (141.2462), Blade Support (141.2462), CSS Support, CVS Integration (11), CoffeeScript (2.0), Command Line Tool Support (141.2462), Database Tools and SQL (1.0), Drupal Support (141.2462), File Watchers (141.2462), GNU GetText files support (*.po) (136.SNAPSHOT), Gherkin (999.999), Git Integration (8.1), GitHub, Google App Engine Support for PHP (141.2462), HAML, HTML Tools (2.0), IDEA CORE, Ini4Idea (141.2462), IntelliLang (8.0), Java Server Pages Integration (1.0), JavaScript Debugger (1.0), JavaScript Intention Power Pack (0.9.4), JavaScript Support (1.0), LESS support, PHP (141.2462), PHP Remote Interpreter (141.2462), Perforce Integration (2.0), Performance Testing (1.0), Phing Support (141.2462), QuirksMode, REST Client, ReStructuredText Support (136.SNAPSHOT), Refactor-X (2.01), Remote Hosts Access (0.1), SASS support, SSH Remote Run (0.1), Subversion Integration (1.1), Task Management (1.0), Terminal (0.1), TextMate bundles support (VERSION), Twig Support (141.2462), UML Support (1.0), Vagrant (141.2462), W3C Validators (2.0), WordPress Support (141.2462), XPathView + XSLT Support (4), XSLT-Debugger (1.4), YAML, hg4idea (10.0) 
+2015-09-23 16:20:25,729 [   3837]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=200; buffer=10; max=748027904 
+2015-09-23 16:20:25,802 [   3910]   INFO - api.vfs.impl.local.FileWatcher - Starting file watcher: /usr/share/phpstorm/bin/fsnotifier64 
+2015-09-23 16:20:25,831 [   3939]   INFO - api.vfs.impl.local.FileWatcher - Native file watcher is operational. 
+2015-09-23 16:20:27,314 [   5422]   INFO - lij.diagnostic.DebugLogManager - Set DEBUG for the following categories: [] 
+2015-09-23 16:20:28,316 [   6424]   INFO - rains.ide.BuiltInServerManager - built-in server started, port 63342 
+2015-09-23 16:20:29,489 [   7597]   INFO - pl.stores.ApplicationStoreImpl - 78 application components initialized in 4511 ms 
+2015-09-23 16:20:29,512 [   7620]   INFO - .intellij.idea.IdeaApplication - App initialization took 8682 ms 
+2015-09-23 16:20:35,070 [  13178]   INFO - ellij.project.impl.ProjectImpl - 19 project components initialized in 394 ms 
+2015-09-23 16:20:35,080 [  13188]   INFO - le.impl.ModuleManagerComponent - 0 module(s) loaded in 0 ms 
+2015-09-23 16:20:35,598 [  13706]   INFO - org.jetbrains.io.BuiltInServer - web server stopped 
+2015-09-23 16:20:35,599 [  13707]   INFO - Types.impl.FileTypeManagerImpl - FileTypeManager: 0 auto-detected files
+Elapsed time on auto-detect: 0 ms 
+2015-09-23 16:20:35,617 [  13725]   INFO - il.indexing.FileBasedIndexImpl - START INDEX SHUTDOWN 
+2015-09-23 16:20:35,714 [  13822]   INFO - il.indexing.FileBasedIndexImpl - END INDEX SHUTDOWN 
+2015-09-23 16:20:35,716 [  13824]   INFO - stubs.SerializationManagerImpl - START StubSerializationManager SHUTDOWN 
+2015-09-23 16:20:35,717 [  13825]   INFO - stubs.SerializationManagerImpl - END StubSerializationManager SHUTDOWN 
+2015-09-23 16:20:35,755 [  13863]   WARN - api.vfs.impl.local.FileWatcher - Watcher terminated with exit code 0 
+2015-09-23 16:20:35,756 [  13864]   INFO - newvfs.persistent.PersistentFS - VFS dispose started 
+2015-09-23 16:20:35,780 [  13888]   INFO - newvfs.persistent.PersistentFS - VFS dispose completed 
+2015-09-23 16:20:35,829 [  13937]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE SHUTDOWN ------------------------------------------------------ 
+2015-09-23 16:25:54,921 [      0]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE STARTED ------------------------------------------------------ 
+2015-09-23 16:25:54,945 [     24]   INFO -        #com.intellij.idea.Main - IDE: PhpStorm (build #PS-141.2462, 18 Aug 2015 00:00) 
+2015-09-23 16:25:54,945 [     24]   INFO -        #com.intellij.idea.Main - OS: Linux (4.1.6-1-arch, amd64) 
+2015-09-23 16:25:54,945 [     24]   INFO -        #com.intellij.idea.Main - JRE: 1.8.0_60-b24 (Oracle Corporation) 
+2015-09-23 16:25:54,945 [     24]   INFO -        #com.intellij.idea.Main - JVM: 25.60-b23 (OpenJDK 64-Bit Server VM) 
+2015-09-23 16:25:54,948 [     27]   INFO -        #com.intellij.idea.Main - JVM Args: -Xbootclasspath/a:./../lib/boot.jar -Xms128m -Xmx750m -XX:MaxPermSize=350m -XX:ReservedCodeCacheSize=225m -XX:+UseConcMarkSweepGC -XX:SoftRefLRUPolicyMSPerMB=50 -ea -Dsun.io.useCanonCaches=false -Djava.net.preferIPv4Stack=true -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Djb.vmOptionsFile=./phpstorm64.vmoptions -XX:ErrorFile=/home/alograg/java_error_in_WEBIDE_%p.log -Djb.restart.code=88 -Didea.paths.selector=WebIde90 -Didea.platform.prefix=PhpStorm -Didea.no.jre.check=true 
+2015-09-23 16:25:55,004 [     83]   INFO -        #com.intellij.idea.Main - JNA library loaded (64-bit) in 55 ms 
+2015-09-23 16:25:55,639 [    718]   INFO - .intellij.idea.IdeaApplication - WM detected: Openbox 
+2015-09-23 16:25:57,045 [   2124]   INFO - llij.ide.plugins.PluginManager - Cannot find optional descriptor uml-java-support.xml 
+2015-09-23 16:25:57,061 [   2140]   INFO - llij.ide.plugins.PluginManager - Cannot find optional descriptor uml-properties-support.xml 
+2015-09-23 16:25:57,159 [   2238]   INFO - llij.ide.plugins.PluginManager - Cannot find optional descriptor js-nashorn-support.xml 
+2015-09-23 16:25:57,840 [   2919]   INFO - llij.ide.plugins.PluginManager - 51 plugins initialized in 1706 ms 
+2015-09-23 16:25:57,841 [   2920]   INFO - llij.ide.plugins.PluginManager - Loaded bundled plugins: ASP (0.1), Apache config (.htaccess) support (141.2462), Behat Support (141.2462), Blade Support (141.2462), CSS Support, CVS Integration (11), CoffeeScript (2.0), Command Line Tool Support (141.2462), Database Tools and SQL (1.0), Drupal Support (141.2462), File Watchers (141.2462), GNU GetText files support (*.po) (136.SNAPSHOT), Gherkin (999.999), Git Integration (8.1), GitHub, Google App Engine Support for PHP (141.2462), HAML, HTML Tools (2.0), IDEA CORE, Ini4Idea (141.2462), IntelliLang (8.0), Java Server Pages Integration (1.0), JavaScript Debugger (1.0), JavaScript Intention Power Pack (0.9.4), JavaScript Support (1.0), LESS support, PHP (141.2462), PHP Remote Interpreter (141.2462), Perforce Integration (2.0), Performance Testing (1.0), Phing Support (141.2462), QuirksMode, REST Client, ReStructuredText Support (136.SNAPSHOT), Refactor-X (2.01), Remote Hosts Access (0.1), SASS support, SSH Remote Run (0.1), Subversion Integration (1.1), Task Management (1.0), Terminal (0.1), TextMate bundles support (VERSION), Twig Support (141.2462), UML Support (1.0), Vagrant (141.2462), W3C Validators (2.0), WordPress Support (141.2462), XPathView + XSLT Support (4), XSLT-Debugger (1.4), YAML, hg4idea (10.0) 
+2015-09-23 16:25:58,701 [   3780]   INFO - ellij.concurrency.JobScheduler - 50 ms execution limit failed for: com.intellij.openapi.progress.impl.CoreProgressManager$1@49e41187; elapsed time was 69ms 
+2015-09-23 16:25:58,740 [   3819]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=200; buffer=10; max=748027904 
+2015-09-23 16:25:58,813 [   3892]   INFO - api.vfs.impl.local.FileWatcher - Starting file watcher: /usr/share/phpstorm/bin/fsnotifier64 
+2015-09-23 16:25:58,835 [   3914]   INFO - api.vfs.impl.local.FileWatcher - Native file watcher is operational. 
+2015-09-23 16:26:00,283 [   5362]   INFO - lij.diagnostic.DebugLogManager - Set DEBUG for the following categories: [] 
+2015-09-23 16:26:01,196 [   6275]   INFO - rains.ide.BuiltInServerManager - built-in server started, port 63342 
+2015-09-23 16:26:02,632 [   7711]   INFO - pl.stores.ApplicationStoreImpl - 78 application components initialized in 4659 ms 
+2015-09-23 16:26:02,659 [   7738]   INFO - .intellij.idea.IdeaApplication - App initialization took 8685 ms 
+2015-09-23 16:26:07,569 [  12648]   INFO - ellij.project.impl.ProjectImpl - 19 project components initialized in 540 ms 
+2015-09-23 16:26:07,570 [  12649]   INFO - le.impl.ModuleManagerComponent - 0 module(s) loaded in 0 ms 
+2015-09-23 16:26:08,061 [  13140]   INFO - Types.impl.FileTypeManagerImpl - FileTypeManager: 0 auto-detected files
+Elapsed time on auto-detect: 0 ms 
+2015-09-23 16:26:08,071 [  13150]   INFO - org.jetbrains.io.BuiltInServer - web server stopped 
+2015-09-23 16:26:08,078 [  13157]   INFO - il.indexing.FileBasedIndexImpl - START INDEX SHUTDOWN 
+2015-09-23 16:26:08,160 [  13239]   INFO - il.indexing.FileBasedIndexImpl - END INDEX SHUTDOWN 
+2015-09-23 16:26:08,161 [  13240]   INFO - stubs.SerializationManagerImpl - START StubSerializationManager SHUTDOWN 
+2015-09-23 16:26:08,161 [  13240]   INFO - stubs.SerializationManagerImpl - END StubSerializationManager SHUTDOWN 
+2015-09-23 16:26:08,325 [  13404]   WARN - api.vfs.impl.local.FileWatcher - Watcher terminated with exit code 0 
+2015-09-23 16:26:08,325 [  13404]   INFO - newvfs.persistent.PersistentFS - VFS dispose started 
+2015-09-23 16:26:08,338 [  13417]   INFO - newvfs.persistent.PersistentFS - VFS dispose completed 
+2015-09-23 16:26:08,359 [  13438]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE SHUTDOWN ------------------------------------------------------ 

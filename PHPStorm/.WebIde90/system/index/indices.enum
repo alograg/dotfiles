@@ -72,9 +72,3 @@ Scss.variable
 Scss.placeholder.selector
 Scss.function
 Scss.mixin
-bash.function.name
-bash.script.name
-bash.script.fullname
-bash.included
-bash.includers
-bash.vardef

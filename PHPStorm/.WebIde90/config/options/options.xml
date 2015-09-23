@@ -4,13 +4,7 @@
     <property name="DefaultHtmlDoctype.MigrateToHtml5" value="true" />
     <property name="DefaultHtmlDoctype.Refreshed" value="1" />
     <property name="PhpStorm.InitialConfiguration" value="true" />
-    <property name="installation.uid" value="e55a250a-d00e-4a4c-9541-a713609f39b7" />
+    <property name="installation.uid" value="aa36edd4-1f61-49bb-941c-c5ac743ce27e" />
     <property name="PhpStorm.initialConfigurationShown" value="true" />
-    <property name="file.chooser.recent.files" value="$USER_HOME$/Proyectos" />
-    <property name="toolwindow.stripes.buttons.info.shown" value="true" />
-    <property name="DeploymentNotificationsComponent.WarnDisplayed.Java7&amp;Windows7FTPIssue" value="false" />
-    <property name="lastTip" value="2" />
-    <property name="file.colors.enable.non.project" value="494539" />
-    <property name="Non-Project Files" value="494539" />
   </component>
 </application>
