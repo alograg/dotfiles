@@ -1,5 +1,11 @@
 <application>
   <component name="DimensionService">
     <location key="WELCOME_SCREEN.0.0.1366.768" x="683" y="230" />
+    <location key="WebDeployment.AddServerDialog.v.1.0.0.1366.768" x="470" y="259" />
+    <location key="ftp.server.browser.0.0.1366.768" x="591" y="118" />
+    <location key="SettingsEditor.0.0.1366.768" x="0" y="0" />
+    <size key="WebDeployment.AddServerDialog.v.1.0.0.1366.768" width="418" height="217" />
+    <size key="ftp.server.browser.0.0.1366.768" width="184" height="498" />
+    <size key="SettingsEditor.0.0.1366.768" width="1366" height="736" />
   </component>
 </application>

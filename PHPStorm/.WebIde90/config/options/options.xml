@@ -6,5 +6,13 @@
     <property name="PhpStorm.InitialConfiguration" value="true" />
     <property name="installation.uid" value="aa36edd4-1f61-49bb-941c-c5ac743ce27e" />
     <property name="PhpStorm.initialConfigurationShown" value="true" />
+    <property name="file.colors.enable.non.project" value="494539" />
+    <property name="ProjectStructure.SecondLevelElements" value="0.2" />
+    <property name="KEYMAP" value="Database&#10;close" />
+    <property name="Non-Project Files" value="494539" />
+    <property name="FileTemplates.CurrentTab" value="Templates" />
+    <property name="FileTemplates.SelectedTemplate" value="Html" />
+    <property name="SingleInspectionProfilePanel.VERTICAL_DIVIDER_PROPORTION" value="0.5" />
+    <property name="SingleInspectionProfilePanel.HORIZONTAL_DIVIDER_PROPORTION" value="0.5" />
   </component>
 </application>

@@ -1,0 +1,13 @@
+<application>
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="71e61bb0-7559-4d24-b356-a738eb82d43c" name="AlogragMe" url="http://www.alograg.me">
+        <fileTransfer host="ftp.alograg.me" port="21" rootFolder="/www.alograg.me/web" password="dfd0dfe2dfd0dfe3dfd0dfeddfd0dffedfd0df98df9c" username="alograg">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</application>

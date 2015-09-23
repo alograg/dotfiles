@@ -1,7 +1,23 @@
 <application>
   <component name="UsageTrigger">
     <counts>
-      <entry feature="ideaapp.started" count="2" />
+      <entry feature="ide.settings.Appearance" count="1" />
+      <entry feature="ide.settings.Auto_Import" count="1" />
+      <entry feature="ide.settings.Code_Folding" count="1" />
+      <entry feature="ide.settings.Deployment" count="1" />
+      <entry feature="ide.settings.Diagrams" count="1" />
+      <entry feature="ide.settings.Editor_Tabs" count="1" />
+      <entry feature="ide.settings.File_Encodings" count="1" />
+      <entry feature="ide.settings.General" count="1" />
+      <entry feature="ide.settings.GitHub" count="1" />
+      <entry feature="ide.settings.Keymap" count="2" />
+      <entry feature="ide.settings.Smart_Keys" count="1" />
+      <entry feature="ide.settings.System_Settings" count="1" />
+      <entry feature="ide.settings.Vagrant" count="1" />
+      <entry feature="ide.settings.Web_Browsers" count="1" />
+      <entry feature="ideaapp.started" count="3" />
+      <entry feature="welcome.screen.WelcomeScreen.Configure" count="1" />
+      <entry feature="welcome.screen.WelcomeScreen.Settings" count="1" />
     </counts>
   </component>
 </application>

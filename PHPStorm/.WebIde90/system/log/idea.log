@@ -123,3 +123,42 @@ Elapsed time on auto-detect: 0 ms
 2015-09-23 16:26:08,325 [  13404]   INFO - newvfs.persistent.PersistentFS - VFS dispose started 
 2015-09-23 16:26:08,338 [  13417]   INFO - newvfs.persistent.PersistentFS - VFS dispose completed 
 2015-09-23 16:26:08,359 [  13438]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE SHUTDOWN ------------------------------------------------------ 
+2015-09-23 16:28:31,352 [      0]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE STARTED ------------------------------------------------------ 
+2015-09-23 16:28:31,377 [     25]   INFO -        #com.intellij.idea.Main - IDE: PhpStorm (build #PS-141.2462, 18 Aug 2015 00:00) 
+2015-09-23 16:28:31,377 [     25]   INFO -        #com.intellij.idea.Main - OS: Linux (4.1.6-1-arch, amd64) 
+2015-09-23 16:28:31,378 [     26]   INFO -        #com.intellij.idea.Main - JRE: 1.8.0_60-b24 (Oracle Corporation) 
+2015-09-23 16:28:31,378 [     26]   INFO -        #com.intellij.idea.Main - JVM: 25.60-b23 (OpenJDK 64-Bit Server VM) 
+2015-09-23 16:28:31,381 [     29]   INFO -        #com.intellij.idea.Main - JVM Args: -Xbootclasspath/a:./../lib/boot.jar -Xms128m -Xmx750m -XX:MaxPermSize=350m -XX:ReservedCodeCacheSize=225m -XX:+UseConcMarkSweepGC -XX:SoftRefLRUPolicyMSPerMB=50 -ea -Dsun.io.useCanonCaches=false -Djava.net.preferIPv4Stack=true -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Djb.vmOptionsFile=./phpstorm64.vmoptions -XX:ErrorFile=/home/alograg/java_error_in_WEBIDE_%p.log -Djb.restart.code=88 -Didea.paths.selector=WebIde90 -Didea.platform.prefix=PhpStorm -Didea.no.jre.check=true 
+2015-09-23 16:28:31,437 [     85]   INFO -        #com.intellij.idea.Main - JNA library loaded (64-bit) in 56 ms 
+2015-09-23 16:28:32,022 [    670]   INFO - .intellij.idea.IdeaApplication - WM detected: Openbox 
+2015-09-23 16:28:33,344 [   1992]   INFO - llij.ide.plugins.PluginManager - Cannot find optional descriptor uml-java-support.xml 
+2015-09-23 16:28:33,365 [   2013]   INFO - llij.ide.plugins.PluginManager - Cannot find optional descriptor uml-properties-support.xml 
+2015-09-23 16:28:33,461 [   2109]   INFO - llij.ide.plugins.PluginManager - Cannot find optional descriptor js-nashorn-support.xml 
+2015-09-23 16:28:34,124 [   2772]   INFO - llij.ide.plugins.PluginManager - 51 plugins initialized in 1623 ms 
+2015-09-23 16:28:34,126 [   2774]   INFO - llij.ide.plugins.PluginManager - Loaded bundled plugins: ASP (0.1), Apache config (.htaccess) support (141.2462), Behat Support (141.2462), Blade Support (141.2462), CSS Support, CVS Integration (11), CoffeeScript (2.0), Command Line Tool Support (141.2462), Database Tools and SQL (1.0), Drupal Support (141.2462), File Watchers (141.2462), GNU GetText files support (*.po) (136.SNAPSHOT), Gherkin (999.999), Git Integration (8.1), GitHub, Google App Engine Support for PHP (141.2462), HAML, HTML Tools (2.0), IDEA CORE, Ini4Idea (141.2462), IntelliLang (8.0), Java Server Pages Integration (1.0), JavaScript Debugger (1.0), JavaScript Intention Power Pack (0.9.4), JavaScript Support (1.0), LESS support, PHP (141.2462), PHP Remote Interpreter (141.2462), Perforce Integration (2.0), Performance Testing (1.0), Phing Support (141.2462), QuirksMode, REST Client, ReStructuredText Support (136.SNAPSHOT), Refactor-X (2.01), Remote Hosts Access (0.1), SASS support, SSH Remote Run (0.1), Subversion Integration (1.1), Task Management (1.0), Terminal (0.1), TextMate bundles support (VERSION), Twig Support (141.2462), UML Support (1.0), Vagrant (141.2462), W3C Validators (2.0), WordPress Support (141.2462), XPathView + XSLT Support (4), XSLT-Debugger (1.4), YAML, hg4idea (10.0) 
+2015-09-23 16:28:35,095 [   3743]   INFO - ellij.concurrency.JobScheduler - 50 ms execution limit failed for: com.intellij.openapi.progress.impl.CoreProgressManager$1@622e0a33; elapsed time was 56ms 
+2015-09-23 16:28:35,150 [   3798]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=200; buffer=10; max=748027904 
+2015-09-23 16:28:35,232 [   3880]   INFO - api.vfs.impl.local.FileWatcher - Starting file watcher: /usr/share/phpstorm/bin/fsnotifier64 
+2015-09-23 16:28:35,256 [   3904]   INFO - api.vfs.impl.local.FileWatcher - Native file watcher is operational. 
+2015-09-23 16:28:36,764 [   5412]   INFO - lij.diagnostic.DebugLogManager - Set DEBUG for the following categories: [] 
+2015-09-23 16:28:37,696 [   6344]   INFO - rains.ide.BuiltInServerManager - built-in server started, port 63342 
+2015-09-23 16:28:38,856 [   7504]   INFO - pl.stores.ApplicationStoreImpl - 78 application components initialized in 4551 ms 
+2015-09-23 16:28:38,871 [   7519]   INFO - .intellij.idea.IdeaApplication - App initialization took 8495 ms 
+2015-09-23 16:28:43,020 [  11668]   INFO - ellij.project.impl.ProjectImpl - 19 project components initialized in 315 ms 
+2015-09-23 16:28:43,021 [  11669]   INFO - le.impl.ModuleManagerComponent - 0 module(s) loaded in 0 ms 
+2015-09-23 16:41:41,748 [ 790396]   INFO - tellij.xml.Html5SchemaProvider - HTML5_SCHEMA_LOCATION = /usr/share/phpstorm/lib/phpstorm.jar!/resources/html5-schema/html5.rnc 
+2015-09-23 16:41:41,748 [ 790396]   INFO - tellij.xml.Html5SchemaProvider - XHTML5_SCHEMA_LOCATION = /usr/share/phpstorm/lib/phpstorm.jar!/resources/html5-schema/xhtml5.rnc 
+2015-09-23 16:41:41,748 [ 790396]   INFO - tellij.xml.Html5SchemaProvider - CHARS_DTD_LOCATION = /usr/share/phpstorm/lib/phpstorm.jar!/resources/html5-schema/html5chars.ent 
+2015-09-23 16:43:56,305 [ 924953]   INFO -                         github - Success; Connection successful 
+2015-09-23 16:45:19,819 [1008467]   INFO - s.webDeployment.PublishUtils$2 - Using "/tmp/vfs_cache" as temporary files store. 
+2015-09-23 16:55:39,815 [1628463]   INFO - org.jetbrains.io.BuiltInServer - web server stopped 
+2015-09-23 16:55:39,816 [1628464]   INFO - Types.impl.FileTypeManagerImpl - FileTypeManager: 0 auto-detected files
+Elapsed time on auto-detect: 0 ms 
+2015-09-23 16:55:39,823 [1628471]   INFO - il.indexing.FileBasedIndexImpl - START INDEX SHUTDOWN 
+2015-09-23 16:55:39,893 [1628541]   INFO - il.indexing.FileBasedIndexImpl - END INDEX SHUTDOWN 
+2015-09-23 16:55:39,895 [1628543]   INFO - stubs.SerializationManagerImpl - START StubSerializationManager SHUTDOWN 
+2015-09-23 16:55:39,897 [1628545]   INFO - stubs.SerializationManagerImpl - END StubSerializationManager SHUTDOWN 
+2015-09-23 16:55:39,996 [1628644]   WARN - api.vfs.impl.local.FileWatcher - Watcher terminated with exit code 0 
+2015-09-23 16:55:39,997 [1628645]   INFO - newvfs.persistent.PersistentFS - VFS dispose started 
+2015-09-23 16:55:40,005 [1628653]   INFO - newvfs.persistent.PersistentFS - VFS dispose completed 
+2015-09-23 16:55:40,023 [1628671]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE SHUTDOWN ------------------------------------------------------ 
