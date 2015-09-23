@@ -1,0 +1,10 @@
+<application>
+  <component name="DimensionService">
+    <location key="FileChooserDialogImpl.0.0.1366.768" x="445" y="63" />
+    <location key="GitCloneDialog.0.0.1366.768" x="373" y="232" />
+    <location key="WELCOME_SCREEN.0.0.1366.768" x="683" y="230" />
+    <location key="com.intellij.ide.util.TipDialog.0.0.1366.768" x="394" y="185" />
+    <size key="FileChooserDialogImpl.0.0.1366.768" width="468" height="514" />
+    <size key="GitCloneDialog.0.0.1366.768" width="612" height="175" />
+  </component>
+</application>

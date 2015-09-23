@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conversion>
+  <applied-converters>
+    <converter id="js-debug-configuration-converter" />
+    <converter id="js-predefined-libraries-merged" />
+  </applied-converters>
+  <project-files>
+    <file path="/home/alograg/Proyectos/sketch-cb-lab/.idea/misc.xml" timestamp="1442966817000" />
+    <file path="/home/alograg/Proyectos/sketch-cb-lab/.idea/modules.xml" timestamp="1442966817000" />
+    <file path="/home/alograg/Proyectos/sketch-cb-lab/.idea/sketch-cb-lab.iml" timestamp="1442966817000" />
+    <file path="/home/alograg/Proyectos/sketch-cb-lab/.idea/vcs.xml" timestamp="1442966831000" />
+    <file path="/home/alograg/Proyectos/sketch-cb-lab/.idea/workspace.xml" timestamp="1442966982000" />
+  </project-files>
+</conversion>
+

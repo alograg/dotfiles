@@ -1,0 +1,42 @@
+<application>
+  <component name="StatisticsApplicationUsages">
+    <group name="php-interpreters">
+      <project id="sketch-cb-lab" values="0" collectionTime="1442967084350" />
+    </group>
+    <group name="module type">
+      <project id="sketch-cb-lab" values="WEB_MODULE" collectionTime="1442967084029" />
+    </group>
+    <group name="vcs">
+      <project id="sketch-cb-lab" values="Git" collectionTime="1442967084028" />
+    </group>
+    <group name="file-type">
+      <project id="sketch-cb-lab" values="Markdown,XML,UNKNOWN,Bash,PLAIN_TEXT,HTML,PHP,SmartyConfig" collectionTime="1442967084045" />
+    </group>
+    <group name="php-interpreter-version">
+      <project id="sketch-cb-lab" values="not installed" collectionTime="1442967084347" />
+    </group>
+    <group name="php-include-path">
+      <project id="sketch-cb-lab" values="0" collectionTime="1442967084339" />
+    </group>
+    <group name="JavaScript versions">
+      <project id="sketch-cb-lab" values="DEFAULT" collectionTime="1442967084337" />
+    </group>
+    <group name="javaScript Scope Usages">
+      <project id="sketch-cb-lab" values="Project,Project" collectionTime="1442967084337" />
+    </group>
+    <group name="php-debug-skipped-paths">
+      <project id="sketch-cb-lab" values="0" collectionTime="1442967084353" />
+    </group>
+    <group name="php-servers">
+      <project id="sketch-cb-lab" values="0" collectionTime="1442967084347" />
+    </group>
+  </component>
+  <component name="UsageTrigger">
+    <counts>
+      <entry feature="ideaapp.started" count="2" />
+      <entry feature="welcome.screen.WelcomeScreen.Configure" count="1" />
+      <entry feature="welcome.screen.WelcomeScreen.Configure.Import" count="1" />
+      <entry feature="welcome.screen.WelcomeScreen.GetFromVcs" count="1" />
+    </counts>
+  </component>
+</application>
