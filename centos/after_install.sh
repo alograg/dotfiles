@@ -1,5 +1,9 @@
 # Update/Upgrade
 yum -y update && yum -y upgrade
+# Repos
+yum -y install epel-release
+# Update/Upgrade
+yum -y update && yum -y upgrade
 # NetToos
 yum -y install net-tools
 # Links
@@ -40,8 +44,6 @@ yum -y install google-chrome-stable
 # NodeJS
 curl --silent --location https://rpm.nodesource.com/setup_7.x | bash -
 yum -y install nodejs npm
-# Repos
-yum -y install epel-release
 # 7Zip
 yum -y install p7zip p7zip-plugins p7zip-gui
 # Reboot
