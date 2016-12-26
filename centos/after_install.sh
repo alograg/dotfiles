@@ -46,5 +46,35 @@ curl --silent --location https://rpm.nodesource.com/setup_7.x | bash -
 yum -y install nodejs npm
 # 7Zip
 yum -y install p7zip p7zip-plugins p7zip-gui
+# DefaultApps
+cat /usr/share/applications/defaults.list | grep video
+cat /usr/share/applications/defaults.list | grep image
+
+echo -e "x-scheme-handler/mailto=google-chrome.desktop">>.local/share/applications/mimeapps.list
+echo -e "application/pdf=google-chrome.desktop">>.local/share/applications/mimeapps.list
+echo -e "image/*=google-chrome.desktop">>.local/share/applications/mimeapps.list
+echo -e "audio/x-mpegurl=google-chrome.desktop">>.local/share/applications/mimeapps.list
+echo -e "video/mp4=google-chrome.desktop">>.local/share/applications/mimeapps.list
+echo -e "video/x-flv=google-chrome.desktop">>.local/share/applications/mimeapps.list
+echo -e "video/mpeg=google-chrome.desktop">>.local/share/applications/mimeapps.list
+echo -e "video/webm=google-chrome.desktop">>.local/share/applications/mimeapps.list
+echo -e "application/octet-stream=google-chrome.desktop">>.local/share/applications/mimeapps.list
+echo -e "audio/x-vorbis+ogg=google-chrome.desktop">>.local/share/applications/mimeapps.list
+echo -e "video/avi=google-chrome.desktop">>.local/share/applications/mimeapps.list
+echo -e "video/flv=google-chrome.desktop">>.local/share/applications/mimeapps.list
+echo -e "video/quicktime=google-chrome.desktop">>.local/share/applications/mimeapps.list
+echo -e "video/vnd.rn-realvideo=google-chrome.desktop">>.local/share/applications/mimeapps.list
+echo -e "video/x-matroska=google-chrome.desktop">>.local/share/applications/mimeapps.list
+echo -e "video/x-ms-asf=google-chrome.desktop">>.local/share/applications/mimeapps.list
+echo -e "video/x-msvideo=google-chrome.desktop">>.local/share/applications/mimeapps.list
+echo -e "video/x-ms-wmv=google-chrome.desktop">>.local/share/applications/mimeapps.list
+echo -e "video/x-ogm=google-chrome.desktop">>.local/share/applications/mimeapps.list
+echo -e "video/x-theora=google-chrome.desktop">>.local/share/applications/mimeapps.list
+
+gsettings set org.gnome.desktop.default-applications.office.calendar exec "chromium-browser 'https://www.google.com/calendar'"
+
+# Fonts
+yum -y install curl cabextract xorg-x11-font-utils fontconfig
+rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 # Reboot
 reboot
