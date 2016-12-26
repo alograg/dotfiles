@@ -41,8 +41,8 @@ yum -y install google-chrome-stable
 curl --silent --location https://rpm.nodesource.com/setup_7.x | bash -
 yum -y install nodejs npm
 # Repos
-yum install epel-release
+yum -y install epel-release
 # 7Zip
-yum install p7zip p7zip-plugins p7zip-gui
+yum -y install p7zip p7zip-plugins p7zip-gui
 # Reboot
 reboot
