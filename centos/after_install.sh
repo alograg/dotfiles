@@ -8,6 +8,8 @@ yum -y update && yum -y upgrade
 yum -y install net-tools
 # Links
 yum -y install links
+# Git
+yum --disablerepo=base,updates --enablerepo=rpmforge-extras update git
 # Apache/PHP/MariaDb
 yum -y install httpd php php-devel php-common php-soap php-gd mariadb-server mariadb
 firewall-cmd --add-service=http
