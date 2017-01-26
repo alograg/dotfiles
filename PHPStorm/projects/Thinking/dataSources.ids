@@ -1,0 +1,799 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="Thinking" uuid="974d157f-2b99-45f3-b7e0-8264a8aac936">
+    <database-info product="MySQL" version="5.5.5-10.1.13-MariaDB" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="matelangular_customers"/>
+    <schema name="" catalog="thinking"/>
+    <table name="customers" schema="" catalog="matelangular_customers" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="nick" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="U3ViLWRvbWluaW8="/>
+      <column name="implementation" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="Tm9tYnJlIGRlbCB0aXBvIGRlIEltcGxlbWVudGFjacOzbg=="/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="deleted_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="full_name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="Tm9tYnJlIGNvbXBsZXRvIGRlIGxhIGluc3RpdHVjacOzbg=="/>
+      <column name="code" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="TnVtZXJvL0PDs2RpZ28gZGUgY2xpZW50ZQ=="/>
+      <column name="short_name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="Tm9tYnJlIGNvcnRvIGRlIGxhIGVzY3VlbGE="/>
+      <column name="contact" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1" remarks="RGF0b3MgZGUgY29udGFjdG8="/>
+      <column name="contract" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1" remarks="RGF0b3MgZGUgY29udHJhdG8="/>
+      <column name="billing" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1" remarks="Q29uZmlndXJhY2nDs24gZGUgZmFjdHVyYWNpw7Nu"/>
+      <column name="config" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1" remarks="Q29uZmlndXJhY2nDs24gZGUgZ2VuZXJhbA=="/>
+      <column name="database" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1" remarks="Q29uZmlndXJhY2nDs24gZGUgYmFzZSBkZSBkYXRvcw=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="customers_nick_unique" unique="true" columns="nick"/>
+      <index name="customers_implementation_index" unique="false" columns="implementation"/>
+      <index name="customers_nick_index" unique="false" columns="nick"/>
+    </table>
+    <table name="logs" schema="" catalog="matelangular_customers" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="deleted_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="application" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="Tm9tYnJlIGRlIGxhIGFwbGljYWNpw7Nu"/>
+      <column name="panel" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="UGFuZWwgdXRpbGl6YWRv"/>
+      <column name="installation" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="SW5zdGFsYWNpw7NuIHF1ZSByZWdpc3Rybw=="/>
+      <column name="user" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="SWRlbnRpZmljYWRvciBkZWwgdXN1YXJpbw=="/>
+      <column name="route" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="UnV0YSBhY2NlZGlkYQ=="/>
+      <column name="data" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1" remarks="RGF0b3MgbWFuZWphZG9z"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="activations" schema="" catalog="thinking" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" remarks="SWRlbnRpZmljYWRvcg==" autoIncrement="true"/>
+      <column name="user_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" remarks="UmVmZXJlbmNpYSBhIHVzdWFyaW9z"/>
+      <column name="code" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="Q29kaWdv"/>
+      <column name="completed" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA==" remarks="U2kgZnVlIGNvbXBsZXRhZG8="/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="completed_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93" remarks="RmVjaGEgZW4gcXVlIHNlIGNvbXBsZXRvIGxhIGFjdGl2YWNpw7Nu"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_activation_user" columns="user_id" ref-table="users" ref-schema="" ref-catalog="thinking" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <index name="activations_user_id_index" unique="false" columns="user_id"/>
+    </table>
+    <table name="address_assignments" schema="" catalog="thinking" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="address_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="addressed_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="addressed_type" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="deleted_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="type" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="VGlwbyBkZSBkaXJlY2Npw7NuLCBlajogZmlzY2FsLCBkb21pY2lsaW8sIGV0Yw=="/>
+      <column name="morph_to" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_address_assignment_address" columns="address_id" ref-table="addresses" ref-schema="" ref-catalog="thinking" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <index name="address_id_type_index" unique="true" columns="address_id,addressed_id,addressed_type"/>
+      <index name="address_assignments_address_id_index" unique="false" columns="address_id"/>
+      <index name="address_assignments_addressed_id_addressed_type_index" unique="false" columns="addressed_id,addressed_type"/>
+    </table>
+    <table name="addresses" schema="" catalog="thinking" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="deleted_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="zip" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="Q8OzZGlnbyBwb3N0YWw="/>
+      <column name="geo_point" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1" remarks="SlNPTiBkZSBwb3NpY2lvbmFtaWVudG8="/>
+      <column name="location" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1" remarks="SlNPTiBkZSBsYSBsb2NhbGlkYWQ="/>
+      <column name="directions" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1" remarks="SlNPTiBkZSBkaXJlY2Npw7Nu"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="FK_address_assignment_address" table="address_assignments" schema="" catalog="thinking" columns="address_id"/>
+    </table>
+    <table name="campaign_targets" schema="" catalog="thinking" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="campaign_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="target_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="target_type" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="deleted_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="morph_to" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_campaign_target_campaign" columns="campaign_id" ref-table="campaigns" ref-schema="" ref-catalog="thinking" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <index name="unique_campaign_target" unique="true" columns="campaign_id,target_id,target_type"/>
+      <index name="campaign_targets_campaign_id_index" unique="false" columns="campaign_id"/>
+      <index name="campaign_targets_target_id_target_type_index" unique="false" columns="target_id,target_type"/>
+    </table>
+    <table name="campaigns" schema="" catalog="thinking" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="type" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MQ==" remarks="VGlwbyBkZSBjYW1wYcOxYSwgZWo6IDE6QXV0b23DoXRpY28gc2Vnw7puIGNyaXRlcmlvcwoyOkVzcGVjaWZpY28sIGFzaWduYWNpw7NuIG1hbnVhbCBkZSBvYmpldGl2b3M="/>
+      <column name="channels" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MQ==" remarks="Q2FuYWxlcyBwb3IgbG9zIHF1ZSBzZSB0cmFzbWl0ZSBlbCBjb211bmljYWRvLCBlajogMTpEQgoyOk1haWwKNDpCcm9hZGNhc3QKODpTTVMKMTY6U2xhY2sKMzI6UHJpbnQ="/>
+      <column name="creator_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4" remarks="UXVpZW4gY3JlbyBlbCBhbGNhbmNl"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="deleted_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="Tm9tYnJlIGRlIGxhIGLDunNxdWVkYQ=="/>
+      <column name="criteria" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1" remarks="Q3JpdGVyaW8gZGUgYsO6c3F1ZWRhIGRlIGRlc3RpbmF0YXJpb3MsIGVqOiBbCiAgewogICAgInRhcmdldF90eXBlIjogIk1vZHVsZXNUaGlua2luZ0xpYWlzb25zTW9kZWxzTGlhaXNvbiIsCiAgICAiZmllbGQiOiAiQ2FtcG8sIGVqOiB0eXBlIiwKICAgICJ2YWx1ZXMiOiBbCiAgICAgIDIsCiAgICAgIDQKICAgIF0sCiAgICAidHlwZSI6ICJBTkQvT1IiCiAgfQpd"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_campaign_creator_id" columns="creator_id" ref-table="people" ref-schema="" ref-catalog="thinking" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <exported-key name="FK_campaign_target_campaign" table="campaign_targets" schema="" catalog="thinking" columns="campaign_id"/>
+      <index name="campaigns_creator_id_index" unique="false" columns="creator_id"/>
+    </table>
+    <table name="cash_counts" schema="" catalog="thinking" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="cashier_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" remarks="SWRlbnRpZmljYWRvciBkZSBsYSBjYWph"/>
+      <column name="person_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4" remarks="SWRlbnRpZmljYWRvciBkZWwgY2FqZXJv"/>
+      <column name="amount" sqlType="DECIMAL" precision="12" scale="2" nullable="false" jdbcType="3" def="MC4wMA==" remarks="TW9udG8gZGVsIGRlcG9zaXRv"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="deleted_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="register_at" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="note" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="Tm90YXMgZGVsIG1vdmltaWVudG8="/>
+      <column name="info" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1" remarks="SW5mb3JtYWNpw7NuIGRlbCBtb3ZpbWllbnRv"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_cash_count_cashier" columns="cashier_id" ref-table="cashiers" ref-schema="" ref-catalog="thinking" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <foreign-key name="FK_cash_count_person" columns="person_id" ref-table="people" ref-schema="" ref-catalog="thinking" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <exported-key name="FK_cashiers_drop_cash_count" table="cashiers_drops" schema="" catalog="thinking" columns="cash_count_id"/>
+      <exported-key name="FK_payment_cash_count" table="payments" schema="" catalog="thinking" columns="cash_count_id"/>
+      <index name="cash_counts_cashier_id_index" unique="false" columns="cashier_id"/>
+      <index name="cash_counts_person_id_index" unique="false" columns="person_id"/>
+    </table>
+    <table name="cashiers" schema="" catalog="thinking" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="folio" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA==" remarks="Rm9saW8gZGUgcmVjaWJvcyBhY3R1YWwgZGUgbGEgY2FqYQ=="/>
+      <column name="maximum" sqlType="DECIMAL UNSIGNED" precision="12" scale="2" nullable="false" jdbcType="3" def="MC4wMA==" remarks="TW9udG8gZGUgYWxlcnRhIHBhcmEgZGVwb3NpdG8="/>
+      <column name="balance" sqlType="DECIMAL" precision="12" scale="2" nullable="false" jdbcType="3" def="MC4wMA==" remarks="QmFsYW5jZSBhY3R1YWwgZGUgbGEgY2FqYQ=="/>
+      <column name="status" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA==" remarks="RXN0YWRvIGRlIGxhIGNhamE="/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="deleted_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="box_cut_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93" remarks="RmVjaGEgZW4gcXVlIHNlIHJlYWxpem8gZWwgdWx0aW1vIGNvcnRl"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="Tm9tYnJlIGRlIGxhIGNhamE="/>
+      <column name="sequence" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="U2VyaWUgZGVsIGZvbGlv"/>
+      <column name="authorized" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="FK_cash_count_cashier" table="cash_counts" schema="" catalog="thinking" columns="cashier_id"/>
+      <exported-key name="FK_cashiers_drop_cashier" table="cashiers_drops" schema="" catalog="thinking" columns="cashier_id"/>
+      <exported-key name="FK_payment_cashier" table="payments" schema="" catalog="thinking" columns="cashier_id"/>
+    </table>
+    <table name="cashiers_drops" schema="" catalog="thinking" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="cashier_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" remarks="TGEgY2FqYSBkZWwgcmV0aXJv"/>
+      <column name="person_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4" remarks="TGEgcGVyc29uYSBxdWUgcmVhbGl6byBlbCByZXRpcm8="/>
+      <column name="cash_count_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4" remarks="SWRlbnRpZmljYWRvciBhcnF1ZW8gZGUgY2FqYQ=="/>
+      <column name="amount" sqlType="DECIMAL" precision="12" scale="2" nullable="false" jdbcType="3" def="MC4wMA==" remarks="TW9udG8gZGVsIHJldGlybw=="/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="deleted_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="note" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="Tm90YXMgZGVsIG1vdmltaWVudG8="/>
+      <column name="info" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1" remarks="SW5mb3JtYWNpw7NuIGRlbCBkZXBvc2l0byBlbiBmb3JtYXRvIEpTT04="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_cashiers_drop_cash_count" columns="cash_count_id" ref-table="cash_counts" ref-schema="" ref-catalog="thinking" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <foreign-key name="FK_cashiers_drop_cashier" columns="cashier_id" ref-table="cashiers" ref-schema="" ref-catalog="thinking" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <foreign-key name="FK_cashiers_drop_person" columns="person_id" ref-table="people" ref-schema="" ref-catalog="thinking" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <index name="cashiers_drops_cash_count_id_index" unique="false" columns="cash_count_id"/>
+      <index name="cashiers_drops_cashier_id_index" unique="false" columns="cashier_id"/>
+      <index name="cashiers_drops_person_id_index" unique="false" columns="person_id"/>
+    </table>
+    <table name="catalog_taxes" schema="" catalog="thinking" type="TABLE">
+      <column name="catalog_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="tax_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <foreign-key name="FK_catalog_tax_catalog" columns="catalog_id" ref-table="catalogs" ref-schema="" ref-catalog="thinking" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <foreign-key name="FK_catalog_tax_tax" columns="tax_id" ref-table="taxes" ref-schema="" ref-catalog="thinking" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <index name="catalog_taxes_catalog_id_index" unique="false" columns="catalog_id"/>
+      <index name="catalog_taxes_tax_id_index" unique="false" columns="tax_id"/>
+    </table>
+    <table name="catalogs" schema="" catalog="thinking" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="config_type" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="QSBxdWUgY2xhc2UgcGVydGVuZWNl"/>
+      <column name="status" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA==" remarks="RXN0YWRvOiAwfDE="/>
+      <column name="taxable" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA==" remarks="U2kgZXMgZmlzY2FsOiAwfDE="/>
+      <column name="payments_methods" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA==" remarks="TcOpdG9kb3MgZGUgcGFnbyBzZWfDum4gbGFzIG9wY2lvbmVzIGRlIHBhZ28="/>
+      <column name="ledger_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4" remarks="Q3VlbnRhIGNvbnRhYmxlIGRlbCBjb25jZXB0bw=="/>
+      <column name="category_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4" remarks="Q2F0ZWdvcsOtYSBkZSByZWZlcmVuY2lh"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="deleted_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="Tm9tYnJlL0PDs2RpZ28="/>
+      <column name="description" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1" remarks="RGVzY3JpcGNpw7NuIGdlbmVyYWw="/>
+      <column name="config_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="morph_to" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_catalog_category" columns="category_id" ref-table="categories" ref-schema="" ref-catalog="thinking" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <foreign-key name="FK_catalog_ledger" columns="ledger_id" ref-table="ledgers" ref-schema="" ref-catalog="thinking" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <exported-key name="FK_catalog_tax_catalog" table="catalog_taxes" schema="" catalog="thinking" columns="catalog_id"/>
+      <exported-key name="FK_product_catalog" table="products" schema="" catalog="thinking" columns="catalog_id"/>
+      <exported-key name="FK_recurrent_catalog" table="recurrents" schema="" catalog="thinking" columns="catalog_id"/>
+      <index name="config_id" unique="true" columns="config_id"/>
+      <index name="morph_to" unique="true" columns="morph_to"/>
+      <index name="catalogs_category_id_index" unique="false" columns="category_id"/>
+      <index name="catalogs_config_type_index" unique="false" columns="config_type"/>
+      <index name="catalogs_ledger_id_index" unique="false" columns="ledger_id"/>
+    </table>
+    <table name="categories" schema="" catalog="thinking" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="parent_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="order_at" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="true" jdbcType="5"/>
+      <column name="left_at" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="true" jdbcType="5"/>
+      <column name="right_at" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="true" jdbcType="5"/>
+      <column name="depth" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="true" jdbcType="5"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="deleted_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="Tm9tYnJl"/>
+      <column name="description" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1" remarks="RGVzY3JpcGNpw7Nu"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="FK_catalog_category" table="catalogs" schema="" catalog="thinking" columns="category_id"/>
+      <index name="categories_left_at_index" unique="false" columns="left_at"/>
+      <index name="categories_parent_id_index" unique="false" columns="parent_id"/>
+      <index name="categories_right_at_index" unique="false" columns="right_at"/>
+    </table>
+    <table name="communications" schema="" catalog="thinking" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="target_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="target_type" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="from_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4" remarks="UXVpZW4gbWFuZGEgZWwgY29tdW5pY2Fkbw=="/>
+      <column name="transcribed_by_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4" remarks="UXVpZW4gdHJhbnNjcmliacOzIGVsIGNvbXVuaWNhZG8="/>
+      <column name="type" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" remarks="VGlwbyBkZSBjb211bmljYWNpw7Nu"/>
+      <column name="signature_required" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="deleted_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="start_at" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91" remarks="Q3VhbmRvIGVtcGllemEgYSBzZXIgbW9zdHJhZG8gZXN0ZSBtZW5zYWpl"/>
+      <column name="remember_at" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91" remarks="Q3VhbmRvIGRlYmUgc2VyIG1hbmRhZG8gdW4gY29ycmVvIGRlIHJlY29yZGF0b3Jpbw=="/>
+      <column name="end_at" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91" remarks="Q3VhbmRvIGRlamEgYSBzZXIgbW9zdHJhZG8gZXN0ZSBtZW5zYWpl"/>
+      <column name="subtype" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" remarks="U3VidGlwbyBkZSBsYSBjb211bmljYWNpw7Nu"/>
+      <column name="level" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" remarks="Tml2ZWwgZGUgbm90aWZpY2FjacOzbjsgaW5mbywgc3VjY2VzcywgZXJyb3I="/>
+      <column name="subject" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" remarks="QXN1bnRvIGRlbCBtZW5zYWpl"/>
+      <column name="greeting" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1" remarks="U2FsdWRv"/>
+      <column name="message" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1" remarks="TWVuc2FqZSBjb21wbGV0bw=="/>
+      <column name="thanks" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1" remarks="RGVzcGVkaWRh"/>
+      <column name="data" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1" remarks="SlNPTiBjb24gbGEgaW5mb3JtYWNpw7NuIHF1ZSBjb21wbGVtZW50YSB1biBjb211bmljYWRvIGRlIHBsYW50aWxsYQ=="/>
+      <column name="morph_to" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_communication_from_id" columns="from_id" ref-table="people" ref-schema="" ref-catalog="thinking" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <foreign-key name="FK_communication_transcribed_by_id" columns="transcribed_by_id" ref-table="people" ref-schema="" ref-catalog="thinking" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <exported-key name="FK_notification_communication" table="notifications" schema="" catalog="thinking" columns="communication_id"/>
+      <index name="communications_from_id_index" unique="false" columns="from_id"/>
+      <index name="communications_target_id_target_type_index" unique="false" columns="target_id,target_type"/>
+      <index name="communications_transcribed_by_id_index" unique="false" columns="transcribed_by_id"/>
+      <index name="communications_type_index" unique="false" columns="type"/>
+    </table>
+    <table name="companies" schema="" catalog="thinking" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="deleted_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="Tm9tYnJlL1JhesOzbiBTb2NpYWw="/>
+      <column name="nick" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="Tm9tYnJlIGNvbWVyY2lhbA=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="customers_tax" schema="" catalog="thinking" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="tax_id" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="SWRlbnRpZmljYWRvciBkZSBpbXB1ZXN0b3MsIGVqLiBSRkM="/>
+      <column name="person_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MQ==" remarks="SWRlbnRpZmljYWRvciBkZSBsYSBwZXJzb25hIGEgbGEgcXVlIHNlIGZhY3R1cmEgY3VhbmRvIGVzIHB1YmxpY28gZW4gZ2VuZXJhbA=="/>
+      <column name="status" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA==" remarks="RXN0YWRvcyBkZWwgUkZD"/>
+      <column name="invoice_number" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MQ==" remarks="Rm9saW8gYWN0dWFsIGRlIGZhY3R1cmFjacOzbg=="/>
+      <column name="un_invoice_number" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MQ==" remarks="Rm9saW8gYWN0dWFsIGRlIGxhIG5vdGEgZGUgY3LDqWRpdG8="/>
+      <column name="debit_number" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MQ==" remarks="Rm9saW8gYWN0dWFsIGRlIGxhIG5vdGEgZGUgY2FyZ28="/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="deleted_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="invoice_format" sqlType="VARCHAR" precision="15" scale="0" nullable="false" jdbcType="12" def="J0YtJScuMDVkJw==" remarks="Rm9ybWF0byBkZWwgZm9saW8gZGUgZmFjdHVyYWNpw7Nu"/>
+      <column name="un_invoice_format" sqlType="VARCHAR" precision="15" scale="0" nullable="false" jdbcType="12" def="J05DLSUnLjA1ZCc=" remarks="Rm9ybWF0byBkZWwgZm9saW8gZGUgbGEgbm90YSBkZSBjcsOpZGl0bw=="/>
+      <column name="debit_format" sqlType="VARCHAR" precision="15" scale="0" nullable="false" jdbcType="12" def="J0MtJScuMDVkJw==" remarks="Rm9ybWF0byBkZWwgZm9saW8gZGUgbGEgbm90YSBkZSBjYXJnbw=="/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="UmF6w7NuIHNvY2lhbA=="/>
+      <column name="api_password" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="Q29udHJhc2XDsWEgcGFyYSBlbCBhcGk="/>
+      <column name="web" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="RGlyZWNjacOzbiB3ZWI="/>
+      <column name="config" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1" remarks="Q29uZmlndXJhY2nDs24gZGUgZmFjdHVyYWNpw7Nu"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_customers_tax_person" columns="person_id" ref-table="people" ref-schema="" ref-catalog="thinking" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <index name="customers_tax_tax_id_unique" unique="true" columns="tax_id"/>
+      <index name="customers_tax_person_id_index" unique="false" columns="person_id"/>
+    </table>
+    <table name="fiscal_liaisons" schema="" catalog="thinking" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="liaison_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" remarks="TGlhaXNpb24gYSBsYSBxdWUgbGUgcGVydGVuZWNlIGVsIGRhdG8gZmljYWw="/>
+      <column name="fiscal_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" remarks="SWQgZGF0b3MgZGUgbGEgZmFjdHVyYQ=="/>
+      <column name="split_type" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MQ==" remarks="MSBQb3JjZW50YWplLCAwIE1vbnRv"/>
+      <column name="split_amount" sqlType="DECIMAL" precision="12" scale="2" nullable="false" jdbcType="3" def="MTAwLjAw" remarks="TW9udG8gZGUgYXNpZ25hZG8gYSBsYSBmYWN0dXJh"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="deleted_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_fiscal_liaison_fiscal" columns="fiscal_id" ref-table="fiscals" ref-schema="" ref-catalog="thinking" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <foreign-key name="FK_fiscal_liaison_liaison" columns="liaison_id" ref-table="liaisons" ref-schema="" ref-catalog="thinking" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <index name="fiscal_liaisons_fiscal_id_index" unique="false" columns="fiscal_id"/>
+      <index name="fiscal_liaisons_liaison_id_index" unique="false" columns="liaison_id"/>
+    </table>
+    <table name="fiscals" schema="" catalog="thinking" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="deleted_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="tax_id" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="SWRlbnRpZmljYWRvciBmaXNjYWw="/>
+      <column name="business_name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="UmF6w7NuIFNvY2lhbCBGaXNjYWw="/>
+      <column name="email" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" remarks="RWwgY29ycmVvIGFsIHF1ZSBzZSBlbnZpYXIgZWwgcmVjaWJvL2ZhY3R1cmE="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="FK_fiscal_liaison_fiscal" table="fiscal_liaisons" schema="" catalog="thinking" columns="fiscal_id"/>
+      <index name="fiscals_tax_id_unique" unique="true" columns="tax_id"/>
+    </table>
+    <table name="invoices" schema="" catalog="thinking" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="person_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MQ==" remarks="SWRlbnRpZmljYWRvciBkZSBsYSBwZXJzb25hIHF1ZSByZWFsaXpv"/>
+      <column name="type" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="OQ==" remarks="VGlwbyBkZSBwYWdv"/>
+      <column name="status" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MQ==" remarks="VGlwbyBkZSBlc3RhZG8="/>
+      <column name="amount" sqlType="DECIMAL" precision="12" scale="2" nullable="false" jdbcType="3" def="MC4wMA==" remarks="TW9udG8gZGVsIGRlcG9zaXRv"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="deleted_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="invoice_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93" remarks="RmVjaGEgZW4gcXVlIHNlIHJlYWxpem8gbGEgZmFjdHVyYQ=="/>
+      <column name="folio" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="Rm9saW8gZGVsIHJlY2libw=="/>
+      <column name="concepts" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1" remarks="Q29uY2VwdG9zIHF1ZSBzZSBmYWN0dXJhbiwgZWo6IFsKICB7CiAgICAicXVhbnRpdHkiOiAxLjUsCiAgICAidW5pdCI6ICJOL0EiLAogICAgImRlc2NyaXB0aW9uIjogIkNvbnNlcHRvIiwKICAgICJhbW91bnQiOiAyMC4wMAogIH0KXQ=="/>
+      <column name="details" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1" remarks="SW5mb3JtYWNpw7NuIGRlbCByZWNpYm8geS9vIGZhY3R1cmE="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_invoice_person" columns="person_id" ref-table="people" ref-schema="" ref-catalog="thinking" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <exported-key name="FK_settlement_payment_invoice" table="settlement_payments" schema="" catalog="thinking" columns="invoice_id"/>
+      <index name="invoices_folio_unique" unique="true" columns="folio"/>
+      <index name="invoices_person_id_index" unique="false" columns="person_id"/>
+    </table>
+    <table name="ledgers" schema="" catalog="thinking" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="parent_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="order_at" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="true" jdbcType="5"/>
+      <column name="left_at" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="true" jdbcType="5"/>
+      <column name="right_at" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="true" jdbcType="5"/>
+      <column name="depth" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="true" jdbcType="5"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="deleted_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="Tm9tYnJl"/>
+      <column name="description" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1" remarks="RGVzY3JpcGNpw7Nu"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="FK_catalog_ledger" table="catalogs" schema="" catalog="thinking" columns="ledger_id"/>
+      <exported-key name="FK_liaison_ledger" table="liaisons" schema="" catalog="thinking" columns="ledger_id"/>
+      <index name="ledgers_left_at_index" unique="false" columns="left_at"/>
+      <index name="ledgers_parent_id_index" unique="false" columns="parent_id"/>
+      <index name="ledgers_right_at_index" unique="false" columns="right_at"/>
+    </table>
+    <table name="liaisons" schema="" catalog="thinking" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="morph_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="morph_type" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="ledger_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4" remarks="Q3VlbnRhIGNvbnRhYmxlIGFwbGljYWJsZQ=="/>
+      <column name="type" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA==" remarks="VGlwbyBkZSByZWxhY2nDs24sIGVqOiAyOlByb3ZlZWRvciw0OlByb3NwZWN0byw4OkNsaWVudGU="/>
+      <column name="credit" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA==" remarks="dGllbXBvIGRlIGNyw6lkaXRvOyAwOm5pbmd1bm8sIE46bGFwc29z"/>
+      <column name="credit_lapse" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MQ==" remarks="TGFwc28gZGVsIGNyw6lkaXRvOyBELFcsTSxZ"/>
+      <column name="payment_day" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" remarks="RGlhIGRlIHBhZ29zLCBlajsgbG9zIGx1bmVzIDAwMSwganVldmVzIDAwNSwgZWwgMTMgZGUgY2FkYSBtZXMgMTEz"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="deleted_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="morph_to" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_liaison_ledger" columns="ledger_id" ref-table="ledgers" ref-schema="" ref-catalog="thinking" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <exported-key name="FK_fiscal_liaison_liaison" table="fiscal_liaisons" schema="" catalog="thinking" columns="liaison_id"/>
+      <exported-key name="FK_sign_up_liaison" table="sign_ups" schema="" catalog="thinking" columns="liaison_id"/>
+      <exported-key name="FK_sign_ups_liaison" table="sign_ups" schema="" catalog="thinking" columns="liaison_id"/>
+      <index name="liaisons_ledger_id_index" unique="false" columns="ledger_id"/>
+      <index name="liaisons_morph_id_morph_type_index" unique="false" columns="morph_id,morph_type"/>
+    </table>
+    <table name="migrations" schema="" catalog="thinking" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="migration" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="batch" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="mutagenos" schema="" catalog="thinking" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" remarks="SWRlbnRpZmljYWRvcg==" autoIncrement="true"/>
+      <column name="morph_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="morph_type" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="Tm9tYnJlIGRlbCBjYW1wbw=="/>
+      <column name="type" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA==" remarks="VGlwbyBkZWwgY2FtcG8="/>
+      <column name="sortOrder" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA==" remarks="T3JkZW4gZGVsIGdydXBvIGRlIGVsZW1lbnRvcw=="/>
+      <column name="number" sqlType="DOUBLE" precision="14" scale="4" nullable="true" jdbcType="8" remarks="RGF0b3MgZGUgbnVtZXJv"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="deleted_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="moment" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93" remarks="RGF0byBkZSB0aWVtcG8="/>
+      <column name="paragraph" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" remarks="RGF0byBkZSB0ZXh0byBjb3J0bw=="/>
+      <column name="mixed" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1" remarks="RGF0byB2YXJpYWJsZTsgdGV4dG8gY29tcGxlam8sIGpzb24sIHhtbCwgZXRjLg=="/>
+      <column name="morph_to" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="mutagenos_morph_id_morph_type_index" unique="false" columns="morph_id,morph_type"/>
+      <index name="mutagenos_name_index" unique="false" columns="name"/>
+    </table>
+    <table name="notifications" schema="" catalog="thinking" type="TABLE">
+      <column name="id" sqlType="CHAR" precision="36" scale="0" nullable="false" jdbcType="1" remarks="Q2xhdmUgw7puaWNhIGRlbCBjb211bmljYWRv"/>
+      <column name="notifiable_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="notifiable_type" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="communication_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4" remarks="Q29tdW5pY2Fkbw=="/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="read_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="signed_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="type" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="data" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1" remarks="RGF0b3MgZGUgbGEgbm90aWZpY2FjacOzbiwgZWwgYXJyZWdsbyBkZXZ1ZWx0byBwb3IgbGEgbm90aWZpY2FjacOzbg=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_notification_communication" columns="communication_id" ref-table="communications" ref-schema="" ref-catalog="thinking" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <index name="notifications_communication_id_index" unique="false" columns="communication_id"/>
+      <index name="notifications_notifiable_id_notifiable_type_index" unique="false" columns="notifiable_id,notifiable_type"/>
+    </table>
+    <table name="panels" schema="" catalog="thinking" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="Tm9tYnJlIGRlbCBQYW5lbA=="/>
+      <column name="status" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MQ==" remarks="RXN0YWRv"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="deleted_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="description" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" remarks="RGVzY3JpcGNpw7Nu"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="panels_name_unique" unique="true" columns="name"/>
+    </table>
+    <table name="password_resets" schema="" catalog="thinking" type="TABLE">
+      <column name="email" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="Y29ycmVvIGVsZWN0csOzbmljbyBkZSByZXN0YWJsZWNpbWllbnRv"/>
+      <column name="token" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="VG9rZW4gZGUgcmVzdGFibGVjaW1pZW50bw=="/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93" remarks="RmVjaGEgZGUgc29saWNpdHVk"/>
+      <index name="password_resets_email_index" unique="false" columns="email"/>
+      <index name="password_resets_token_index" unique="false" columns="token"/>
+    </table>
+    <table name="payments" schema="" catalog="thinking" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="person_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MQ==" remarks="SWRlbnRpZmljYWRvciBkZSBsYSBwZXJzb25hIHF1ZSByZWdpc3RybyAoQ2FqZXJvL2Ep"/>
+      <column name="cashier_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4" remarks="SWRlbnRpZmljYWRvciBkZSBsYSBjYWph"/>
+      <column name="cash_count_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4" remarks="SWRlbnRpZmljYWRvciBhcnF1ZW8gZGUgY2FqYQ=="/>
+      <column name="type" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MQ==" remarks="Q29tbyBmdWUgcmVnaXN0cmFkbyBlbCBwYWdv"/>
+      <column name="amount" sqlType="DECIMAL" precision="12" scale="2" nullable="false" jdbcType="3" def="MC4wMA==" remarks="TW9udG8gcGFnYWRv"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="deleted_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="payed_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93" remarks="RmVjaGEgZW4gcXVlIHNlIHJlYWxpem8gZWwgcGFnbw=="/>
+      <column name="folio" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="Rm9saW8gZGVsIHJlY2libw=="/>
+      <column name="note" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1" remarks="Tm90YXMgZGVsIHBhZ28="/>
+      <column name="info" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1" remarks="SW5mb3JtYWNpw7NuIGRlbCBwYWdv"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_payment_cash_count" columns="cash_count_id" ref-table="cash_counts" ref-schema="" ref-catalog="thinking" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <foreign-key name="FK_payment_cashier" columns="cashier_id" ref-table="cashiers" ref-schema="" ref-catalog="thinking" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <foreign-key name="FK_payment_person" columns="person_id" ref-table="people" ref-schema="" ref-catalog="thinking" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <exported-key name="FK_settlement_payment_payment" table="settlement_payments" schema="" catalog="thinking" columns="payment_id"/>
+      <index name="payments_cash_count_id_index" unique="false" columns="cash_count_id"/>
+      <index name="payments_cashier_id_index" unique="false" columns="cashier_id"/>
+      <index name="payments_person_id_index" unique="false" columns="person_id"/>
+    </table>
+    <table name="people" schema="" catalog="thinking" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="deleted_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="first_name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="UHJpbWVyIGFwZWxsaWRv"/>
+      <column name="second_name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="U2VndW5kbyBhcGVsbGlkbw=="/>
+      <column name="names" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="Tm9tYnJlcw=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="FK_campaign_creator_id" table="campaigns" schema="" catalog="thinking" columns="creator_id"/>
+      <exported-key name="FK_cash_count_person" table="cash_counts" schema="" catalog="thinking" columns="person_id"/>
+      <exported-key name="FK_cashiers_drop_person" table="cashiers_drops" schema="" catalog="thinking" columns="person_id"/>
+      <exported-key name="FK_communication_from_id" table="communications" schema="" catalog="thinking" columns="from_id"/>
+      <exported-key name="FK_communication_transcribed_by_id" table="communications" schema="" catalog="thinking" columns="transcribed_by_id"/>
+      <exported-key name="FK_customers_tax_person" table="customers_tax" schema="" catalog="thinking" columns="person_id"/>
+      <exported-key name="FK_invoice_person" table="invoices" schema="" catalog="thinking" columns="person_id"/>
+      <exported-key name="FK_payment_person" table="payments" schema="" catalog="thinking" columns="person_id"/>
+      <exported-key name="FK_user_person" table="users" schema="" catalog="thinking" columns="person_id"/>
+    </table>
+    <table name="persistences" schema="" catalog="thinking" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" remarks="SWRlbnRpZmljYWRvcg==" autoIncrement="true"/>
+      <column name="user_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" remarks="UmVmZXJlbmNpYSBhIHVzdWFyaW9z"/>
+      <column name="code" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="Q8OzZGlnbyBkZSBwZXJzaXN0ZW5jaWE="/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_persistence_user" columns="user_id" ref-table="users" ref-schema="" ref-catalog="thinking" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <index name="persistences_code_unique" unique="true" columns="code"/>
+      <index name="persistences_user_id_index" unique="false" columns="user_id"/>
+    </table>
+    <table name="price_lists" schema="" catalog="thinking" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="owner_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="owner_type" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="status" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA==" remarks="QmluYXJpbyBkZSBzdGF0dXMsIGVqOiAxOmFjdGl2bywgMjpjb21wcmEsIDQ6dmVudGE="/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="deleted_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="start_at" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91" remarks="RmVjaGEgZGUgaW5pY2lhbCBkZSB2YWxpZGVz"/>
+      <column name="end_at" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91" remarks="RmVjaGEgZGUgZmluYWwgZGUgdmFsaWRlcw=="/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="Tm9tYnJlL0PDs2RpZ28="/>
+      <column name="description" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1" remarks="RGVzY3JpcGNpw7NuIGdlbmVyYWw="/>
+      <column name="modifiers" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1" remarks="TW9kaWZpY2Fkb3JlcyBkZSBwcmVjaW9z"/>
+      <column name="configs" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1" remarks="Q29uZmlndXJhY2lvbmVz"/>
+      <column name="morph_to" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="FK_price_price_list" table="prices" schema="" catalog="thinking" columns="price_list_id"/>
+      <index name="morph_to" unique="true" columns="morph_to"/>
+      <index name="price_lists_owner_id_owner_type_index" unique="false" columns="owner_id,owner_type"/>
+    </table>
+    <table name="prices" schema="" catalog="thinking" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="price_list_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4" remarks="TGlzdGEgZGUgcHJlY2lvcw=="/>
+      <column name="product_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" remarks="Q29uY2VwdG8="/>
+      <column name="unit_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4" remarks="VW5pZGFkIGVuIGxhIHF1ZSBzZSBjdWVudGEgZXN0ZSBwcmVjaW8="/>
+      <column name="amount" sqlType="DECIMAL" precision="12" scale="2" nullable="false" jdbcType="3" remarks="TW9udG8="/>
+      <column name="currency" sqlType="VARCHAR" precision="3" scale="0" nullable="false" jdbcType="12" def="J01YTic=" remarks="TW9uZWRhIGRlIHZlbnRh"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="deleted_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_price_price_list" columns="price_list_id" ref-table="price_lists" ref-schema="" ref-catalog="thinking" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <foreign-key name="FK_price_product" columns="product_id" ref-table="products" ref-schema="" ref-catalog="thinking" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <foreign-key name="FK_price_unit" columns="unit_id" ref-table="units" ref-schema="" ref-catalog="thinking" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <index name="prices_price_list_id_index" unique="false" columns="price_list_id"/>
+      <index name="prices_product_id_index" unique="false" columns="product_id"/>
+      <index name="prices_unit_id_index" unique="false" columns="unit_id"/>
+    </table>
+    <table name="products" schema="" catalog="thinking" type="TABLE">
+      <column name="catalog_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" remarks="Q29uY2VwdG8gZGVsIGNhdGFsb2dv"/>
+      <column name="inventory_type" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA==" remarks="VGlwbyBkZSBpbnZlbnRhcmlvLCBlajogMDpnZW5lcmFsLCAxOlBvciBudW1lcm8gZGUgc2VyaWU="/>
+      <column name="gain_margin" sqlType="DECIMAL" precision="3" scale="2" nullable="false" jdbcType="3" def="MC4wMA==" remarks="UG9yY2VudGFqZSBtw61uaW1vIGRlIGdhbmFuY2lh"/>
+      <column name="stock_min" sqlType="DECIMAL" precision="3" scale="2" nullable="true" jdbcType="3" remarks="TcOtbmltbyBlbiByZXF1ZXJpZG8gZW4gZXhpc3RlbmNpYQ=="/>
+      <column name="stock_max" sqlType="DECIMAL" precision="3" scale="2" nullable="true" jdbcType="3" remarks="TWF4aW1vIHBlcm1pdGlkbyBlbiBleGlzdGVuY2lh"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="deleted_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="magnitude" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="J3B6YSc=" remarks="TWF4aW1vIHBlcm1pdGlkbyBlbiBleGlzdGVuY2lh"/>
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <foreign-key name="FK_product_catalog" columns="catalog_id" ref-table="catalogs" ref-schema="" ref-catalog="thinking" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <exported-key name="FK_price_product" table="prices" schema="" catalog="thinking" columns="product_id"/>
+      <index name="id" unique="true" columns="id"/>
+      <index name="products_catalog_id_index" unique="false" columns="catalog_id"/>
+    </table>
+    <table name="recurrents" schema="" catalog="thinking" type="TABLE">
+      <column name="catalog_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" remarks="Q29uY2VwdG8="/>
+      <column name="amount" sqlType="DECIMAL" precision="12" scale="2" nullable="false" jdbcType="3" remarks="TW9udG8="/>
+      <column name="exhibitions" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="true" jdbcType="5" remarks="VmVjZXMgcXVlIHNlIHJlcGl0ZQ=="/>
+      <column name="lapse" sqlType="VARCHAR" precision="3" scale="0" nullable="false" jdbcType="12" remarks="TGFwc28gcXVlIHNlIHV0aWxpemE="/>
+      <column name="currency" sqlType="VARCHAR" precision="3" scale="0" nullable="false" jdbcType="12" def="J1VTRCc=" remarks="TW9uZWRhIGRlIHZlbnRh"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="deleted_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="start_at" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91" remarks="Q3VhbmRvIGVtcGllemEgZWwgY29udGVv"/>
+      <column name="modifiers" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1" remarks="TW9kaWZpY2Fkb3JlcyBkZSBwcmVjaW9z"/>
+      <column name="configs" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1" remarks="Q29uZmlndXJhY2lvbmVz"/>
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <foreign-key name="FK_recurrent_catalog" columns="catalog_id" ref-table="catalogs" ref-schema="" ref-catalog="thinking" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <exported-key name="FK_sign_up_recurrent" table="sign_ups" schema="" catalog="thinking" columns="recurrent_id"/>
+      <exported-key name="FK_sign_ups_recurrent" table="sign_ups" schema="" catalog="thinking" columns="recurrent_id"/>
+      <index name="id" unique="true" columns="id"/>
+      <index name="recurrents_catalog_id_index" unique="false" columns="catalog_id"/>
+    </table>
+    <table name="reminders" schema="" catalog="thinking" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" remarks="SWRlbnRpZmljYWRvcg==" autoIncrement="true"/>
+      <column name="user_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" remarks="UmVmZXJlbmNpYSBhIHVzdWFyaW9z"/>
+      <column name="completed" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA==" remarks="RXN0YWRvIGRlIHJlY29yZGF0b3Jpbw=="/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="completed_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93" remarks="RmVjaGEgZGUgY29tcGxldGFkbw=="/>
+      <column name="code" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="Q8OzZGlnbyBkZSByZWNvcmRhdG9yaW8="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_reminder_user" columns="user_id" ref-table="users" ref-schema="" ref-catalog="thinking" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <index name="reminders_user_id_index" unique="false" columns="user_id"/>
+    </table>
+    <table name="requisitions" schema="" catalog="thinking" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="role_users" schema="" catalog="thinking" type="TABLE">
+      <column name="user_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" remarks="UmVmZXJlbmNpYSBhIHVzdWFyaW9z"/>
+      <column name="role_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" remarks="UmVmZXJlbmNpYSBhIGxvcyByb2xlcw=="/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="user_id,role_id"/>
+      <foreign-key name="FK_role_user_role" columns="role_id" ref-table="roles" ref-schema="" ref-catalog="thinking" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <foreign-key name="FK_role_user_user" columns="user_id" ref-table="users" ref-schema="" ref-catalog="thinking" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <index name="role_users_role_id_index" unique="false" columns="role_id"/>
+      <index name="role_users_user_id_index" unique="false" columns="user_id"/>
+    </table>
+    <table name="roles" schema="" catalog="thinking" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" remarks="SWRlbnRpZmljYWRvcg==" autoIncrement="true"/>
+      <column name="slug" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="Tm9tYnJlIGludGVyLWxlbmd1YWpl"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="Tm9tYnJl"/>
+      <column name="permissions" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1" remarks="UGVybWlzb3M="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="FK_role_user_role" table="role_users" schema="" catalog="thinking" columns="role_id"/>
+      <index name="roles_slug_unique" unique="true" columns="slug"/>
+    </table>
+    <table name="settlement_payments" schema="" catalog="thinking" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="settlement_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4" remarks="UmVmZXJlbmNpYSBhIGxhIGN1ZW50YSBwb3IgcGFnYXI="/>
+      <column name="payment_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" remarks="UmVmZXJlbmNpYSBhbCBwYWdv"/>
+      <column name="invoice_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4" remarks="UmVmZXJlbmNpYSBhIGxhIGZhY3R1cmE="/>
+      <column name="amount" sqlType="DECIMAL" precision="12" scale="2" nullable="false" jdbcType="3" remarks="TW9udG8gY29uIGltcHVlc3RvcyBkZSBsYSBleGhpYmljacOzbg=="/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="deleted_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_settlement_payment_invoice" columns="invoice_id" ref-table="invoices" ref-schema="" ref-catalog="thinking" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <foreign-key name="FK_settlement_payment_payment" columns="payment_id" ref-table="payments" ref-schema="" ref-catalog="thinking" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <foreign-key name="FK_settlement_payment_settlement" columns="settlement_id" ref-table="settlements" ref-schema="" ref-catalog="thinking" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <index name="settlement_payments_invoice_id_index" unique="false" columns="invoice_id"/>
+      <index name="settlement_payments_payment_id_index" unique="false" columns="payment_id"/>
+      <index name="settlement_payments_settlement_id_index" unique="false" columns="settlement_id"/>
+    </table>
+    <table name="settlements" schema="" catalog="thinking" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="target_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="target_type" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="way" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" remarks="VGlwbyBkZSBjdWVudGEsIGVqOiAxOnBhZ2FyLCAyOmNvYnJhcg=="/>
+      <column name="conduct" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" remarks="VGlwbyBkZSBjb25jZXB0bywgZWo6IDA6bm9ybWFsLDE6ZGlzY291bnQsMjpzdXJjaGFyZ2VzLDM6ZGVjbGluZWQ="/>
+      <column name="exhibition" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MQ==" remarks="TnVtZXJvIGRlIGV4aGliaWNpw7Nu"/>
+      <column name="amount" sqlType="DECIMAL" precision="12" scale="2" nullable="false" jdbcType="3" remarks="TW9udG8gY29uIGltcHVlc3RvcyBkZSBsYSBleGhpYmljacOzbg=="/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="deleted_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="expected_at" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91" remarks="TGEgZmVjaGEgZW4gbGEgcXVlIHNlIGVzcGVyYSBlbCBwYWdv"/>
+      <column name="morph_to" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="FK_settlement_payment_settlement" table="settlement_payments" schema="" catalog="thinking" columns="settlement_id"/>
+      <index name="settlements_target_id_target_type_index" unique="false" columns="target_id,target_type"/>
+    </table>
+    <table name="sign_ups" schema="" catalog="thinking" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="liaison_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4" remarks="QSBxdWllbiBwZXJ0ZW5lY2UgbGEgaW5zY3JpcGNpw7Nu"/>
+      <column name="recurrent_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4" remarks="RWwgdGlwbyBkZSBwYWdvIGRlIHN1c2NyaXBjacOzbg=="/>
+      <column name="exhibitions" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="true" jdbcType="5" remarks="VmVjZXMgcXVlIHNlIHBsYW5jaGE="/>
+      <column name="modify_in" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MQ==" remarks="Q2FtcG8gcGFyYSB1dGlsaXphciBjb21vIGZlY2hhIGRlIG1vZGlmaWNhY2nDs24="/>
+      <column name="lapse" sqlType="VARCHAR" precision="3" scale="0" nullable="false" jdbcType="12" remarks="TGFwc28gcXVlIHNlIHV0aWxpemE="/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="deleted_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="start_at" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91" remarks="Q3VhbmRvIGluaWNpYQ=="/>
+      <column name="cutoff_at" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="true" jdbcType="-6" remarks="Q29ydGUgZGVsIHBlcmlvZG8="/>
+      <column name="invoice_at" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="true" jdbcType="-6" remarks="RmFjdHVyYWNpw7NuIGRlbCBwZXJpb2Rv"/>
+      <column name="effective_at" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="true" jdbcType="-6" remarks="Q3VhbmRvIHRvbWEgdmFsaWRlcyBwYXJhIG1vZGlmaWNhZG9yZXMgZGVsIHBlcmlvZG8="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_sign_up_liaison" columns="liaison_id" ref-table="liaisons" ref-schema="" ref-catalog="thinking" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <foreign-key name="FK_sign_up_recurrent" columns="recurrent_id" ref-table="recurrents" ref-schema="" ref-catalog="thinking" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <foreign-key name="FK_sign_ups_liaison" columns="liaison_id" ref-table="liaisons" ref-schema="" ref-catalog="thinking" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_sign_ups_recurrent" columns="recurrent_id" ref-table="recurrents" ref-schema="" ref-catalog="thinking" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="sign_ups_liaison_id_index" unique="false" columns="liaison_id"/>
+      <index name="sign_ups_recurrent_id_index" unique="false" columns="recurrent_id"/>
+    </table>
+    <table name="table_logs" schema="" catalog="thinking" type="TABLE">
+      <column name="table_name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="update_time" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA=" version="true"/>
+    </table>
+    <table name="taxes" schema="" catalog="thinking" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="uses" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="Nw==" remarks="VXRpbGl6YWNpw7NuIGRlbCBpbXB1ZXN0bw=="/>
+      <column name="amount" sqlType="DOUBLE" precision="5" scale="2" nullable="false" jdbcType="8" def="MC4wMA==" remarks="TW9udG8vUG9yY2VudGFqZSBhIGFwbGljYXI="/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="deleted_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="Tm9tYnJlIGRsZSBpbXB1ZXN0bw=="/>
+      <column name="acronym" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="QWNyw7NuaW1vIGRlbCBub21icmU="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="FK_catalog_tax_tax" table="catalog_taxes" schema="" catalog="thinking" columns="tax_id"/>
+      <index name="taxes_acronym_unique" unique="true" columns="acronym"/>
+    </table>
+    <table name="throttle" schema="" catalog="thinking" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" remarks="SWRlbnRpZmljYWRvcg==" autoIncrement="true"/>
+      <column name="user_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4" remarks="UmVmZXJlbmNpYSBhIHVzdWFyaW9z"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="type" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="VGlwbyBkZSBzZWd1aW1pZW50bw=="/>
+      <column name="ip" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" remarks="SXAgc3VwdWVzdG8gZGVsIHVzdWFyaW8gaW5ncmVzYWRv"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_throttle_user" columns="user_id" ref-table="users" ref-schema="" ref-catalog="thinking" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <index name="throttle_user_id_index" unique="false" columns="user_id"/>
+    </table>
+    <table name="units" schema="" catalog="thinking" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="symbol" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="U8OtbWJvbG8="/>
+      <column name="per_unit" sqlType="DOUBLE" precision="22" scale="0" nullable="false" jdbcType="8"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="deleted_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="Tm9tYnJlIGNvbXBsZXRv"/>
+      <column name="magnitude" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="TWFnbml0dWQgZGUgbGEgdW5pZGFk"/>
+      <column name="native" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="RW4gYmFzZSBhIHF1ZSB1bmlkYWQ="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="FK_price_unit" table="prices" schema="" catalog="thinking" columns="unit_id"/>
+      <index name="units_symbol_unique" unique="true" columns="symbol"/>
+    </table>
+    <table name="users" schema="" catalog="thinking" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" remarks="SWRlbnRpZmljYWRvcg==" autoIncrement="true"/>
+      <column name="email" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="Q29ycmVvIGVsZWN0csOzbmljbw=="/>
+      <column name="person_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MQ=="/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="deleted_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="last_login" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="password" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="Q29udHJhc2XDsWE="/>
+      <column name="first_name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" remarks="Tm9tYnJlcw=="/>
+      <column name="last_name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" remarks="QXBlbGxpZG9z"/>
+      <column name="permissions" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1" remarks="UGVybWlzb3M="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_user_person" columns="person_id" ref-table="people" ref-schema="" ref-catalog="thinking" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <exported-key name="FK_activation_user" table="activations" schema="" catalog="thinking" columns="user_id"/>
+      <exported-key name="FK_persistence_user" table="persistences" schema="" catalog="thinking" columns="user_id"/>
+      <exported-key name="FK_reminder_user" table="reminders" schema="" catalog="thinking" columns="user_id"/>
+      <exported-key name="FK_role_user_user" table="role_users" schema="" catalog="thinking" columns="user_id"/>
+      <exported-key name="FK_throttle_user" table="throttle" schema="" catalog="thinking" columns="user_id"/>
+      <index name="users_email_unique" unique="true" columns="email"/>
+      <index name="users_person_id_index" unique="false" columns="person_id"/>
+    </table>
+    <procedure name="UsersCount" schema="" catalog="thinking" type="2">
+      <prototype>
+        <parameter name="" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" type="5" index="0"/>
+      </prototype>
+    </procedure>
+  </data-source>
+  <data-source name="AlogragMe" uuid="ffba4223-02ea-481f-89b7-f302f87c3ae2">
+    <database-info product="MySQL" version="5.5.5-10.0.27-MariaDB-0+deb8u1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
+    <schema name="" catalog="400001_personal"/>
+    <table name="accounts" schema="" catalog="400001_personal" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="bank_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR" precision="250" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="accounts_ibfk_1" columns="bank_id" ref-table="banks" ref-schema="" ref-catalog="400001_personal" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="promises_ibfk_1" table="promises" schema="" catalog="400001_personal" columns="account_id"/>
+      <index name="unique_account" unique="true" columns="name"/>
+      <index name="bank_idx" unique="false" columns="bank_id"/>
+    </table>
+    <table name="bank_percentages" schema="" catalog="400001_personal" type="VIEW">
+      <column name="bank_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="Q1" sqlType="DOUBLE" precision="35" scale="18" nullable="true" jdbcType="8"/>
+      <column name="Q2" sqlType="DOUBLE" precision="35" scale="18" nullable="true" jdbcType="8"/>
+    </table>
+    <table name="banks" schema="" catalog="400001_personal" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="250" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="accounts_ibfk_1" table="accounts" schema="" catalog="400001_personal" columns="bank_id"/>
+      <index name="unique_banks" unique="true" columns="name"/>
+    </table>
+    <table name="budgets" schema="" catalog="400001_personal" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="250" scale="0" nullable="false" jdbcType="12"/>
+      <column name="percentage" sqlType="DOUBLE" precision="5" scale="2" nullable="false" jdbcType="8" def="MC4wMA=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="categories_ibfk_1" table="categories" schema="" catalog="400001_personal" columns="budget_id"/>
+      <index name="unique_budget" unique="true" columns="name"/>
+    </table>
+    <table name="categories" schema="" catalog="400001_personal" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="budget_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR" precision="250" scale="0" nullable="false" jdbcType="12"/>
+      <column name="percentage" sqlType="DOUBLE" precision="5" scale="2" nullable="false" jdbcType="8" def="MC4wMA=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="categories_ibfk_1" columns="budget_id" ref-table="budgets" ref-schema="" ref-catalog="400001_personal" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="promises_ibfk_2" table="promises" schema="" catalog="400001_personal" columns="category_id"/>
+      <index name="unique_category" unique="true" columns="name"/>
+      <index name="budget_idx" unique="false" columns="budget_id"/>
+    </table>
+    <table name="categories_pond" schema="" catalog="400001_personal" type="VIEW">
+      <column name="budget_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="budget_max" sqlType="DOUBLE" precision="27" scale="10" nullable="true" jdbcType="8"/>
+    </table>
+    <table name="promises" schema="" catalog="400001_personal" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="account_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="category_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="fortnight" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6"/>
+      <column name="amount" sqlType="DOUBLE" precision="10" scale="2" nullable="true" jdbcType="8" def="MC4wMA=="/>
+      <column name="detail" sqlType="VARCHAR" precision="250" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="promises_ibfk_1" columns="account_id" ref-table="accounts" ref-schema="" ref-catalog="400001_personal" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="promises_ibfk_2" columns="category_id" ref-table="categories" ref-schema="" ref-catalog="400001_personal" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="account_idx" unique="false" columns="account_id"/>
+      <index name="category_idx" unique="false" columns="category_id"/>
+    </table>
+    <table name="resume_q" schema="" catalog="400001_personal" type="VIEW">
+      <column name="category_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="account_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="Q1" sqlType="DOUBLE" precision="23" scale="6" nullable="true" jdbcType="8"/>
+      <column name="Q2" sqlType="DOUBLE" precision="23" scale="6" nullable="true" jdbcType="8"/>
+    </table>
+    <table name="used_in_categories" schema="" catalog="400001_personal" type="VIEW">
+      <column name="budget_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="per_month" sqlType="DOUBLE" precision="19" scale="2" nullable="true" jdbcType="8"/>
+    </table>
+  </data-source>
+</component>

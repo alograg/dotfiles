@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="Back" pattern="file:app//*||file:bootstrap//*||file:config//*" />
+</component>

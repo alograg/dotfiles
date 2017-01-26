@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="Angular" pattern="file:angular//*||file:bower.json||file:packages.json" />
+</component>

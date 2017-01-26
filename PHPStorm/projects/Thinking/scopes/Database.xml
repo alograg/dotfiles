@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="Database" pattern="file:config/database.php||file:database//*||file:app/Modules//*/Migrations//*" />
+</component>

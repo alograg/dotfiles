@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="Leguajes" pattern="file:resources/lang//*||file:angular//*.json" />
+</component>
