@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conversion>
+  <applied-converters>
+    <converter id="js-debug-configuration-converter" />
+    <converter id="js-predefined-libraries-merged" />
+  </applied-converters>
+  <project-files>
+    <file path="D:\wamp\vhosts\mo.localwamp.dev\.idea\blade.xml" timestamp="1447170804128" />
+    <file path="D:\wamp\vhosts\mo.localwamp.dev\.idea\commandlinetools\Tool_based_on_Symfony_Console_13_11_15_03_53_PM_a.xml" timestamp="1447451611276" />
+    <file path="D:\wamp\vhosts\mo.localwamp.dev\.idea\deployment.xml" timestamp="1447453222507" />
+    <file path="D:\wamp\vhosts\mo.localwamp.dev\.idea\dictionaries\Henry.xml" timestamp="1447454681189" />
+    <file path="D:\wamp\vhosts\mo.localwamp.dev\.idea\encodings.xml" timestamp="1447178853909" />
+    <file path="D:\wamp\vhosts\mo.localwamp.dev\.idea\laravel-plugin.xml" timestamp="1447170804139" />
+    <file path="D:\wamp\vhosts\mo.localwamp.dev\.idea\misc.xml" timestamp="1447172836455" />
+    <file path="D:\wamp\vhosts\mo.localwamp.dev\.idea\mo.localwamp.dev.iml" timestamp="1447457894421" />
+    <file path="D:\wamp\vhosts\mo.localwamp.dev\.idea\modules.xml" timestamp="1447170443631" />
+    <file path="D:\wamp\vhosts\mo.localwamp.dev\.idea\phing.xml" timestamp="1447170804143" />
+    <file path="D:\wamp\vhosts\mo.localwamp.dev\.idea\php.xml" timestamp="1447171883861" />
+    <file path="D:\wamp\vhosts\mo.localwamp.dev\.idea\typescript-compiler.xml" timestamp="1447170804154" />
+    <file path="D:\wamp\vhosts\mo.localwamp.dev\.idea\vagrant.xml" timestamp="1447171883868" />
+    <file path="D:\wamp\vhosts\mo.localwamp.dev\.idea\vcs.xml" timestamp="1447170804135" />
+    <file path="D:\wamp\vhosts\mo.localwamp.dev\.idea\webResources.xml" timestamp="1447170804158" />
+    <file path="D:\wamp\vhosts\mo.localwamp.dev\.idea\workspace.xml" timestamp="1447466589106" />
+  </project-files>
+</conversion>
+

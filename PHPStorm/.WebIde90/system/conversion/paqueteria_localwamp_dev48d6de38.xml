@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conversion>
+  <applied-converters>
+    <converter id="js-debug-configuration-converter" />
+    <converter id="js-predefined-libraries-merged" />
+  </applied-converters>
+  <project-files>
+    <file path="D:\wamp\vhosts\paqueteria.localwamp.dev\.idea\AltosPack.iml" timestamp="1452040652802" />
+    <file path="D:\wamp\vhosts\paqueteria.localwamp.dev\.idea\blade.xml" timestamp="1452019337774" />
+    <file path="D:\wamp\vhosts\paqueteria.localwamp.dev\.idea\codeStyleSettings.xml" timestamp="1452040652814" />
+    <file path="D:\wamp\vhosts\paqueteria.localwamp.dev\.idea\commandlinetools\Composer_5_01_16_03_41_PM_c.xml" timestamp="1452030177699" />
+    <file path="D:\wamp\vhosts\paqueteria.localwamp.dev\.idea\deployment.xml" timestamp="1452019296213" />
+    <file path="D:\wamp\vhosts\paqueteria.localwamp.dev\.idea\dictionaries\Henry.xml" timestamp="1452019440273" />
+    <file path="D:\wamp\vhosts\paqueteria.localwamp.dev\.idea\encodings.xml" timestamp="1452019286306" />
+    <file path="D:\wamp\vhosts\paqueteria.localwamp.dev\.idea\laravel-plugin.xml" timestamp="1452019889256" />
+    <file path="D:\wamp\vhosts\paqueteria.localwamp.dev\.idea\misc.xml" timestamp="1452019688888" />
+    <file path="D:\wamp\vhosts\paqueteria.localwamp.dev\.idea\modules.xml" timestamp="1452019352346" />
+    <file path="D:\wamp\vhosts\paqueteria.localwamp.dev\.idea\phing.xml" timestamp="1452019296205" />
+    <file path="D:\wamp\vhosts\paqueteria.localwamp.dev\.idea\php.xml" timestamp="1452019688891" />
+    <file path="D:\wamp\vhosts\paqueteria.localwamp.dev\.idea\typescript-compiler.xml" timestamp="1452019296217" />
+    <file path="D:\wamp\vhosts\paqueteria.localwamp.dev\.idea\vcs.xml" timestamp="1452019286311" />
+    <file path="D:\wamp\vhosts\paqueteria.localwamp.dev\.idea\webResources.xml" timestamp="1452019296222" />
+    <file path="D:\wamp\vhosts\paqueteria.localwamp.dev\.idea\workspace.xml" timestamp="1459186460780" />
+  </project-files>
+</conversion>
+

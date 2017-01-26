@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conversion>
+  <applied-converters>
+    <converter id="js-debug-configuration-converter" />
+    <converter id="js-predefined-libraries-merged" />
+  </applied-converters>
+  <project-files>
+    <file path="D:\Trabajo\GlobalSolare\v5\.idea\blade.xml" timestamp="1471023356106" />
+    <file path="D:\Trabajo\GlobalSolare\v5\.idea\deployment.xml" timestamp="1471023273091" />
+    <file path="D:\Trabajo\GlobalSolare\v5\.idea\dictionaries\Henry.xml" timestamp="1471023356123" />
+    <file path="D:\Trabajo\GlobalSolare\v5\.idea\encodings.xml" timestamp="1471023273078" />
+    <file path="D:\Trabajo\GlobalSolare\v5\.idea\laravel-plugin.xml" timestamp="1471023356115" />
+    <file path="D:\Trabajo\GlobalSolare\v5\.idea\misc.xml" timestamp="1471023356101" />
+    <file path="D:\Trabajo\GlobalSolare\v5\.idea\modules.xml" timestamp="1471023273087" />
+    <file path="D:\Trabajo\GlobalSolare\v5\.idea\phing.xml" timestamp="1471023276769" />
+    <file path="D:\Trabajo\GlobalSolare\v5\.idea\typescript-compiler.xml" timestamp="1471023276804" />
+    <file path="D:\Trabajo\GlobalSolare\v5\.idea\v5.iml" timestamp="1471023356096" />
+    <file path="D:\Trabajo\GlobalSolare\v5\.idea\vcs.xml" timestamp="1471023273083" />
+    <file path="D:\Trabajo\GlobalSolare\v5\.idea\workspace.xml" timestamp="1471025187861" />
+  </project-files>
+</conversion>
+

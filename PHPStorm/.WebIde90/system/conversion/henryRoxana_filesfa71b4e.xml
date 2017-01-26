@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conversion>
+  <applied-converters>
+    <converter id="js-debug-configuration-converter" />
+    <converter id="js-predefined-libraries-merged" />
+  </applied-converters>
+  <project-files>
+    <file path="D:\Trabajo\henryRoxana_files\.idea\blade.xml" timestamp="1450804717879" />
+    <file path="D:\Trabajo\henryRoxana_files\.idea\deployment.xml" timestamp="1450801837508" />
+    <file path="D:\Trabajo\henryRoxana_files\.idea\dictionaries\Henry.xml" timestamp="1450801904427" />
+    <file path="D:\Trabajo\henryRoxana_files\.idea\encodings.xml" timestamp="1450801837497" />
+    <file path="D:\Trabajo\henryRoxana_files\.idea\henryRoxana_files.iml" timestamp="1450801904386" />
+    <file path="D:\Trabajo\henryRoxana_files\.idea\laravel-plugin.xml" timestamp="1450802006890" />
+    <file path="D:\Trabajo\henryRoxana_files\.idea\misc.xml" timestamp="1450804717875" />
+    <file path="D:\Trabajo\henryRoxana_files\.idea\modules.xml" timestamp="1450801837503" />
+    <file path="D:\Trabajo\henryRoxana_files\.idea\phing.xml" timestamp="1450801904400" />
+    <file path="D:\Trabajo\henryRoxana_files\.idea\typescript-compiler.xml" timestamp="1450801904431" />
+    <file path="D:\Trabajo\henryRoxana_files\.idea\vcs.xml" timestamp="1450801837500" />
+    <file path="D:\Trabajo\henryRoxana_files\.idea\workspace.xml" timestamp="1450810677017" />
+  </project-files>
+</conversion>
+

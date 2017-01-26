@@ -1,0 +1,1 @@
+select "Matricula","Foto" from DSE130D3;

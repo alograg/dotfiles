@@ -1,0 +1,11 @@
+<templateSet group="Formly">
+  <template name="fomli.check" value="{&#10;  type: 'checkbox',&#10;  key: '$key$',&#10;  templateOptions: {&#10;    label: ''&#10;  },&#10;  expressionProperties:{&#10;    'templateOptions.label': &quot;'&quot; + translateBase + &quot;$key$' | translate&quot;&#10;  }&#10;}" description="Checkbox" toReformat="true" toShortenFQNames="true">
+    <variable name="key" expression="jsSuggestVariableName()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JS_EXPRESSION" value="true" />
+      <option name="JSX_HTML" value="true" />
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+</templateSet>

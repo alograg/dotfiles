@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conversion>
+  <applied-converters>
+    <converter id="js-debug-configuration-converter" />
+    <converter id="js-predefined-libraries-merged" />
+  </applied-converters>
+  <project-files>
+    <file path="D:\wamp\vhosts\tutores.localwamp.dev\.idea\blade.xml" timestamp="1456277568626" />
+    <file path="D:\wamp\vhosts\tutores.localwamp.dev\.idea\commandlinetools\Composer_23_02_16_07_52_PM_c.xml" timestamp="1457399042805" />
+    <file path="D:\wamp\vhosts\tutores.localwamp.dev\.idea\commandlinetools\Tool_based_on_Symfony_Console_24_02_16_12_05_PM_a.xml" timestamp="1457399042800" />
+    <file path="D:\wamp\vhosts\tutores.localwamp.dev\.idea\dataSources.local.xml" timestamp="1460130830974" />
+    <file path="D:\wamp\vhosts\tutores.localwamp.dev\.idea\dataSources.xml" timestamp="1465000065228" />
+    <file path="D:\wamp\vhosts\tutores.localwamp.dev\.idea\deployment.xml" timestamp="1456277524833" />
+    <file path="D:\wamp\vhosts\tutores.localwamp.dev\.idea\dictionaries\Henry.xml" timestamp="1456278801489" />
+    <file path="D:\wamp\vhosts\tutores.localwamp.dev\.idea\encodings.xml" timestamp="1456277524819" />
+    <file path="D:\wamp\vhosts\tutores.localwamp.dev\.idea\inspectionProfiles\Project_Default.xml" timestamp="1461946902346" />
+    <file path="D:\wamp\vhosts\tutores.localwamp.dev\.idea\inspectionProfiles\profiles_settings.xml" timestamp="1456871735383" />
+    <file path="D:\wamp\vhosts\tutores.localwamp.dev\.idea\jsLibraryMappings.xml" timestamp="1456871300371" />
+    <file path="D:\wamp\vhosts\tutores.localwamp.dev\.idea\laravel-plugin.xml" timestamp="1456278801481" />
+    <file path="D:\wamp\vhosts\tutores.localwamp.dev\.idea\misc.xml" timestamp="1456278801469" />
+    <file path="D:\wamp\vhosts\tutores.localwamp.dev\.idea\modules.xml" timestamp="1456277524828" />
+    <file path="D:\wamp\vhosts\tutores.localwamp.dev\.idea\phing.xml" timestamp="1456277568639" />
+    <file path="D:\wamp\vhosts\tutores.localwamp.dev\.idea\php.xml" timestamp="1456278801483" />
+    <file path="D:\wamp\vhosts\tutores.localwamp.dev\.idea\tutores.localwamp.dev.iml" timestamp="1464217687275" />
+    <file path="D:\wamp\vhosts\tutores.localwamp.dev\.idea\typescript-compiler.xml" timestamp="1456278801492" />
+    <file path="D:\wamp\vhosts\tutores.localwamp.dev\.idea\vagrant.xml" timestamp="1456278801495" />
+    <file path="D:\wamp\vhosts\tutores.localwamp.dev\.idea\vcs.xml" timestamp="1456279260722" />
+    <file path="D:\wamp\vhosts\tutores.localwamp.dev\.idea\watcherTasks.xml" timestamp="1458324886079" />
+    <file path="D:\wamp\vhosts\tutores.localwamp.dev\.idea\webResources.xml" timestamp="1456277806811" />
+    <file path="D:\wamp\vhosts\tutores.localwamp.dev\.idea\workspace.xml" timestamp="1484181030123" />
+  </project-files>
+</conversion>
+

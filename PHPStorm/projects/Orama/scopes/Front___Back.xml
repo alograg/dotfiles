@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="Front &amp; Back" pattern="file[Orama]:app//*||file[Orama]:database/migrations//*||file[Orama]:database/seeds//*||file[Orama]:resources/views//*||file[Orama]:resources/lang//*||file[Orama]:resources/assets/src/less//*||file[Orama]:public/app/js//*" />
+</component>

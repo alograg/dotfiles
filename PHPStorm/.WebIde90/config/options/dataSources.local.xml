@@ -1,0 +1,25 @@
+<application>
+  <component name="dataSourceStorageLocal">
+    <data-source name="General" uuid="18d5a614-15ce-4f14-b509-317124c31fd8">
+      <secret-storage>master_key</secret-storage>
+    </data-source>
+    <data-source name="MX" uuid="dc050bfb-7afb-460d-a7fd-07bd5efe1511">
+      <secret-storage>master_key</secret-storage>
+    </data-source>
+    <data-source name="OramaAlfa (Respaldo)" uuid="bb79fe42-eb3e-473d-bb39-be40f0c996d0">
+      <secret-storage>master_key</secret-storage>
+      <user-name>GedeonRialcnom</user-name>
+      <schema-pattern>apack_test.* o2_monclair.* orama.*</schema-pattern>
+    </data-source>
+    <data-source name="OramaBeta (Pruebas)" uuid="893ac45e-4da7-4b2a-8eb1-ddd604c4608b">
+      <secret-storage>master_key</secret-storage>
+      <user-name>GedeonRialcnom</user-name>
+      <schema-pattern>o2_test.* orama_test.*</schema-pattern>
+    </data-source>
+    <data-source name="Base V2 (Pruebas)" uuid="2fa20224-54d8-42c5-bb2d-e349a3da14b3">
+      <secret-storage>master_key</secret-storage>
+      <user-name>GedeonRialcnom</user-name>
+      <schema-pattern>OCustomers_test.* apack_test.* orama.* orama_test.*</schema-pattern>
+    </data-source>
+  </component>
+</application>

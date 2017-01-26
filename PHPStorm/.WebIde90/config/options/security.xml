@@ -1,0 +1,41 @@
+<application>
+  <component name="PasswordDatabase">
+    <option name="MASTER_PASSWORD_INFO" value="01000000d08c9ddf0115d1118c7a00c04fc297eb01000000a4ec1b9265c73e4cb2d467a832bdcab800000000160000004d006100730074006500720020004b0065007900000010660000000100002000000006f9f9e579d25b18293d9fbd83358cb01d48648c6988a499895723f97e5dc3c6000000000e8000000002000020000000ab18a1c2a21833019c4c58f9b1d7fff10fb28eacfbe867440f46c58d1e0c00a8100000008e29d8fd9a4ef8e8323a35f3802ec96f40000000bf22d433bba2794f16820cd93053c49092ff95a2880c7cc2cf87b1b08b0ffb9dde6f2ff3609c8aa09cb4c74b32948ff00c3a0af3870218a5808f0826e4af9471" />
+    <option name="PASSWORDS">
+      <array>
+        <array>
+          <option value="89b22ef573e6d02824a0c96d45ebd4da59630fbbec02d0fc8c50865bd2d64fea" />
+          <option value="ad9fddea01e80a0af32326b84867fc494a9549bcbd9417b24377e6adb6c7b9bc" />
+          <option value="ad00421334e4f7f00780b1e9671f71a0c7797ebb90cc1ae74bc1ee94eeb1b2cb" />
+          <option value="bf6bdfb8d9c8a728353c6c0db7816e098d7f8b74228e2a1d44be04bacc04272e" />
+          <option value="d3d6d91d82027cb33b3bdc413c0dfe9d52b12fb626f969f0daee5ef3803a9c84" />
+          <option value="da903bb80601535125814882c7da9294573b36eaafe78974ef88b17d17bb0bb4" />
+          <option value="0559cc2a84ff4ffe61a8c69ec8704cbad323741cdc1e49d05ccff1d1d549214e" />
+          <option value="0eb767f0cfff5877eb7d8c07e06ac1a8e594d283dedf03e1cf31f1a6acb95d87" />
+          <option value="2a8decd8f2c4368ac6d921b6faea06f0a032ec6668d33246d2b9835fb5888679" />
+          <option value="2f058e0601c1080efcf2964dd3ead616effa1dcaf43a564f60f8078d317b21b0" />
+          <option value="46e517fe438fe1083f52645a72ade02f19ea477b53b404655badb11f18110644" />
+          <option value="4d020029de9fe964f0faa9f6a59e76fba30e88bcb48f5e4c2d8f2555ae550446" />
+          <option value="5c213afa1972b061e4f83ef855df3c681e6ab987cbd7b41314ae5faae634014f" />
+          <option value="7c175e3bedada7a7372da60c9c2353ee3915fa8558582fab687c08845bd9fc2f" />
+        </array>
+        <array>
+          <option value="6de13cecbf6cfd5d368c41e86a3d8a78" />
+          <option value="f6ed1514d1f251875c2a2532e00e688d4e05e1c2c21fd03d21a4073d25d8df09" />
+          <option value="7f2ab8c87b362a7b0ebdcd37c4bc6114" />
+          <option value="ef700989fc2b5243c25043773994d05b" />
+          <option value="7f2ab8c87b362a7b0ebdcd37c4bc6114" />
+          <option value="e23def0edb6e2cbb8266bc843cf8c602bc55562195f4cac53010f10a923d241f" />
+          <option value="8e7c870a366ec8bd64cdef174db8958cab164cf10156a3eb0d932111874b8f84" />
+          <option value="c0bd3046c562788f80975b0dfb11308b" />
+          <option value="e23def0edb6e2cbb8266bc843cf8c602bc55562195f4cac53010f10a923d241f" />
+          <option value="e23def0edb6e2cbb8266bc843cf8c602bc55562195f4cac53010f10a923d241f" />
+          <option value="513098928c2662a10cec52888b7bc93d" />
+          <option value="8e7c870a366ec8bd64cdef174db8958cab164cf10156a3eb0d932111874b8f84" />
+          <option value="8e7c870a366ec8bd64cdef174db8958cab164cf10156a3eb0d932111874b8f84" />
+          <option value="e23def0edb6e2cbb8266bc843cf8c602bc55562195f4cac53010f10a923d241f" />
+        </array>
+      </array>
+    </option>
+  </component>
+</application>

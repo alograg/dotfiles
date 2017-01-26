@@ -1,0 +1,14 @@
+<application>
+  <component name="KeyPromoterConfiguration">
+    <option name="settings">
+      <KeyPromoterSettings>
+        <option name="allButtonsEnabled" value="true" />
+        <option name="popupTemplate" value="&lt;html&gt;&#10; &lt;body&gt;&#10;&lt;table&gt;&#10;    &lt;tr&gt;&#10;        &lt;th&gt;&lt;h1&gt;{0}&lt;/h1&gt;&lt;/th&gt;&#10;    &lt;/tr&gt;&#10;    &lt;tr&gt;&#10;        &lt;td&gt;&lt;h2&gt;{1} time(s)&lt;/h2&gt;&lt;/td&gt;&#10;    &lt;/tr&gt;&#10;&lt;/table&gt;&#10; &lt;/body&gt;&#10;&lt;/html&gt;&#10;" />
+        <option name="proposeToCreateShortcutCount" value="15" />
+        <option name="allButtonsEnabled" value="true" />
+        <option name="proposeToCreateShortcutCount" value="15" />
+        <option name="popupTemplate" value="&lt;html&gt;&#10; &lt;body&gt;&#10;&lt;table&gt;&#10;    &lt;tr&gt;&#10;        &lt;th&gt;&lt;h1&gt;{0}&lt;/h1&gt;&lt;/th&gt;&#10;    &lt;/tr&gt;&#10;    &lt;tr&gt;&#10;        &lt;td&gt;&lt;h2&gt;{1} time(s)&lt;/h2&gt;&lt;/td&gt;&#10;    &lt;/tr&gt;&#10;&lt;/table&gt;&#10; &lt;/body&gt;&#10;&lt;/html&gt;&#10;" />
+      </KeyPromoterSettings>
+    </option>
+  </component>
+</application>
