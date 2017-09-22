@@ -1,3 +1,0 @@
-<component name="DependencyValidationManager">
-  <scope name="Develop" pattern="(file:resources//*||file:public//*||file:database//*||file:bootstrap//*||file:app//*||file:angular//*||file:tests//*||file:config//*||file:routes//*||file:tasks//*||file:build.xml||file:package.json||file:composer.json||file:bower.json)&amp;&amp;!file:public/build//*&amp;&amp;!file:public/css//*&amp;&amp;!file:public/js//*&amp;&amp;!file:public/views//*&amp;&amp;!file[thinking.localwamp.dev]:public/fonts//*" />
-</component>

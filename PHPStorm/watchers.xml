@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TaskOptions>
+  <TaskOptions>
+    <option name="arguments" value="" />
+    <option name="checkSyntaxErrors" value="true" />
+    <option name="description" value="Compila los archivos de front" />
+    <option name="exitCodeBehavior" value="ERROR" />
+    <option name="fileExtension" value="*" />
+    <option name="immediateSync" value="true" />
+    <option name="name" value="Gulp" />
+    <option name="output" value="" />
+    <option name="outputFilters">
+      <array />
+    </option>
+    <option name="outputFromStdout" value="false" />
+    <option name="passParentEnvs" value="true" />
+    <option name="program" value="gulp" />
+    <option name="scopeName" value="Angular" />
+    <option name="trackOnlyRoot" value="false" />
+    <option name="workingDir" value="$ProjectFileDir$" />
+    <envs />
+  </TaskOptions>
+  <TaskOptions>
+    <option name="arguments" value="$FilePathRelativeToProjectRoot$ database\migrations\$FileName$ /Y" />
+    <option name="checkSyntaxErrors" value="true" />
+    <option name="description" value="Mueve los migrastes de modulos a la carpeta de migrate" />
+    <option name="exitCodeBehavior" value="ERROR" />
+    <option name="fileExtension" value="php" />
+    <option name="immediateSync" value="true" />
+    <option name="name" value="Move Migrates" />
+    <option name="output" value="" />
+    <option name="outputFilters">
+      <array />
+    </option>
+    <option name="outputFromStdout" value="false" />
+    <option name="passParentEnvs" value="true" />
+    <option name="program" value="C:/Windows/System32/xcopy.exe" />
+    <option name="scopeName" value="ModuleMigrates" />
+    <option name="trackOnlyRoot" value="false" />
+    <option name="workingDir" value="$ProjectFileDir$" />
+    <envs />
+  </TaskOptions>
+</TaskOptions>
+

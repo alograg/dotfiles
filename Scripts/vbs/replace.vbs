@@ -5,6 +5,10 @@ strFileName = Wscript.Arguments(0)
 strOldText = Wscript.Arguments(1)
 strNewText = Wscript.Arguments(2)
 
+Wscript.Echo strFileName
+Wscript.Echo strOldText
+Wscript.Echo strNewText
+
 Set objFSO = CreateObject("Scripting.FileSystemObject")
 Set objFile = objFSO.OpenTextFile(strFileName, ForReading)
 strText = objFile.ReadAll
