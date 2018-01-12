@@ -1,3 +1,4 @@
+#!/bin/bash
 # Update/Upgrade
 yum -y update && yum -y upgrade
 # Repos
@@ -12,8 +13,8 @@ yum -y install links
 yum --disablerepo=base,updates --enablerepo=rpmforge-extras update git
 # Apache/PHP/MariaDb
 yum -y install httpd php php-devel php-common php-soap php-gd mariadb-server mariadb
-firewall-cmd --add-service=http
-firewall-cmd --add-service=mysql
+firewall-cmd -permanent --add-service=http
+firewall-cmd -permanent --add-service=mysql
 firewall-cmd -permanent -add-port=3221/tcp
 firewall-cmd --reload
 systemctl restart httpd.service
@@ -78,5 +79,17 @@ gsettings set org.gnome.desktop.default-applications.office.calendar exec "chrom
 # Fonts
 yum -y install curl cabextract xorg-x11-font-utils fontconfig
 rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
+# FiraFont
+mkdir -p ~/.local/share/fonts
+for type in Bold Light Medium Regular Retina; do
+    wget -O ~/.local/share/fonts/FiraCode-${type}.ttf \
+    "https://github.com/tonsky/FiraCode/blob/master/distr/ttf/FiraCode-${type}.ttf?raw=true";
+done
+fc-cache -f
+# vscoder
+rpm --import https://packages.microsoft.com/keys/microsoft.asc
+sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
+yum check-update
+yum install code
 # Reboot
 reboot
