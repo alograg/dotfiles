@@ -18,6 +18,8 @@ systemctl stop php72-php-fpm
 # Change port of PHP server
 sed -i 's/:9000/:9056/' /etc/opt/remi/php56/php-fpm.d/www.conf
 sed -i 's/:9000/:9072/' /etc/opt/remi/php72/php-fpm.d/www.conf
+# vi /etc/sysconfig/selinux
+# SELINUXTYPE=targeted
 # Stqrt server
 systemctl start php72-php-fpm
 systemctl start php56-php-fpm
