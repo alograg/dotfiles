@@ -149,6 +149,24 @@ server {
     }
 }
 EOF
+cat > /etc/nginx/conf.d/gzip.conf << EOF
+##
+# Gzip Settings
+##
+gzip  on;
+gzip_http_version 1.1;
+gzip_vary on;
+gzip_comp_level 6;
+gzip_proxied any;
+gzip_types application/javascript application/rss+xml application/x-font application/x-font-opentype application/x-font-otf application/x-font-truetype application/x-font-ttf application/x-javascript application/xhtml+xml application/xml font/opentype font/otf font/ttf image/svg+xml image/x-icon text/css text/html text/javascript text/plain text/xml;
+
+# make sure gzip does not lose large gzipped js or css files
+# see http://blog.leetsoft.com/2007/07/25/nginx-gzip-ssl.html
+gzip_buffers 16 8k;
+
+# Disable gzip for certain browsers.
+gzip_disable “MSIE [1-6].(?!.*SV1)”;
+EOF
 # Apache Config
 ## Script wrapper PHP 5.4
 cat > /var/www/cgi-bin/php54.fcgi << EOF
