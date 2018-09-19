@@ -1,4 +1,6 @@
 #!/bin/bash
+# references
+# https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-on-centos-7
 # Repos
 yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm
@@ -44,10 +46,10 @@ mysql -p -B -e "FLUSH privileges;;" mysql
 # phpVV-php-soap
 # phpVV-php-sqlite
 # phpVV-php-xml
-yum install -y php54 php54-php-bcmath php54-php-cli php54-php-common php54-php-devel php54-php-fpm php54-php-gd php54-php-imap php54-php-intl php54-php-mbstring php54-php-mcrypt php54-php-mysqlnd php54-php-pdo php54-php-pear php54-php-pecl-memcache php54-php-process php54-php-soap php54-php-sqlite php54-php-xml 
-yum install -y php56 php56-php-bcmath php56-php-cli php56-php-common php56-php-devel php56-php-fpm php56-php-gd php56-php-imap php56-php-intl php56-php-mbstring php56-php-mcrypt php56-php-mysqlnd php56-php-pdo php56-php-pear php56-php-pecl-memcache php56-php-process php56-php-soap php56-php-sqlite php56-php-xml 
-yum install -y php70 php70-php-bcmath php70-php-cli php70-php-common php70-php-devel php70-php-fpm php70-php-gd php70-php-imap php70-php-intl php70-php-mbstring php70-php-mcrypt php70-php-mysqlnd php70-php-pdo php70-php-pear php70-php-pecl-memcache php70-php-process php70-php-soap php70-php-sqlite php70-php-xml 
-yum install -y php72 php72-php-bcmath php72-php-cli php72-php-common php72-php-devel php72-php-fpm php72-php-gd php72-php-imap php72-php-intl php72-php-mbstring php72-php-mcrypt php72-php-mysqlnd php72-php-pdo php72-php-pear php72-php-pecl-memcache php72-php-process php72-php-soap php72-php-sqlite php72-php-xml 
+yum install -y php54 php54-php-bcmath php54-php-cli php54-php-common php54-php-devel php54-php-fpm php54-php-gd php54-php-imap php54-php-intl php54-php-mbstring php54-php-mcrypt php54-php-mysqlnd php54-php-pdo php54-php-pear php54-php-pecl-memcache php54-php-process php54-php-soap php54-php-sqlite php54-php-xml php54-php-ioncube-loader
+yum install -y php56 php56-php-bcmath php56-php-cli php56-php-common php56-php-devel php56-php-fpm php56-php-gd php56-php-imap php56-php-intl php56-php-mbstring php56-php-mcrypt php56-php-mysqlnd php56-php-pdo php56-php-pear php56-php-pecl-memcache php56-php-process php56-php-soap php56-php-sqlite php56-php-xml php56-php-ioncube-loader
+yum install -y php70 php70-php-bcmath php70-php-cli php70-php-common php70-php-devel php70-php-fpm php70-php-gd php70-php-imap php70-php-intl php70-php-mbstring php70-php-mcrypt php70-php-mysqlnd php70-php-pdo php70-php-pear php70-php-pecl-memcache php70-php-process php70-php-soap php70-php-sqlite php70-php-xml php70-php-ioncube-loader
+yum install -y php72 php72-php-bcmath php72-php-cli php72-php-common php72-php-devel php72-php-fpm php72-php-gd php72-php-imap php72-php-intl php72-php-mbstring php72-php-mcrypt php72-php-mysqlnd php72-php-pdo php72-php-pear php72-php-pecl-memcache php72-php-process php72-php-soap php72-php-sqlite php72-php-xml php72-php-ioncube-loader
 # Stop servers
 systemctl stop nginx
 systemctl stop httpd
@@ -57,6 +59,7 @@ systemctl stop php70-php-fpm
 systemctl stop php72-php-fpm
 # Set Enforce
 sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/sysconfig/selinux
+sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/selinux/config
 # SELINUX=disabled
 # FireWalls
 firewall-cmd --permanent --add-service=http
@@ -83,8 +86,9 @@ sed -i 's/= nobody/= nginx/' /etc/opt/remi/php72/php-fpm.d/www.conf
 # Nginx Config
 #http://local.artebeaute.test/
 #mkdir -p /var/www/local/public
-#chown -R root:nginx /var/www/html/example1.com/ 
-#chmod -R 755 /var/www/html/example1.com/ 
+#chown -R root:nginx /var/www
+#chmod -R 775 /var/www
+#usermod -aG apache nginx
 cat > /etc/nginx/conf.d/vhost.conf << EOF
 server {
 	index index.html index.php index.htm;
