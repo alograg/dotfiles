@@ -82,11 +82,11 @@ gsettings set org.gnome.desktop.default-applications.office.calendar exec "chrom
 
 # Fonts
 yum -y install curl cabextract xorg-x11-font-utils fontconfig
-rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
+yum -y install https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 # FiraFont
-mkdir -p ~/.local/share/fonts
+mkdir -p /usr/share/fonts/Fira
 for type in Bold Light Medium Regular Retina; do
-    wget -O ~/.local/share/fonts/FiraCode-${type}.ttf \
+    wget -O /usr/share/fonts/Fira/FiraCode-${type}.ttf \
     "https://github.com/tonsky/FiraCode/blob/master/distr/ttf/FiraCode-${type}.ttf?raw=true";
 done
 fc-cache -f

@@ -2,13 +2,12 @@
 # references
 # https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-on-centos-7
 # Repos
-yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm
-# Install
 yum -y install epel-release
+yum -y install https://rpms.remirepo.net/enterprise/remi-release-7.rpm
+# Install
 yum -y install p7zip p7zip-plugins
 ## Apache
-yum install httpd -y
+#yum install httpd -y
 ## Nginx
 yum install nginx -y
 systemctl status nginx
@@ -16,12 +15,12 @@ systemctl status nginx
 ## MariaDB
 yum install mariadb-server mariadb MariaDB-client -y
 ## MySQL
-yum -y install https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm
-rpm -Uvh http://mirror.webtatic.com/yum/el5/latest.rpm
+#yum -y install https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm
+#rpm -Uvh http://mirror.webtatic.com/yum/el5/latest.rpm
 #yum -y install http://repo.mysql.com/yum/mysql-5.5-community/el/7/x86_64/mysql-community-release-el7-5.noarch.rpm
-yum install -y mysql-community-server
-service mysqld start
-mysql_secure_installation
+#yum install -y mysql-community-server
+#service mysqld start
+#mysql_secure_installation
 ## Add user
 mysql -p -B -e "CREATE USER 'alograg'@'%';" mysql
 mysql -p -B -e "GRANT ALL PRIVILEGES ON *.* To 'alograg'@'%' IDENTIFIED BY '';" mysql
