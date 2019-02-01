@@ -1,18 +1,11 @@
 #!/bin/bash
 # references
 # https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-on-centos-7
-# Repos
-yum -y install epel-release
-yum -y install https://rpms.remirepo.net/enterprise/remi-release-7.rpm
-# Install
-yum -y install p7zip p7zip-plugins unzip zip
-## Apache
-#yum install httpd -y
 ## Nginx
-yum install nginx -y
+yum -y install nginx
 # Database
 ## MariaDB
-yum install mariadb-server mariadb MariaDB-client -y
+yum -y install mariadb-server mariadb MariaDB-client
 service mariadb start
 mysql_secure_installation
 ## Add user
@@ -43,10 +36,6 @@ yum install -y php{54,56,70,72} php{54,56,70,72}-php-bcmath php{54,56,70,72}-php
 # Stop servers
 systemctl stop nginx
 systemctl stop php{54,56,70,72}-php-fpm
-# Set Enforce
-sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/sysconfig/selinux
-sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/selinux/config
-# SELINUX=disabled
 # FireWalls
 firewall-cmd --permanent --add-service=http
 firewall-cmd --permanent --add-service=mysql

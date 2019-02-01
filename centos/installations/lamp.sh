@@ -1,26 +1,18 @@
 #!/bin/bash
 # references
 # https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-on-centos-7
-# Repos
-yum -y install epel-release
-yum -y install https://rpms.remirepo.net/enterprise/remi-release-7.rpm
-# Install
-yum -y install p7zip p7zip-plugins
-## Apache
-#yum install httpd -y
-## Nginx
-yum install nginx -y
-systemctl status nginx
+# Apache
+yum -y install httpd
 # Database
 ## MariaDB
-yum install mariadb-server mariadb MariaDB-client -y
+yum -y install mariadb-server mariadb MariaDB-client
 ## MySQL
 #yum -y install https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm
 #rpm -Uvh http://mirror.webtatic.com/yum/el5/latest.rpm
 #yum -y install http://repo.mysql.com/yum/mysql-5.5-community/el/7/x86_64/mysql-community-release-el7-5.noarch.rpm
 #yum install -y mysql-community-server
 #service mysqld start
-#mysql_secure_installation
+mysql_secure_installation
 ## Add user
 mysql -p -B -e "CREATE USER 'alograg'@'%';" mysql
 mysql -p -B -e "GRANT ALL PRIVILEGES ON *.* To 'alograg'@'%' IDENTIFIED BY '';" mysql
@@ -56,10 +48,6 @@ systemctl stop php54-php-fpm
 systemctl stop php56-php-fpm
 systemctl stop php70-php-fpm
 systemctl stop php72-php-fpm
-# Set Enforce
-sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/sysconfig/selinux
-sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/selinux/config
-# SELINUX=disabled
 # FireWalls
 firewall-cmd --permanent --add-service=http
 firewall-cmd --permanent --add-service=mysql
@@ -82,90 +70,6 @@ sed -i 's/= nobody/= nginx/' /etc/opt/remi/php54/php-fpm.d/www.conf
 sed -i 's/= nobody/= nginx/' /etc/opt/remi/php56/php-fpm.d/www.conf
 sed -i 's/= nobody/= nginx/' /etc/opt/remi/php70/php-fpm.d/www.conf
 sed -i 's/= nobody/= nginx/' /etc/opt/remi/php72/php-fpm.d/www.conf
-# Nginx Config
-#http://local.artebeaute.test/
-#mkdir -p /var/www/local/public
-#chown -R root:nginx /var/www
-#chmod -R 775 /var/www
-#usermod -aG apache nginx
-cat > /etc/nginx/conf.d/vhost.conf << EOF
-server {
-	index index.html index.php index.htm;
-	set $basepath "/var/www";
-	# check one name domain for simple application
-	server_name ~^(?<subdomain>\w*)\.(?<domain>.+)$;
-    set $rootpath "${domain}/${subdomain}/public";
-    set $servername "${subdomain}.${domain}.test";
-	access_log "/var/log/nginx/vhost.access.log";
-	error_log "/var/log/nginx/vhost.error.log";
-    root $basepath/$rootpath;
-    location = /favicon.ico { log_not_found off; access_log off; }
-    location = /robots.txt { log_not_found off; access_log off; allow all; }
-    location ~*  \.(woff|jpg|jpeg|png|gif|ico|css|js)$ {
-        access_log off;
-        log_not_found off;
-        expires 365d;
-    }
-	# check file exist and send request sting to index.php
-	location / {
-		try_files $uri $uri/ /index.php?$is_args$args;
-	}
-	# allow php only in root index.php
-	#location ~ "^/index\.php$" {
-	# allow execute all php files
-	location ~ \.php$ {
-		try_files $uri =404;
-		fastcgi_split_path_info ^(.+\.php)(/.+)$;
-		fastcgi_pass 127.0.0.1:9072;
-		fastcgi_index index.php;
-        fastcgi_param SCRIPT_FILENAME  $document_root$fastcgi_script_name;
-		include fastcgi_params;
-	}
-	# disallow access to apache configs
-	location ~ /\.ht {
-		deny all;
-	}
-	# disallow access to git configs path
-	location ~ /\.git {
-		deny all;
-	}
-    # Yoast SEO Sitemaps
-    location ~ ([^/]*)sitemap-rewrite-disabled(.*).x(m|s)l$ {
-        ## this redirects sitemap.xml to /sitemap_index.xml
-        rewrite ^/sitemap.xml$ /sitemap_index.xml permanent;
-        ## this makes the XML sitemaps work
-        rewrite ^/([a-z]+)?-?sitemap.xsl$ /index.php?xsl=$1 last;
-        rewrite ^/sitemap_index.xml$ /index.php?sitemap=1 last;
-        rewrite ^/([^/]+?)-sitemap([0-9]+)?.xml$ /index.php?sitemap=$1&sitemap_n=$2 last;
-        ## The following lines are optional for the premium extensions
-        ## News SEO
-        rewrite ^/news-sitemap.xml$ /index.php?sitemap=wpseo_news last;
-        ## Local SEO
-        rewrite ^/locations.kml$ /index.php?sitemap=wpseo_local_kml last;
-        rewrite ^/geo-sitemap.xml$ /index.php?sitemap=wpseo_local last;
-        ## Video SEO
-        rewrite ^/video-sitemap.xsl$ /index.php?xsl=video last;
-    }
-}
-EOF
-cat > /etc/nginx/conf.d/gzip.conf << EOF
-##
-# Gzip Settings
-##
-gzip  on;
-gzip_http_version 1.1;
-gzip_vary on;
-gzip_comp_level 6;
-gzip_proxied any;
-gzip_types application/javascript application/rss+xml application/x-font application/x-font-opentype application/x-font-otf application/x-font-truetype application/x-font-ttf application/x-javascript application/xhtml+xml application/xml font/opentype font/otf font/ttf image/svg+xml image/x-icon text/css text/html text/javascript text/plain text/xml;
-
-# make sure gzip does not lose large gzipped js or css files
-# see http://blog.leetsoft.com/2007/07/25/nginx-gzip-ssl.html
-gzip_buffers 16 8k;
-
-# Disable gzip for certain browsers.
-gzip_disable “MSIE [1-6].(?!.*SV1)”;
-EOF
 # Apache Config
 ## Script wrapper PHP 5.4
 cat > /var/www/cgi-bin/php54.fcgi << EOF
@@ -189,26 +93,18 @@ exec /bin/php72-cgi
 EOF
 ## Make executable
 chmod 755 /var/www/cgi-bin/php*.fcgi
-## php configuration for apache, by default php56-fcgi
+## php configuration for apache, by default php72-fcgi
 cat > /etc/httpd/conf.d/php.conf << EOF
 ScriptAlias /cgi-bin/ "/var/www/cgi-bin/"
-AddHandler php54-fcgi .php
+AddHandler php72-fcgi .php
 Action php56-fcgi /cgi-bin/php56.fcgi
 Action php70-fcgi /cgi-bin/php70.fcgi
 Action php72-fcgi /cgi-bin/php72.fcgi
 EOF
 # Start server
-systemctl restart php54-php-fpm
-systemctl restart php56-php-fpm
-systemctl restart php70-php-fpm
-systemctl restart php72-php-fpm
+systemctl restart php{54,56,70,72}-php-fpm
 systemctl restart mysqld
 systemctl restart httpd
-systemctl restart nginx
-systemctl enable nginx
 systemctl enable httpd
 systemctl enable mysqld
-systemctl enable php54-php-fpm
-systemctl enable php56-php-fpm
-systemctl enable php70-php-fpm
-systemctl enable php72-php-fpm
+systemctl enable php{54,56,70,72}-php-fpm
