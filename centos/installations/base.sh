@@ -9,6 +9,7 @@ yum -y update && yum -y upgrade
 yum -y install net-tools
 # Git
 yum -y install git
+git config --global core.fileMode false
 # wGet
 yum -y install wget
 # Set Enforce
