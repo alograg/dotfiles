@@ -26,9 +26,19 @@
     </action>
   </item>
   <separator/>
-  <item label="Log Out">
+  <!--item label="Log Out">
     <action name="SessionLogout">
       <prompt>yes</prompt>
+    </action>
+  </item-->
+  <item label="Reboot">
+    <action name="Execute">
+      <execute>sudo 'shutdown -r now'</execute>
+    </action>
+  </item>
+  <item label="Shut down">
+    <action name="Execute">
+      <execute>sudo 'shutdown -h now'</execute>
     </action>
   </item>
 </menu>
