@@ -3,8 +3,11 @@
 yum -y update && yum -y upgrade
 # Repos
 yum -y install epel-release
+yum -y install https://rpms.remirepo.net/enterprise/remi-release-7.rpm
 # Update/Upgrade
 yum -y update && yum -y upgrade
+# YUM Utils
+yum install yum-utils
 # NetToos
 yum -y install net-tools
 # Git

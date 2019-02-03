@@ -25,3 +25,7 @@ rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
 yum check-update
 yum install code
+# PHPStorm
+wget https://download-cf.jetbrains.com/webide/PhpStorm-2018.3.3.tar.gz
+tar xfz PhpStorm-2018.3.3.tar.gz -C /opt/
+/opt/PhpStorm-2018.3.3/bin/PhpStorm.sh

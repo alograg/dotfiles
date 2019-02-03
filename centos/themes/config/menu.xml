@@ -23,7 +23,7 @@
   <separator/>
   <item label="Exit">
     <action name="Exit">
-      <prompt>yes</prompt>
+      <prompt>no</prompt>
     </action>
   </item>
   <!--item label="Log Out">
