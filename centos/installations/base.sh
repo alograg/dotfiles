@@ -19,3 +19,7 @@ yum -y install wget
 sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/sysconfig/selinux
 sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/selinux/config
 # SELINUX=disabled
+# Alias
+echo -e "alias la='ls -la --color=auto'" >> .bashrc
+echo -e "alias space='df -h'" >> .bashrc
+echo -e "alias tarextract='tar xfz'" >> .bashrc
