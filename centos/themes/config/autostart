@@ -17,3 +17,5 @@
 #xfce-mcs-manager &
 
 guake &
+google-chrome-stable --proxy-pac-url=file:///home/alograg/.config/openbox/local.pac %U &
+/opt/PhpStorm-183.5153.36/bin/phpstorm.sh &

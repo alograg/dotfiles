@@ -25,3 +25,7 @@ echo -e "video/x-msvideo=google-chrome.desktop">>.local/share/applications/mimea
 echo -e "video/x-ms-wmv=google-chrome.desktop">>.local/share/applications/mimeapps.list
 echo -e "video/x-ogm=google-chrome.desktop">>.local/share/applications/mimeapps.list
 echo -e "video/x-theora=google-chrome.desktop">>.local/share/applications/mimeapps.list
+
+# Set Proxy Pac File
+PAC_PROPERTY=' --proxy-pac-url=file:///home/alograg/.config/openbox/local.pac'
+sed -i "s|google-chrome-stable|& $PAC_PROPERTY|g" /usr/share/applications/google-chrome.desktop
