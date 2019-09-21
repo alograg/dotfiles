@@ -28,7 +28,7 @@ mysql -u root -p -B -e "FLUSH privileges;" mysql
 # phpVV-php-soap
 # phpVV-php-sqlite
 # phpVV-php-xml
-yum install -y php{54,56,70,71,72,73} php{54,56,70,71,72,73}-php-bcmath php{54,56,70,71,72,73}-php-cli php{54,56,70,71,72,73}-php-common php{54,56,70,71,72,73}-php-devel php{54,56,70,71,72,73}-php-fpm php{54,56,70,71,72,73}-php-gd php{54,56,70,71,72,73}-php-imap php{54,56,70,71,72,73}-php-intl php{54,56,70,71,72,73}-php-mbstring php{54,56,70,71,72,73}-php-mcrypt php{54,56,70,71,72,73}-php-mysqlnd php{54,56,70,71,72,73}-php-pdo php{54,56,70,71,72,73}-php-pear php{54,56,70,71,72,73}-php-pecl-memcache php{54,56,70,71,72,73}-php-process php{54,56,70,71,72,73}-php-soap php{54,56,70,71,72,73}-php-sqlite php{54,56,70,71,72,73}-php-xml php{54,56,70,71,72,73}-php-ioncube-loader php{54,56,70,71,72,73}-php-pecl-xdebug php{54,56,70,71,72,73}-php-pecl-zip
+yum install -y php{54,56,70,71,72,73} php{54,56,70,71,72,73}-php-bcmath php{54,56,70,71,72,73}-php-cli php{54,56,70,71,72,73}-php-common php{54,56,70,71,72,73}-php-devel php{54,56,70,71,72,73}-php-fpm php{54,56,70,71,72,73}-php-gd php{54,56,70,71,72,73}-php-imap php{54,56,70,71,72,73}-php-intl php{54,56,70,71,72,73}-php-mbstring php{54,56,70,71,72,73}-php-mcrypt php{54,56,70,71,72,73}-php-mysqlnd php{54,56,70,71,72,73}-php-pdo php{54,56,70,71,72,73}-php-pear php{54,56,70,71,72,73}-php-pecl-memcache php{54,56,70,71,72,73}-php-process php{54,56,70,71,72,73}-php-soap php{54,56,70,71,72,73}-php-sqlite php{54,56,70,71,72,73}-php-xml php{54,56,70,71,72,73}-php-ioncube-loader php{54,56,70,71,72,73}-php-pecl-xdebug php{54,56,70,71,72,73}-php-pecl-zip php{54,56,70,71,72,73}-php-pecl-zmq
 # Stop servers
 systemctl stop php{54,56,70,71,72,73}-php-fpm
 firewall-cmd --permanent --add-service=mysql
