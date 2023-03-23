@@ -1,0 +1,16 @@
+# Personal Aliases
+alias l='ls -lF'
+alias la='l -a'
+alias historian='history | grep'
+
+function mkcd() {
+	mkdir -p $1
+	cd $1
+}
+
+if ! which docker &> /dev/null ; then
+    alias dockerla='docker ps -a'
+    alias dockerls='docker ps --format "table {{.ID}}\t{{.Status}}\t{{.Names}}"'
+    alias docker-clean-images='docker rmi $(docker images -f "dangling=true" -q)'
+    alias docker-compose='docker compose'
+fi

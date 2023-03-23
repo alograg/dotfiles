@@ -1,5 +1,5 @@
-# myConfig
+# Alograg DotFiles
 
 ## Environment
 
-[Ubuntu minimal (Server) ](https://ubuntu.com/download/server) with [DWM](https://dwm.suckless.org/)
+[Ubuntu minimal (Server)](https://ubuntu.com/download/server) with [DWM](https://dwm.suckless.org/)
