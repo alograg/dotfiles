@@ -1,8 +1,4 @@
-#!/usr/bin/sh
-
-# Configuracion de alias
-
-curl https://raw.githubusercontent.com/alograg/dotfiles/master/aliases >~/.bash_aliases
+#!/bin/sh
 
 # Insalacion de requisitos
 
@@ -18,7 +14,49 @@ sudo apt install -y \
 	libarchive-dev libfuse-dev \
 	golang
 git clone https://github.com/google/fuse-archive.git
-cd fuse-archive
+cd fuse-archive || exit
 make install
 cd ..
 rm fR fuse-archive
+
+# Configuracion de git
+
+git config --global user.name "$USER"
+read -p "Enter your git email [$USER@exemple.com]: " correo
+correo=${correo:-"$USER@exemple.com"}
+git config --global user.email "$correo"
+git config --global core.editor "nvim"
+git config --global color.ui "auto"
+git config --global core.filemode false
+git config --global alias.st status
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.ci commit
+git config --global alias.hist "log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short"
+git config --global core.excludesfile ~/.config/.gitignore_global
+git config --global commit.gpgsign true
+git config --global merge.defaultToUpstream recursive
+git config --global push.default simple
+git config --global core.preloadindex true
+git config --global core.fscache true
+git config --global credential.helper cache
+
+# Configuracion de respaldo de configuracion
+
+git init --bare https://github.com/alograg/dotfiles.git $HOME/.cfg
+
+config() {
+   /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree="$HOME" $@
+}
+
+config lfs install
+mkdir -p .config-backup
+config checkout
+if [ $? = 0 ]; then
+  echo "Checked out config.";
+  else
+    echo "Backing up pre-existing dot files.";
+    config checkout 2>&1 | grep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .config-backup/{}
+fi;
+config checkout
+config config status.showUntrackedFiles no
