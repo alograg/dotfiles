@@ -208,7 +208,7 @@ if [ "$scope" ]; then
 fi
 commitMessage+=": "
 if [ "$selected_emoji" ]; then
-    commitMessage+="${selected_emoji% *} "
+    commitMessage+="${selected_emoji%%[[:space:]]*} "
 fi
 commitMessage+="$description"
 if [ "$breakingDescription" ]; then
