@@ -1,0 +1,226 @@
+#!/bin/bash
+
+trap cleanup INT TERM EXIT
+
+usage () {
+  cat <<EOF
+Generates commit messages that meet "Conventional Commit" and perform the commit.
+REF: https://www.conventionalcommits.org/en/v1.0.0/'
+
+Usage: $(basename "$0") [-h|--help] [-v|--verbose] [-t|--text-only] [--no-colors]
+  -h, --help         Print this help and exit
+  -v, --verbose      Print script debug info
+  --no-color         Not use colors
+  -t, --text-only    Shows only the text without committing
+
+EOF
+  exit
+}
+
+cleanup () {
+  trap - INT TERM EXIT
+  # script cleanup here
+}
+
+setup_colors () {
+  if [ -t 2 ] && [ -z "${NO_COLOR-}" ] && [ "${TERM-}" != "dumb" ]; then
+    NOFORMAT='\033[0m'
+    RED='\033[0;31m'
+    GREEN='\033[0;32m'
+    ORANGE='\033[0;33m'
+    BLUE='\033[0;34m'
+    PURPLE='\033[0;35m'
+    CYAN='\033[0;36m'
+    YELLOW='\033[1;33m'
+  else
+    NOFORMAT=''
+    RED=''
+    GREEN=''
+    ORANGE=''
+    BLUE=''
+    PURPLE=''
+    CYAN=''
+    YELLOW=''
+  fi
+}
+
+COLS=$(tput cols)
+
+msg () {
+  echo "${1-}" >&2
+}
+
+secction_div () {
+  printf -- '=%.0s' $(seq $COLS)
+}
+
+sub_secction_div () {
+  printf -- '-%.0s' $(seq $COLS)
+}
+
+die () {
+  local msg=$1
+  local code=${2-1} # default exit status 1
+  msg "$msg"
+  exit "$code"
+}
+
+parse_params () {
+  # default values of variables set from params
+  TEXT_ONLY=0
+  param=''
+
+  while :; do
+    case "${1-}" in
+    -h | --help) usage ;;
+    -v | --verbose) set -x ;;
+    --no-color) NO_COLOR=1 ;;
+    -t | --text-only) TEXT_ONLY=1 ;; # example flag
+    -?*) die "Unknown option: $1" ;;
+    *) break ;;
+    esac
+    shift
+  done
+
+  args=${@}
+
+  return 0
+}
+
+parse_params "$@"
+
+menu_from_array ()
+{
+  select item; do
+  # Check the selected menu item number
+  if [ 1 -le "$REPLY" ] && [ "$REPLY" -le $# ];
+  then
+    echo "$item"
+    break;
+  else
+    #echo "Wrong selection: Select any number from 1-$#"
+    echo ""
+  fi
+  done
+}
+
+secction_div
+
+# Pide al usuario el tipo de cambio
+PS3="TYPE: "
+type_options=( "feat" "fix" "chore" "refactor" "style" "docs" "test" "-> exit" )
+
+type="$(menu_from_array "${type_options[@]}")"
+
+[ "$type" = "-> exit" ] && exit 0
+
+secction_div
+
+# Pregunta al usuario si el cambio tiene un ámbito (scope)
+echo -n -e "Have an scope? (y/\e[4mn\e[0m)"
+read -p ": " yn
+if [ "$yn" = "y" ]; then
+    sun_secction_div
+    # Define el archivo donde se almacenarán las opciones de ámbito
+    SCOPE_FILE=".scopes"
+
+    [ -f $SCOPE_FILE ] || touch "$SCOPE_FILE"
+
+    # Lee las opciones de ámbito desde el archivo
+    mapfile -t scope_options < $SCOPE_FILE
+
+    # Agrega una opción extra para permitir al usuario agregar un nuevo ámbito
+    scope_options+=("Add new scope")
+
+    # Muestra las opciones de ámbito disponibles
+    PS3="SCOPE: "
+    scope="$(menu_from_array "${scope_options[@]}")"
+
+    # Si se seleccionó "Add new scope", pide al usuario el nombre del nuevo ámbito y lo agrega al archivo
+    if [ "$scope" = "Add new scope" ]; then
+        sub_secction_div
+        read -p "Enter the new scope: " new_scope
+        echo "$new_scope" >> "$SCOPE_FILE"
+        scope="$new_scope"
+    fi
+fi
+
+secction_div
+
+# Descarga el archivo JSON de Gitmojis
+[ -f ~/.config/gitmojis.json ] || curl https://raw.githubusercontent.com/carloscuesta/gitmoji/v3.13.1/packages/gitmojis/src/gitmojis.json -o ~/.config/gitmojis.json
+
+if ! which jq > /dev/null 2>&1 ; then
+    echo "I need JP: https://github.com/jmespath/jp"
+    sudo apt install -y jq
+fi
+
+# Lee los Gitmojis desde el archivo JSON y crea un array con las opciones disponibles
+[ -f ~/.config/gitmojis.lst ] || jq -r '.gitmojis | .[] | "\(.code) \(.description)"' ~/.config/gitmojis.json > ~/.config/gitmojis.lst
+mapfile -t emoji_options < ~/.config/gitmojis.lst
+
+emoji_options+=(" (without)")
+# Pide al usuario que seleccione un Gitmoji
+PS3="Select a Gitmoji: "
+selected_emoji="$(menu_from_array "${emoji_options[@]}")"
+
+secction_div
+
+# Pide al usuario la descripción del cambio
+read -p "Description (máximo 100 caracteres): " description
+while [ ${#description} -lt 1 ] || [ ${#description} -gt 100 ]; do
+    read -p "Description must have between 1 and 100 characters: " description
+done
+
+secction_div
+
+# Pregunta al usuario si el cambio es una ruptura (breaking change)
+echo -n -e "Is a BREAKING CHANGE? (y/\e[4mn\e[0m)"
+read -p ": " yn
+if [ "$yn" = "y" ]; then
+    sub_secction_div
+    read -p "Please describe the BREAKING CHANGE: " breakingDescription
+    while [ ${#breakingDescription} -lt 1 ] || [ ${#breakingDescription} -gt 100 ]; do
+        read -p "BREAKING CHANGE must have between 1 and 100 characters: " breakingDescription
+    done
+fi
+
+secction_div
+
+# Pregunta al usuario si el cambio está relacionado con un número de issue
+echo -n -e "Is related to any ISSUE? (y/\e[4mn\e[0m)"
+read -p ": " yn
+if [ "$yn" = "y" ]; then
+    sub_secction_div
+    # Pregunta al usuario sobre el número del issue
+    read -p "ISSUE number? (#123): " issueNumber
+    while [ "$(echo "$issueNumber" | cut -c1)" != "#" ]; do
+        read -p "ISSUE number must start with #: " issueNumber
+    done
+fi
+
+secction_div
+
+# Genera el mensaje del commit en el formato convencional
+commitMessage="$type"
+if [ "$scope" ]; then
+    commitMessage+="($scope)"
+fi
+commitMessage+=": "
+if [ "$selected_emoji" ]; then
+    commitMessage+="${selected_emoji% *} "
+fi
+commitMessage+="$description"
+if [ "$breakingDescription" ]; then
+    commitMessage+="\n\nBREAKING CHANGE: $breakingDescription"
+fi
+if [ "$issueNumber" ]; then
+    commitMessage+="\n\n$issueNumber"
+fi
+
+# Imprime el mensaje del commit
+if [ $TEXT_ONLY = 1 ]; then
+    echo "$commitMessage"
+else
+    git commit -m "$commitMessage"
+fi
