@@ -3,3 +3,8 @@
   smudge = git-lfs smudge -- %f
   process = git-lfs filter-process
   required = true
+[core]
+	excludesfile = ~/.config/.gitignore_global
+[user]
+	name = alograg
+	email = alograg@gmail.com
