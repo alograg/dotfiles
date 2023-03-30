@@ -2,6 +2,8 @@
 
 # Insalacion de requisitos
 
+cd ~
+
 sudo apt install -y \
 	git \
 	neovim \
@@ -17,7 +19,7 @@ git clone https://github.com/google/fuse-archive.git
 cd fuse-archive || exit
 make install
 cd ..
-rm fR fuse-archive
+rm -fR fuse-archive
 
 # Configuracion de git
 
