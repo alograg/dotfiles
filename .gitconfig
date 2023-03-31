@@ -5,6 +5,25 @@
   required = true
 [core]
 	excludesfile = ~/.config/.gitignore_global
+	editor = nvim
+	filemode = false
+	preloadindex = true
+	fscache = true
 [user]
 	name = alograg
 	email = alograg@gmail.com
+[alias]
+	st = status
+	co = checkout
+	br = branch
+	ci = commit
+	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+	amend = commit --amend
+[color]
+	ui = auto
+[merge]
+	defaultToUpstream = recursive
+[push]
+	default = simple
+[credential]
+	helper = store
