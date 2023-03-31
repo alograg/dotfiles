@@ -4,26 +4,26 @@
   process = git-lfs filter-process
   required = true
 [core]
-	excludesfile = ~/.config/.gitignore_global
-	editor = nvim
-	filemode = false
-	preloadindex = true
-	fscache = true
+  excludesfile = ~/.config/.gitignore_global
+  editor = nvim
+  filemode = false
+  preloadindex = true
+  fscache = true
 [user]
-	name = alograg
-	email = alograg@gmail.com
+  name = alograg
+  email = alograg@gmail.com
 [alias]
-	st = status
-	co = checkout
-	br = branch
-	ci = commit
-	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
-	amend = commit --amend
+  st = status
+  co = checkout
+  br = branch
+  ci = commit
+  hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+  amend = commit --amend
 [color]
-	ui = auto
+  ui = auto
 [merge]
-	defaultToUpstream = recursive
+  defaultToUpstream = true
 [push]
-	default = simple
+  default = simple
 [credential]
-	helper = store
+  helper = store
