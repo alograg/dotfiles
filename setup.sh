@@ -24,9 +24,9 @@ rm -fR fuse-archive
 # Configuracion de respaldo de configuracion
 
 if [ "$(type -t config)" = "" ]; then
-config() {
-   /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree="$HOME" $@
-}
+  config() {
+    /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree="$HOME" $@
+  }
 fi
 
 if [ ! -d $HOME/.cfg ] ; then
@@ -34,10 +34,10 @@ if [ ! -d $HOME/.cfg ] ; then
   mkdir -p .config-backup
   config checkout
   if [ $? = 0 ]; then
-  echo "Checked out config.";
+    echo "Checked out config.";
   else
-  echo "Backing up pre-existing dot files.";
-  config checkout 2>&1 | grep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .config-backup/{}
+    echo "Backing up pre-existing dot files.";
+    config checkout 2>&1 | grep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .config-backup/{}
   fi;
   config checkout
   config config status.showUntrackedFiles no
