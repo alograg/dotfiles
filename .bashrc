@@ -90,7 +90,7 @@ function prompt_timer_stop {
         RPS1+="\e[1;37;42m ✔" # green tick
     fi
     RPS1+="\e[0m"
-    PS1="\e[0m$(tput sc; rightprompt ${RPS1}; tput rc)" # begin with a newline
+    PS1="\n\e[0m\e[0m$(tput sc; rightprompt ${RPS1}; tput rc)" # begin with a newline
 
     local PSCHAR="\$"
     PS1+="\e[0;1;32m\u@\h\e[0m:" # non-root: green hostname
