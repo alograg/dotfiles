@@ -4,25 +4,21 @@
 
 cd ~
 
+# Instalaciones y actualizaciones
+sudo apt update
+sudo atp upgrade
 sudo apt install -y \
   git \
-  neovim \
-  vifm \
   build-essential \
+  software-properties-common \
   p7zip-full \
   p7zip-rar \
   fuseiso \
   sshfs \
   libarchive-dev libfuse-dev \
   golang
-git clone https://github.com/google/fuse-archive.git
-cd fuse-archive || exit
-sudo make install
-cd ..
-rm -fR fuse-archive
 
 # Configuracion de respaldo de configuracion
-
 if [ "$(type -t config)" = "" ]; then
   config() {
     /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree="$HOME" $@
@@ -44,7 +40,6 @@ if [ ! -d $HOME/.cfg ] ; then
 fi
 
 # Configuracion de git
-
 echo -n -e "Change the user and git mail? (y/\e[4mn\e[0m)"
 read -p ": " yn
 if [ "$yn" = "y" ]; then
@@ -55,3 +50,22 @@ if [ "$yn" = "y" ]; then
 fi
 
 # git lfs install
+
+# Instalar ultima versionde NeoVim
+wget https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.deb
+sudo apt install -y ./nvim-linux64.deb
+sudo update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
+sudo update-alternatives --config vi
+sudo update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
+sudo update-alternatives --config vim
+sudo update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
+sudo update-alternatives --config editor
+rm -f ./nvim-linux64.deb
+
+## Instalar ViRm y plugins
+sudo apt install -y vifm
+git clone https://github.com/google/fuse-archive.git
+cd fuse-archive || exit
+sudo make install
+cd ..
+rm -fR fuse-archive
