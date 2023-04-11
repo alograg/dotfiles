@@ -4,6 +4,9 @@
 
 cd ~
 
+echo "I require being a superuser"
+sudo echo "Thanks!"
+
 # Instalaciones y actualizaciones
 sudo apt update
 sudo atp upgrade
@@ -26,7 +29,7 @@ if [ "$(type -t config)" = "" ]; then
 fi
 
 if [ ! -d $HOME/.cfg ] ; then
-  git clone --bare https://github.com/alograg/dotfiles.git $HOME/.cfg
+  git clone --depth=1 --bare https://github.com/alograg/dotfiles.git $HOME/.cfg
   mkdir -p .config-backup
   config checkout
   if [ $? = 0 ]; then
@@ -64,7 +67,7 @@ rm -f ./nvim-linux64.deb
 
 ## Instalar ViRm y plugins
 sudo apt install -y vifm
-git clone https://github.com/google/fuse-archive.git
+git clone --depth=1 https://github.com/google/fuse-archive.git
 cd fuse-archive || exit
 sudo make install
 cd ..
