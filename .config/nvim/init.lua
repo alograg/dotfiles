@@ -1,0 +1,6 @@
+require "options"
+require "keymaps"
+require "plugins"
+require "bootstrap"
+require "colorscheme"
+require "statusline"
