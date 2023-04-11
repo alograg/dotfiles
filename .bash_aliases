@@ -32,7 +32,7 @@ alias config="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
 # adding flags
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
-alias vifm='./.config/vifm/scripts/vifmrun'
+#alias vifm='~/.config/vifm/scripts/vifmrun'
 
 # ps
 alias psa="ps auxf"
@@ -60,7 +60,7 @@ alias newtag='git tag -a'
 alias jctl="journalctl -p 3 -xb"
 
 # docker
-if ! which docker > /dev/null 2>&1 ; then
+if which docker > /dev/null 2>&1 ; then
     alias dockerla='docker ps -a'
     alias dockerls='docker ps --format "table {{.ID}}\t{{.Status}}\t{{.Names}}"'
     alias docker-clean-images='docker rmi $(docker images -f "dangling=true" -q)'

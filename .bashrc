@@ -11,6 +11,19 @@ export HISTFILESIZE=5000
 export HISTIGNORE="ls:[bf]g:exit:pwd:clear:alias"
 export HISTTIMEFORMAT="%F %T "
 
+# Customize ls colors and output
+export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=34:cd=34:su=31:sg=31:tw=32:ow=33:'
+export CLICOLOR=1
+export LSCOLORS=GxFxCxDxBxegedabagaced
+
+# Use colors for man pages
+export LESS_TERMCAP_md=$'\e[01;31m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[01;44;33m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[01;32m'
+
 ### SHOPT
 shopt -s autocd # change to named directory
 shopt -s cdspell # autocorrects cd misspellings
