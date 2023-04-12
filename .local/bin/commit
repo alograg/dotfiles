@@ -116,33 +116,34 @@ type="$(menu_from_array "${type_options[@]}")"
 
 secction_div
 
-# Pregunta al usuario si el cambio tiene un ámbito (scope)
-echo -n -e "Have an scope? (y/\e[4mn\e[0m)"
-read -p ": " yn
-if [ "$yn" = "y" ]; then
-    sun_secction_div
-    # Define el archivo donde se almacenarán las opciones de ámbito
-    SCOPE_FILE=".scopes"
+# Pregunta al usuario el ámbito (scope)
+# Define el archivo donde se almacenarán las opciones de ámbito
+SCOPE_FILE=".scopes"
 
-    [ -f $SCOPE_FILE ] || touch "$SCOPE_FILE"
+[ -f $SCOPE_FILE ] || touch "$SCOPE_FILE"
 
-    # Lee las opciones de ámbito desde el archivo
-    mapfile -t scope_options < $SCOPE_FILE
+# Lee las opciones de ámbito desde el archivo
+mapfile -t scope_options < $SCOPE_FILE
 
-    # Agrega una opción extra para permitir al usuario agregar un nuevo ámbito
-    scope_options+=("Add new scope")
+# Agrega una opción extra para permitir al usuario agregar un nuevo ámbito
+scope_options+=("Add new scope")
+# Agrega una opción extra para Omitir un scope
+scope_options+=("Without scope")
 
-    # Muestra las opciones de ámbito disponibles
-    PS3="SCOPE: "
-    scope="$(menu_from_array "${scope_options[@]}")"
+# Muestra las opciones de ámbito disponibles
+PS3="SCOPE: "
+scope="$(menu_from_array "${scope_options[@]}")"
 
-    # Si se seleccionó "Add new scope", pide al usuario el nombre del nuevo ámbito y lo agrega al archivo
-    if [ "$scope" = "Add new scope" ]; then
-        sub_secction_div
-        read -p "Enter the new scope: " new_scope
-        echo "$new_scope" >> "$SCOPE_FILE"
-        scope="$new_scope"
-    fi
+# Si se seleccionó "Add new scope", pide al usuario el nombre del nuevo ámbito y lo agrega al archivo
+if [ "$scope" = "Add new scope" ]; then
+    sub_secction_div
+    read -p "Enter the new scope: " new_scope
+    echo "$new_scope" >> "$SCOPE_FILE"
+    scope="$new_scope"
+fi
+# Si se seleccionó "Without scope", omite el ámbito
+if [ "$scope" = "Without scope" ]; then
+    scope=""
 fi
 
 secction_div
