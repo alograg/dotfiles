@@ -15,7 +15,7 @@
 [alias]
 	amend = commit --amend --reuse-message=HEAD
 	undo = reset HEAD~1 --mixed
-	; clone = clone --template=/Users/void/.git-templates
+	snap = clone --depth=1
   # push
   pf = push --force-with-lease
 
