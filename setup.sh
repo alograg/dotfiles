@@ -8,18 +8,25 @@ echo "I require being a superuser"
 sudo echo "Thanks!"
 
 # Instalaciones y actualizaciones
+sudo apt remove -y neovim vim vi
 sudo apt update
 sudo atp upgrade
 sudo apt install -y \
-  git \
+  bc \
   build-essential \
-  software-properties-common \
+  cmake \
+  curl \
+  fuseiso \
+  gettext \
+  git \
+  golang \
+  libarchive-dev libfuse-dev \
+  ninja-build \
   p7zip-full \
   p7zip-rar \
-  fuseiso \
+  software-properties-common \
   sshfs \
-  libarchive-dev libfuse-dev \
-  golang
+  unzip
 
 # Configuracion de respaldo de configuracion
 if [ "$(type -t config)" = "" ]; then
@@ -55,6 +62,10 @@ fi
 # git lfs install
 
 # Instalar ultima versionde NeoVim
+git clone --depth=1 https://github.com/neovim/neovim
+cd neovim
+git checkout "$(git describe --tags $(git rev-list --tags --max-count=1))"
+
 wget https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.deb
 sudo apt install -y ./nvim-linux64.deb
 sudo update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
@@ -71,4 +82,6 @@ git clone --depth=1 https://github.com/google/fuse-archive.git
 cd fuse-archive || exit
 sudo make install
 cd ..
-rm -fR fuse-archive
+sudo rm -fR fuse-archive
+
+config update-index --assume-unchanged setup.sh
