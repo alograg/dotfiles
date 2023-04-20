@@ -7,7 +7,7 @@ export NVM_DIR="$HOME/.nvm"
 if [ -s "$NVM_DIR/nvm.sh" ] ; then
   cdnvm() {
       command cd "$@" || return $?
-      if [[ -s ./.nvmrc && -r $./.nvmrc ]]; then
+      if [[ -f ./.nvmrc ]]; then
           declare nvm_version
           nvm_version=$(<./.nvmrc)
 
