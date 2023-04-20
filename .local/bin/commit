@@ -44,17 +44,17 @@ setup_colors () {
   fi
 }
 
-COLS=$(tput cols)
-
 msg () {
   echo "${1-}" >&2
 }
 
 secction_div () {
+  COLS=$(tput cols)
   printf -- '=%.0s' $(seq $COLS) >&2
 }
 
 sub_secction_div () {
+  COLS=$(tput cols)
   printf -- '-%.0s' $(seq $COLS) >&2
 }
 
