@@ -13,18 +13,22 @@ fi
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
-# Personal Aliases
+# Alias of directories
 alias ll='ls -alF'
 alias l='ls -lF'
 alias la='l -a'
+alias l.='ls -lad .[!.]* ..?*'
 alias ..='cd ..'
 alias ...='cd ../..'
-alias l.='l -a | grep "^\."'
-alias sa='sudo !!'
-alias historian='history | grep'
 alias br='cd -'
 alias hm='cd ~'
+
+# SUDO allias
+alias sa='sudo !!'
 alias takeIt="sudo chown -R $USER"
+
+# History tool
+alias historian='history | grep'
 
 # bare git repo alias for dotfiles
 
@@ -72,3 +76,10 @@ fi
 # Kill all the tabs in Chrome to free up memory
 # [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
 alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
+
+for file in ~/.local/tools/*; do
+  if [ -f "$file" ] && [ -r "$file" ]; then
+    # Source the file if it is a readable regular file
+    . "${file}"
+  fi
+done
