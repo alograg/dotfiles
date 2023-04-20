@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/bin/sh
 ### Creat and enter dir
 # usage: mkcd <path>
 mkcd() {
