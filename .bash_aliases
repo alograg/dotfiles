@@ -27,7 +27,9 @@ alias hm='cd ~'
 alias takeIt="sudo chown -R $USER"
 
 # bare git repo alias for dotfiles
+
 alias config="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
+alias config-commit="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME commit -m '$(commit -t)'"
 
 # adding flags
 alias df='df -h'                          # human-readable sizes

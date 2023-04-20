@@ -51,11 +51,11 @@ msg () {
 }
 
 secction_div () {
-  printf -- '=%.0s' $(seq $COLS)
+  printf -- '=%.0s' $(seq $COLS) >&2
 }
 
 sub_secction_div () {
-  printf -- '-%.0s' $(seq $COLS)
+  printf -- '-%.0s' $(seq $COLS) >&2
 }
 
 die () {
@@ -152,18 +152,18 @@ secction_div
 [ -f ~/.config/gitmojis.json ] || curl https://raw.githubusercontent.com/carloscuesta/gitmoji/v3.13.1/packages/gitmojis/src/gitmojis.json -o ~/.config/gitmojis.json
 
 if ! which jq > /dev/null 2>&1 ; then
-    echo "I need JP: https://github.com/jmespath/jp"
-    sudo apt install -y jq
+  echo "I need JP to import icon list: https://github.com/jmespath/jp" >&2
+  # Lee los Gitmojis desde el archivo JSON y crea un array con las opciones disponibles
+  [ -f ~/.config/gitmojis.lst ] || jq -r '.gitmojis | .[] | "\(.code) \(.description)"' ~/.config/gitmojis.json > ~/.config/gitmojis.lst
 fi
 
-# Lee los Gitmojis desde el archivo JSON y crea un array con las opciones disponibles
-[ -f ~/.config/gitmojis.lst ] || jq -r '.gitmojis | .[] | "\(.code) \(.description)"' ~/.config/gitmojis.json > ~/.config/gitmojis.lst
-mapfile -t emoji_options < ~/.config/gitmojis.lst
-
-emoji_options+=(" (without)")
-# Pide al usuario que seleccione un Gitmoji
-PS3="Select a Gitmoji: "
-selected_emoji="$(menu_from_array "${emoji_options[@]}")"
+if [ -f ~/.config/gitmojis.lst ] ; then
+  mapfile -t emoji_options < ~/.config/gitmojis.lst
+  emoji_options+=(" (without)")
+  # Pide al usuario que seleccione un Gitmoji
+  PS3="Select a Gitmoji: "
+  selected_emoji="$(menu_from_array "${emoji_options[@]}")"
+fi
 
 secction_div
 
@@ -176,7 +176,7 @@ done
 secction_div
 
 # Pregunta al usuario si el cambio es una ruptura (breaking change)
-echo -n -e "Is a BREAKING CHANGE? (y/\e[4mn\e[0m)"
+echo -n -e "Is a BREAKING CHANGE? (y/\e[4mn\e[0m)" >&2
 read -p ": " yn
 if [ "$yn" = "y" ]; then
     sub_secction_div
@@ -189,7 +189,7 @@ fi
 secction_div
 
 # Pregunta al usuario si el cambio está relacionado con un número de issue
-echo -n -e "Is related to any ISSUE? (y/\e[4mn\e[0m)"
+echo -n -e "Is related to any ISSUE? (y/\e[4mn\e[0m)" >&2
 read -p ": " yn
 if [ "$yn" = "y" ]; then
     sub_secction_div
