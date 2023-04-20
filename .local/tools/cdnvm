@@ -7,29 +7,9 @@ export NVM_DIR="$HOME/.nvm"
 if [ -s "$NVM_DIR/nvm.sh" ] ; then
   cdnvm() {
       command cd "$@" || return $?
-      nvm_path=$(nvm_find_up .nvmrc | tr -d '\n')
-
-      # If there are no .nvmrc file, use the default nvm version
-      if [[ ! $nvm_path = *[^[:space:]]* ]]; then
-
-          declare default_version;
-          default_version=$(nvm version default);
-
-          # If there is no default version, set it to `node`
-          # This will use the latest version on your machine
-          if [[ $default_version == "N/A" ]]; then
-              nvm alias default node;
-              default_version=$(nvm version default);
-          fi
-
-          # If the current version is not the default version, set it to use the default version
-          if [[ $(nvm current) != "$default_version" ]]; then
-              nvm use default;
-          fi
-
-      elif [[ -s $nvm_path/.nvmrc && -r $nvm_path/.nvmrc ]]; then
+      if [[ -s ./.nvmrc && -r $./.nvmrc ]]; then
           declare nvm_version
-          nvm_version=$(<"$nvm_path"/.nvmrc)
+          nvm_version=$(<./.nvmrc)
 
           declare locally_resolved_nvm_version
           # `nvm ls` will check all locally-available versions
