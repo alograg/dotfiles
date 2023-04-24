@@ -152,7 +152,7 @@ fi
 
 secction_div
 
-if command -v curl >/dev/null 2>&1] \
+if command -v curl >/dev/null 2>&1 \
        && command -v jq >/dev/null 2>&1 ; then
   # Descarga el archivo JSON de Gitmojis
   [ -f ~/.config/gitmojis.json ] || curl https://raw.githubusercontent.com/carloscuesta/gitmoji/v3.13.1/packages/gitmojis/src/gitmojis.json -o ~/.config/gitmojis.json
