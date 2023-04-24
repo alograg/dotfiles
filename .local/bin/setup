@@ -150,7 +150,6 @@ setup_config () {
 
   if [ ! -d $HOME/dotfiles ] ; then
     git clone --depth=1 --bare $url $HOME/dotfiles
-    mkdir -p .config-backup
     config checkout -f
     config config status.showUntrackedFiles no
   fi
@@ -244,14 +243,19 @@ run_setup () {
     "neovim")
       setup_neovim
     ;;
-    *)
+    "all")
+      setup_git
+      setup_config
+      setup_dev_tools
+      setup_vifm
+      setup_neovim
     ;;
   esac
 }
 
 if [ ${#args} -eq 0 ] ; then
   PS3="Setup what?: "
-  option="$(menu_from_array config git dev_tools vifm neovim)"
+  option="$(menu_from_array config git dev_tools vifm neovim all)"
   run_setup "$option"
 else
   run_setup "${args[0]}"
