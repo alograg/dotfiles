@@ -2,4 +2,6 @@
 
 [ "$1" ] || exit 1
 
+#TODO: make template logic
+
 printf '#!/bin/sh\n' > "$1" && chmod +x "$1"

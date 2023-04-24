@@ -87,6 +87,10 @@ parse_params () {
   return 0
 }
 
+if ! command -v git >/dev/null 2>&1; then
+    die "I need git to continue"
+fi
+
 parse_params "$@"
 
 menu_from_array ()
@@ -148,24 +152,27 @@ fi
 
 secction_div
 
-# Descarga el archivo JSON de Gitmojis
-[ -f ~/.config/gitmojis.json ] || curl https://raw.githubusercontent.com/carloscuesta/gitmoji/v3.13.1/packages/gitmojis/src/gitmojis.json -o ~/.config/gitmojis.json
+if command -v curl >/dev/null 2>&1] \
+       && command -v jq >/dev/null 2>&1 ; then
+  # Descarga el archivo JSON de Gitmojis
+  [ -f ~/.config/gitmojis.json ] || curl https://raw.githubusercontent.com/carloscuesta/gitmoji/v3.13.1/packages/gitmojis/src/gitmojis.json -o ~/.config/gitmojis.json
 
-if ! which jq > /dev/null 2>&1 ; then
-  echo "I need JP to import icon list: https://github.com/jmespath/jp" >&2
-  # Lee los Gitmojis desde el archivo JSON y crea un array con las opciones disponibles
-  [ -f ~/.config/gitmojis.lst ] || jq -r '.gitmojis | .[] | "\(.code) \(.description)"' ~/.config/gitmojis.json > ~/.config/gitmojis.lst
+  if ! which jq > /dev/null 2>&1 ; then
+    echo "I need JP to import icon list: https://github.com/jmespath/jp" >&2
+    # Lee los Gitmojis desde el archivo JSON y crea un array con las opciones disponibles
+    [ -f ~/.config/gitmojis.lst ] || jq -r '.gitmojis | .[] | "\(.code) \(.description)"' ~/.config/gitmojis.json > ~/.config/gitmojis.lst
+  fi
+
+  if [ -f ~/.config/gitmojis.lst ] ; then
+    mapfile -t emoji_options < ~/.config/gitmojis.lst
+    emoji_options+=(" (without)")
+    # Pide al usuario que seleccione un Gitmoji
+    PS3="Select a Gitmoji: "
+    selected_emoji="$(menu_from_array "${emoji_options[@]}")"
+  fi
+
+  secction_div
 fi
-
-if [ -f ~/.config/gitmojis.lst ] ; then
-  mapfile -t emoji_options < ~/.config/gitmojis.lst
-  emoji_options+=(" (without)")
-  # Pide al usuario que seleccione un Gitmoji
-  PS3="Select a Gitmoji: "
-  selected_emoji="$(menu_from_array "${emoji_options[@]}")"
-fi
-
-secction_div
 
 # Pide al usuario la descripción del cambio
 read -p "Description (máximo 100 caracteres): " description
