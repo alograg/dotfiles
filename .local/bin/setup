@@ -144,12 +144,12 @@ setup_config () {
   # Configuracion de respaldo de configuracion
   if [ "$(type -t config)" = "" ]; then
     config() {
-      /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree="$HOME" $@
+      /usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree="$HOME" $@
     }
   fi
 
-  if [ ! -d $HOME/.cfg ] ; then
-    git clone --depth=1 --bare $url $HOME/.cfg
+  if [ ! -d $HOME/dotfiles ] ; then
+    git clone --depth=1 --bare $url $HOME/dotfiles
     mkdir -p .config-backup
     config checkout -f
     config config status.showUntrackedFiles no
