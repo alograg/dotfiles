@@ -52,7 +52,7 @@ alias addall='git add .'
 alias branch='git branch'
 alias checkout='git checkout'
 alias clone='git clone'
-if [ "$(type -t commit)" = "" ]; then
+if [ ! -f "$HOME/.local/bin/commit" ]; then
   alias commit='git commit -m'
 fi
 alias fetch='git fetch'
