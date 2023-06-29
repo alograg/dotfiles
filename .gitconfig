@@ -13,9 +13,9 @@
   process = git-lfs filter-process
   required = true
 [alias]
-	amend = commit --amend --reuse-message=HEAD
-	undo = reset HEAD~1 --mixed
-	snap = clone --depth=1
+  amend = commit --amend --reuse-message=HEAD
+  undo = reset HEAD~1 --mixed
+  snap = clone --depth=1
   # push
   pf = push --force-with-lease
 
@@ -31,13 +31,13 @@
   ra = rebase --abort
 
   m = merge
-	ma = merge --abort
-	mc = merge --continue
-	ms = merge --skip
+  ma = merge --abort
+  mc = merge --continue
+  ms = merge --skip
 
-	rmc = rm --cached
-	ls = ls-files
-	lsf = !git ls-files | grep -i
+  rmc = rm --cached
+  ls = ls-files
+  lsf = !git ls-files | grep -i
 
   ph = "!git push origin $(git rev-parse --abbrev-ref HEAD)"
   pu = "!git pull --rebase origin $(git rev-parse --abbrev-ref HEAD)"
@@ -50,14 +50,14 @@
   open ="!hub browse"
   # show url of remote
   url =! bash -c 'git config --get remote.origin.url | sed -E "s/.+:\\(.+\\)\\.git$/https:\\\\/\\\\/github\\\\.com\\\\/\\\\1/g"'
-	# View the current working tree status using the short format
+  # View the current working tree status using the short format
   st = status --short --branch
   ss  = stash save
-	sc  = stash clear
-	sl  = !git stash list | awk -F':' '{print $1}' | fzf --preview 'git -c color.ui=always stash show -p {}'
-	sp  = !git stash pop `git stash list | awk -F':' '{print $1}' | fzf --preview 'git -c color.ui=always stash show -p {}'`
-	sd  = !git stash drop `git stash list | awk -F':' '{print $1}' | fzf --preview 'git -c color.ui=always stash show -p {}'`
-	fixup = "!f() { SHA=`git rev-parse "$1"`; git commit --fixup "$SHA" && GIT_SEQUENCE_EDITOR=true git rebase --interactive --autosquash "$SHA^"; }; f"
+  sc  = stash clear
+  sl  = !git stash list | awk -F':' '{print $1}' | fzf --preview 'git -c color.ui=always stash show -p {}'
+  sp  = !git stash pop `git stash list | awk -F':' '{print $1}' | fzf --preview 'git -c color.ui=always stash show -p {}'`
+  sd  = !git stash drop `git stash list | awk -F':' '{print $1}' | fzf --preview 'git -c color.ui=always stash show -p {}'`
+  fixup = "!f() { SHA=`git rev-parse "$1"`; git commit --fixup "$SHA" && GIT_SEQUENCE_EDITOR=true git rebase --interactive --autosquash "$SHA^"; }; f"
   changelog = "!_() { t=$(git describe --abbrev=0 --tags); git log ${t}..HEAD --no-merges --pretty=format:'* %s'; }; _"
 
   # list files which have changed since REVIEW_BASE
@@ -73,7 +73,7 @@
   reviewone = !nvim -p +\"tabdo Gvdiffsplit! $REVIEW_BASE\" +\"let g:gitgutter_diff_base = '$REVIEW_BASE'\"
 
   # Interactive rebase with the given number of latest commits
-	rebase-branch = "!r() { git rebase -i HEAD~$1; }; r"
+  rebase-branch = "!r() { git rebase -i HEAD~$1; }; r"
 
   # respond to PR feedback
   pr =!git commit --amend --reuse-message=HEAD --no-edit && git push --force-with-lease
@@ -86,8 +86,8 @@
   # Pull in remote changes for the current repository and all its submodules
   up = !git pull --rebase --prune $@ && git submodule update --init --recursive
 
-	# Switch to a branch, creating it if necessary
-	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+  # Switch to a branch, creating it if necessary
+  go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
 
   # Checkout a pull request from origin (of a github repository)
   f = !"pr() { git fetch origin pull/$1/head:pr-$1; git checkout pr-$1; }; pr"
@@ -97,10 +97,10 @@
   conflicts = diff --name-only --diff-filter=U
   # nice logs
   lg = log --color --graph --pretty=format:'%C(yellow)%h%Creset %s %C(bold green)%ar%Creset %C(bold blue)%an%Creset%C(bold red)%d%Creset' -n 16
-	lines = ! git ls-files | xargs cat | wc -l
+  lines = ! git ls-files | xargs cat | wc -l
 
   # requires FZF
-	autofixup = "!f() { COMMIT=$(git log --pretty=oneline | fzf | awk '{print $1}'); git commit --fixup $COMMIT; GIT_SEQUENCE_EDITOR=: git rebase --autostash --autosquash -i $COMMIT^; }; f"
+  autofixup = "!f() { COMMIT=$(git log --pretty=oneline | fzf | awk '{print $1}'); git commit --fixup $COMMIT; GIT_SEQUENCE_EDITOR=: git rebase --autostash --autosquash -i $COMMIT^; }; f"
 
   # commit all with an message (which need not be quoted)
   cm = "!f() { git commit -a -m \"$*\" ; }; f"
@@ -111,8 +111,8 @@
   # fix your branch when it's missing upstream
   upstream = "!git branch --set-upstream-to=origin/$(git rev-parse --abbrev-ref HEAD) $(git rev-parse --abbrev-ref HEAD)"
 
-	# List aliases
-	aliases = config --get-regexp alias
+  # List aliases
+  aliases = config --get-regexp alias
 
 
 [url "git@github.com:"]
