@@ -226,6 +226,33 @@ setup_neovim () {
   return 0
 }
 
+setup_suckless () {
+  install build-essential libx11-dev libxft-dev libxinerama-dev libfreetype6-dev libfontconfig1-dev xorg
+  sudo apt purge gnome-shell-*
+  [ !-d ~/.sources/suckless ] || mkdir ~/.sources/suckless
+  sucklessApps=('dwm' 'st' 'dmenu')
+  for appSuckless in "${sucklessApps[@]}"
+    do
+      cd ~/.sources/suckless
+      git clone --depth=1 "https://git.suckless.org/$appSuckless"
+      cd $appSuckless
+      sudo make clean install
+    done
+  echo "$(which dwm)" > ~/.xinitrc
+}
+
+setup_dwm_rebuild () {
+  [ !-d ~/.sources/suckless ] || ( echo "No source code" && exit )
+  sucklessApps=('dwm' 'st' 'dmenu')
+  for appSuckless in "${sucklessApps[@]}"
+    do
+      cd ~/.sources/suckless
+      cd $appSuckless
+      sudo make clean install
+    done
+  cd ~
+}
+
 run_setup () {
   case $1 in
     "config")
@@ -243,12 +270,19 @@ run_setup () {
     "neovim")
       setup_neovim
     ;;
+    "dwm")
+      setup_suckless
+    ;;
+    "rebuildDwm")
+     setup_dwm_rebuild
+    ;;
     "all")
       setup_git
       setup_config
       setup_dev_tools
       setup_vifm
       setup_neovim
+      setup_dwm
     ;;
   esac
 }
