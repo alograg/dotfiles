@@ -7,6 +7,5 @@
 ## Install
 
 ```sh
-curl https://raw.githubusercontent.com/alograg/dotfiles/master/.local/bin/setup > setup.sh
-bash setup.sh
+curl -o- https://raw.githubusercontent.com/alograg/dotfiles/master/.local/bin/setup | bash
 ```
