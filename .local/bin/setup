@@ -284,7 +284,7 @@ run_setup () {
       setup_dev_tools
       setup_vifm
       setup_neovim
-      setup_dwm
+      setup_suckless 
     ;;
   esac
 }
