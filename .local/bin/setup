@@ -238,6 +238,9 @@ setup_suckless () {
       cd $HOME/.sources/suckless
       git clone --depth=1 "https://git.suckless.org/$appSuckless"
       cd $appSuckless
+      if [ "$appSuckless" = "dwm" ]; then
+        ln -s $HOME/.sources/patch/dwn/config.h config.h
+      fi
       sudo make clean install
     done
   echo "$(which dwm)" > $HOME/.xinitrc
