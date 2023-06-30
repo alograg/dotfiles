@@ -23,6 +23,9 @@ alias ...='cd ../..'
 alias br='cd -'
 alias hm='cd ~'
 
+# General alias
+alias weather='curl wttr.in'
+
 # SUDO allias
 alias sa='sudo !!'
 alias takeIt="sudo chown -R $USER"
