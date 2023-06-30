@@ -231,16 +231,16 @@ setup_neovim () {
 setup_suckless () {
   install build-essential libx11-dev libxft-dev libxinerama-dev libfreetype6-dev libfontconfig1-dev xorg
   sudo apt purge gnome-shell-*
-  [ !-d ~/.sources/suckless ] || mkdir ~/.sources/suckless
+  [ !-d $HOME/.sources/suckless ] || mkdir -p $HOME/.sources/suckless
   sucklessApps=('dwm' 'st' 'dmenu')
   for appSuckless in "${sucklessApps[@]}"
     do
-      cd ~/.sources/suckless
+      cd $HOME/.sources/suckless
       git clone --depth=1 "https://git.suckless.org/$appSuckless"
       cd $appSuckless
       sudo make clean install
     done
-  echo "$(which dwm)" > ~/.xinitrc
+  echo "$(which dwm)" > $HOME/.xinitrc
 }
 
 setup_dwm_rebuild () {
@@ -291,7 +291,7 @@ run_setup () {
 
 if [ ${#args} -eq 0 ] ; then
   PS3="Setup what?: "
-  option="$(menu_from_array config git dev_tools vifm neovim all)"
+  option="$(menu_from_array config git dev_tools vifm neovim dwm rebuildDwm all)"
   run_setup "$option"
 else
   run_setup "${args[0]}"
