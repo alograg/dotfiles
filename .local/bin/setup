@@ -203,6 +203,8 @@ setup_vifm () {
     fuseiso \
     p7zip-full \
     p7zip-rar \
+    libarchive-dev \
+    libfuse-dev \
     sshfs \
     unzip
   git clone --depth=1 https://github.com/google/fuse-archive.git
