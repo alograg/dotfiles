@@ -115,3 +115,8 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+if [ -f ~/.bash_env ]; then
+    source ~/.bash_env
+fi
+
