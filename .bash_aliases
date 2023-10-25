@@ -61,6 +61,7 @@ alias push='git push origin'
 alias stat='git status'  # 'status' is protected name so using 'stat' instead
 alias tag='git tag'
 alias newtag='git tag -a'
+alias gtf='git ls-tree --full-tree --name-only -r HEAD'
 
 # get error messages from journalctl
 alias jctl="journalctl -p 3 -xb"
