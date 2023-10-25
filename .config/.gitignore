@@ -1,0 +1,8 @@
+# Ignore all other configs
+
+*
+!.gitignore
+!.gitignore_global
+!nvim/
+!vifm/
+

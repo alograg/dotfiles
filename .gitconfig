@@ -125,5 +125,5 @@
   defaultToUpstream = true
 [push]
   default = simple
-[credential]
-  helper = store
+[diff]
+	tool = nvim -d -O

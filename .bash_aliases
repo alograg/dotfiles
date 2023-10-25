@@ -33,11 +33,11 @@ alias historian='history | grep'
 # bare git repo alias for dotfiles
 
 alias config="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
-#:alias config-commit="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME commit -m '$(commit -t)'"
 
 # adding flags
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
+alias du='du -sh'                         # Summary human-readable sizes of the folder
 #alias vifm='~/.config/vifm/scripts/vifmrun'
 
 # ps
@@ -77,6 +77,7 @@ fi
 # [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
 alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
 
+# Add tool scripts
 if [ -d ~/.local/tools ] ; then
   for file in ~/.local/tools/*; do
     if [ -f "$file" ] && [ -r "$file" ]; then
