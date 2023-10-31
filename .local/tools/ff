@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# Función para buscar un archivo con find
+function ff() {
+  # Obtiene los parámetros de la función
+  local file="$1"
+  local dir="$2"
+  local extras="$3"
+
+  # Si no se especifica el directorio objetivo, lo establece en el directorio actual
+  if [ -z "$dir" ]; then
+    dir="."
+  fi
+
+  # Si no se especifica el directorio objetivo, lo establece en el directorio actual
+  if [ -z "$extras" ]; then
+    extras="-type f"
+  fi
+
+  # Realiza la búsqueda con find
+  find "$dir" -name "$file" $extras
+}
+
