@@ -2,6 +2,6 @@
 
 *
 !.gitignore
-!bin/
-!tools/
+!bin/*
+!tools/*
 

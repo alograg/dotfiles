@@ -22,6 +22,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias br='cd -'
 alias hm='cd ~'
+alias lsize='sudo du -h --max-depth=1 | sort -hr'
 
 # SUDO allias
 alias sa='sudo !!'
@@ -31,7 +32,6 @@ alias takeIt="sudo chown -R $USER"
 alias historian='history | grep'
 
 # bare git repo alias for dotfiles
-
 alias config="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
 
 # adding flags
@@ -72,6 +72,7 @@ if which docker > /dev/null 2>&1 ; then
     alias dockerls='docker ps --format "table {{.ID}}\t{{.Status}}\t{{.Names}}"'
     alias docker-clean-images='docker rmi $(docker images -f "dangling=true" -q)'
     alias docker-compose='docker compose'
+    alias docker-images-size='docker image ls --format "{{.Size}} {{.ID}} {{.Repository}}:{{.Tag}}" | LANG=en_US sort -hr | column -t'
 fi
 
 # Kill all the tabs in Chrome to free up memory
