@@ -96,8 +96,9 @@
 
   conflicts = diff --name-only --diff-filter=U
   # nice logs
-  lg = log --color --graph --pretty=format:'%C(yellow)%h%Creset %s %C(bold green)%ar%Creset %C(bold blue)%an%Creset%C(bold red)%d%Creset' -n 16
+  lg = log --color --graph --pretty=format:'%C(yellow)%h%Creset %s %C(bold green)%aI%Creset %C(bold blue)%an%Creset%C(bold red)%d%Creset' -n 16
   lines = ! git ls-files | xargs cat | wc -l
+  la = lg --all
 
   # requires FZF
   autofixup = "!f() { COMMIT=$(git log --pretty=oneline | fzf | awk '{print $1}'); git commit --fixup $COMMIT; GIT_SEQUENCE_EDITOR=: git rebase --autostash --autosquash -i $COMMIT^; }; f"
