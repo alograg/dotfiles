@@ -68,11 +68,13 @@ alias jctl="journalctl -p 3 -xb"
 
 # docker
 if which docker > /dev/null 2>&1 ; then
-    alias dockerla='docker ps -a'
-    alias dockerls='docker ps --format "table {{.ID}}\t{{.Status}}\t{{.Names}}"'
-    alias docker-clean-images='docker rmi $(docker images -f "dangling=true" -q)'
+    alias dk='docker'
+    alias dkla='docker ps -a'
+    alias dkls='docker ps --format "table {{.ID}}\t{{.Status}}\t{{.Names}}"'
+    alias dkic='docker rmi $(docker images -f "dangling=true" -q)'
     alias docker-compose='docker compose'
-    alias docker-images-size='docker image ls --format "{{.Size}} {{.ID}} {{.Repository}}:{{.Tag}}" | LANG=en_US sort -hr | column -t'
+    alias dkc='docker compose'
+    alias dkis='docker image ls --format "{{.Size}} {{.ID}} {{.Repository}}:{{.Tag}}" | LANG=en_US sort -hr | column -t'
 fi
 
 # Kill all the tabs in Chrome to free up memory
