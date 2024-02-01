@@ -33,7 +33,7 @@ fi
 
 if [ -z "$1" ]
   then
-    echo "Add message text as second arguments"
+    echo "Add message text as first argument"
     exit 0
 fi
 
