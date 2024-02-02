@@ -22,6 +22,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias br='cd -'
 alias hm='cd ~'
+alias lsize='sudo du -h --max-depth=1 | sort -hr'
 
 # General alias
 alias weather='curl wttr.in'
@@ -34,13 +35,12 @@ alias takeIt="sudo chown -R $USER"
 alias historian='history | grep'
 
 # bare git repo alias for dotfiles
-
 alias config="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
-#:alias config-commit="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME commit -m '$(commit -t)'"
 
 # adding flags
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
+alias du='du -sh'                         # Summary human-readable sizes of the folder
 #alias vifm='~/.config/vifm/scripts/vifmrun'
 
 # ps
@@ -64,22 +64,27 @@ alias push='git push origin'
 alias stat='git status'  # 'status' is protected name so using 'stat' instead
 alias tag='git tag'
 alias newtag='git tag -a'
+alias gtf='git ls-tree --full-tree --name-only -r HEAD'
 
 # get error messages from journalctl
 alias jctl="journalctl -p 3 -xb"
 
 # docker
 if which docker > /dev/null 2>&1 ; then
-    alias dockerla='docker ps -a'
-    alias dockerls='docker ps --format "table {{.ID}}\t{{.Status}}\t{{.Names}}"'
-    alias docker-clean-images='docker rmi $(docker images -f "dangling=true" -q)'
+    alias dk='docker'
+    alias dkla='docker ps -a'
+    alias dkls='docker ps --format "table {{.ID}}\t{{.Status}}\t{{.Names}}"'
+    alias dkic='docker rmi $(docker images -f "dangling=true" -q)'
     alias docker-compose='docker compose'
+    alias dkc='docker compose'
+    alias dkis='docker image ls --format "{{.Size}} {{.ID}} {{.Repository}}:{{.Tag}}" | LANG=en_US sort -hr | column -t'
 fi
 
 # Kill all the tabs in Chrome to free up memory
 # [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
 alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
 
+# Add tool scripts
 if [ -d ~/.local/tools ] ; then
   for file in ~/.local/tools/*; do
     if [ -f "$file" ] && [ -r "$file" ]; then

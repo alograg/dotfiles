@@ -1,0 +1,7 @@
+#!/usr/bin/sh
+
+function config-commit () {
+  MESSAGE="$(commit -t)"
+  git --git-dir="${HOME}/dotfiles" --work-tree="${HOME}" commit -m "$MESSAGE"
+}
+
