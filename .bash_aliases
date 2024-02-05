@@ -22,6 +22,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias br='cd -'
 alias hm='cd ~'
+alias dsize='du -sh'                         # Summary human-readable sizes of the folder
 alias lsize='sudo du -h --max-depth=1 | sort -hr'
 
 # General alias
@@ -40,7 +41,6 @@ alias config="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
 # adding flags
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
-alias du='du -sh'                         # Summary human-readable sizes of the folder
 #alias vifm='~/.config/vifm/scripts/vifmrun'
 
 # ps
