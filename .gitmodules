@@ -1,0 +1,12 @@
+[submodule "dwm"]
+	path = .sources/dwm
+	url = https://github.com/alograg/dwm.git
+	branch = current
+[submodule "st"]
+	path = .sources/st
+	url = https://github.com/alograg/st.git
+	branch = current
+[submodule "dmenu"]
+	path = .sources/dmenu
+	url = https://github.com/alograg/dmenu.git
+	branch = current
