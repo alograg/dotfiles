@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# Establecer los valores predeterminados para PATH y FILENAME
+BASE_PATH=${1:-.}
+FILENAME=${2:-duplicate.csv}
+
+# Encontrar archivos duplicados y enviar a un archivo CSV
+find "${BASE_PATH}" -type f -exec md5sum {} + | sort | uniq -w32 --all-repeated=separate | sed -e "s/.* //' ;" > "${FILENAME}"
+#find "${PATH}" -type f -not -empty -exec cksum {} + | sort | tee /tmp/f.tmp | cut -f 1,2 -d ' ' | uniq -d | grep -hif - /tmp/f.tmp >"${FILENAME}" 
+# Imprimir mensaje de confirmación
+echo "¡La búsqueda de duplicados ha finalizado!\nLos resultados se almacenaron en el archivo:\n${FILENAME}"
+

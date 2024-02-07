@@ -231,36 +231,17 @@ setup_neovim () {
 setup_suckless () {
   install build-essential libx11-dev libxft-dev libxinerama-dev libfreetype6-dev libfontconfig1-dev xorg
   sudo apt purge gnome-shell-*
-  [ ! -d $HOME/.sources/suckless ] || mkdir -p $HOME/.sources/suckless
-  sucklessApps=('dwm' 'st' 'dmenu')
-  for appSuckless in "${sucklessApps[@]}"
-    do
-      cd $HOME/.sources/suckless
-      git clone --depth=1 "https://git.suckless.org/$appSuckless"
-      cd $appSuckless
-      if [ "$appSuckless" = "dwm" ]; then
-        ln -s $HOME/.sources/patch/dwn/config.h config.h
-      fi
-      sudo make clean install
-    done
-    if [ ! -f $HOME/.xinitrc ]; then
-      cat <<<EOF > $HOME/.xinitrc
-while true; do
-	xsetroot -name "$(date '+%Y-%m-%d (%a W%W) %H:%M')"
-	sleep 20
-done &
-EOF;
-      echo "$(which dwm)" >> $HOME/.xinitrc
-    fi
+  setup_dwm_rebuild 
+  if [ ! -f $HOME/.xinitrc ]; then
+    echo "$(which dwm)" >> $HOME/.xinitrc
+  fi
 }
 
 setup_dwm_rebuild () {
-  [ ! -d ~/.sources/suckless ] || ( echo "No source code" && exit )
   sucklessApps=('dwm' 'st' 'dmenu')
   for appSuckless in "${sucklessApps[@]}"
     do
-      cd ~/.sources/suckless
-      cd $appSuckless
+      cd ~/.sources/$appSuckless
       sudo make clean install
     done
   cd ~
