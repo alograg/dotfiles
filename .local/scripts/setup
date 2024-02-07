@@ -216,6 +216,7 @@ setup_vifm () {
 }
 
 setup_neovim () {
+  return 0
   if ! command -v curl >/dev/null 2>&1 ; then
     msg "cURL requiered"
     install cURL
@@ -228,6 +229,19 @@ setup_neovim () {
   return 0
 }
 
+setup_gdrive () {
+  if ! command -v curl >/dev/null 2>&1 ; then
+    msg "cURL requiered"
+    install cURL
+  fi
+  [ ! -d $HOME/.local/bin ] || mkdir -p $HOME/.local/bin
+  curl -L https://github.com/glotlabs/gdrive/releases/download/latest/gdrive_linux-x64.tar.gz -o $HOME/.local/bin/gdrive.tar.gz
+  cd $HOME/.local/bin/
+  tar -xzvf gdrive.tar.gz
+  rm gdrive.tar.gz
+  return 0
+}
+
 setup_suckless () {
   install build-essential libx11-dev libxft-dev libxinerama-dev libfreetype6-dev libfontconfig1-dev xorg
   sudo apt purge gnome-shell-*
@@ -235,6 +249,7 @@ setup_suckless () {
   if [ ! -f $HOME/.xinitrc ]; then
     echo "$(which dwm)" >> $HOME/.xinitrc
   fi
+  return 0
 }
 
 setup_dwm_rebuild () {
@@ -245,6 +260,7 @@ setup_dwm_rebuild () {
       sudo make clean install
     done
   cd ~
+  return 0
 }
 
 run_setup () {

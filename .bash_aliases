@@ -14,34 +14,32 @@ fi
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # Alias of directories
-alias ll='ls -alF'
+alias ll='ls -AlF'
 alias l='ls -lF'
-alias la='l -a'
-alias l.='ls -lad .[!.]* ..?*'
+alias la='l -alF'
+alias l.='ls -laFd .[!.]* ..?*'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias br='cd -'
 alias hm='cd ~'
-alias dsize='du -sh'                         # Summary human-readable sizes of the folder
 alias lsize='sudo du -h --max-depth=1 | sort -hr'
 
 # General alias
 alias weather='curl wttr.in'
 
 # SUDO allias
-alias sa='sudo !!'
 alias takeIt="sudo chown -R $USER"
 
 # History tool
 alias historian='history | grep'
 
 # bare git repo alias for dotfiles
-alias config="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
+alias config="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 
 # adding flags
+alias dsize='du -sh'                      # Summary human-readable sizes of the folder
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
-#alias vifm='~/.config/vifm/scripts/vifmrun'
 
 # ps
 alias psa="ps auxf"
@@ -61,7 +59,7 @@ fi
 alias fetch='git fetch'
 alias pull='git pull origin'
 alias push='git push origin'
-alias stat='git status'  # 'status' is protected name so using 'stat' instead
+alias stat='git st'  # 'status' is protected name so using 'stat' instead
 alias tag='git tag'
 alias newtag='git tag -a'
 alias gtf='git ls-tree --full-tree --name-only -r HEAD'

@@ -9,4 +9,3 @@
 !.config
 !.local
 !.sources
-.config/nvim/plugin/packer_compiled.lua
