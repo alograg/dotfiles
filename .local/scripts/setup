@@ -263,6 +263,10 @@ setup_dwm_rebuild () {
   return 0
 }
 
+setup_nix () {
+  sh <(curl -L https://nixos.org/nix/install) --daemon
+}
+
 run_setup () {
   case $1 in
     "config")
@@ -289,6 +293,9 @@ run_setup () {
     "setup_gdrive")
       setup_gdrive
     ;;
+    "setup_nix")
+      setup_nix
+    ;;
     "all")
       setup_git
       setup_config
@@ -297,6 +304,7 @@ run_setup () {
       setup_neovim
       setup_suckless 
       setup_gdrive
+      setup_nix 
     ;;
   esac
 }
