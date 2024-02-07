@@ -144,12 +144,12 @@ setup_config () {
   # Configuracion de respaldo de configuracion
   if [ "$(type -t config)" = "" ]; then
     config() {
-      /usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree="$HOME" $@
+      /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree="$HOME" $@
     }
   fi
 
-  if [ ! -d $HOME/dotfiles ] ; then
-    git clone --depth=1 --bare $url $HOME/dotfiles
+  if [ ! -d $HOME/.dotfiles ] ; then
+    git clone --depth=1 --bare $url $HOME/.dotfiles
     config checkout -f
     config config status.showUntrackedFiles no
   fi
@@ -286,6 +286,9 @@ run_setup () {
     "rebuildDwm")
      setup_dwm_rebuild
     ;;
+    "setup_gdrive")
+      setup_gdrive
+    ;;
     "all")
       setup_git
       setup_config
@@ -293,6 +296,7 @@ run_setup () {
       setup_vifm
       setup_neovim
       setup_suckless 
+      setup_gdrive
     ;;
   esac
 }
