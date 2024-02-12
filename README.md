@@ -9,3 +9,11 @@
 ```sh
 bash <(curl -o- https://raw.githubusercontent.com/alograg/dotfiles/master/.local/bin/setup)
 ```
+
+## Individual uses
+
+```sh
+# Add aliases
+source <(curl -o- https://raw.githubusercontent.com/alograg/dotfiles/master/.bash_aliases)
+```
+
