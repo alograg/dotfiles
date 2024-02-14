@@ -13,37 +13,53 @@
   process = git-lfs filter-process
   required = true
 [alias]
+  # shortcuts
   amend = commit --amend --reuse-message=HEAD
   undo = reset HEAD~1 --mixed
   snap = clone --depth=1
-  # push
-  pf = push --force-with-lease
-
   a = "!git status --short | peco | awk '{print $2}' | xargs git add"
   b = branch -a
-
   sw = checkout -
+  rmc = rm --cached
+  ls = ls-files
+  lsf = !git ls-files | grep -i
+  unpushed = log --branches --not --remotes --no-walk --decorate --oneline
+  conflicts = diff --name-only --diff-filter=U
+
+  # magic tools
+  nha = "!f(){ git reset --hard; git clean -df; if [ -d ".git/rebase-apply" ] || [ -d ".git/rebase-merge" ]; then git rebase --abort; fi; }; f"
+  forget="!git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D"
+  forgetlist="!git fetch -p && git branch -vv | awk '/: gone]/{print $1}'"
+  uncommit = reset --soft HEAD~1
+
+  # push
+  pf = push --force-with-lease
+  ph = "!git push origin $(git rev-parse --abbrev-ref HEAD)"
+  # respond to PR feedback
+  pr =!git commit --amend --reuse-message=HEAD --no-edit && git push --force-with-lease
+
+  # pull
+  pu = "!git pull --rebase origin $(git rev-parse --abbrev-ref HEAD)"
+  # Pull in remote changes for the current repository and all its submodules
+  up = !git pull --rebase --prune $@ && git submodule update --init --recursive
+
   # rebase
   r = rebase
   ri = rebase --interactive
   rc = rebase --continue            # continue rebase
   rs = rebase --skip                # skip rebase
   ra = rebase --abort
+  # Interactive rebase with the given number of latest commits
+  rebase-branch = "!r() { git rebase -i HEAD~$1; }; r"
 
+  # merge
   m = merge
   ma = merge --abort
   mc = merge --continue
   ms = merge --skip
 
-  rmc = rm --cached
-  ls = ls-files
-  lsf = !git ls-files | grep -i
-
-  ph = "!git push origin $(git rev-parse --abbrev-ref HEAD)"
-  pu = "!git pull --rebase origin $(git rev-parse --abbrev-ref HEAD)"
-
   # ecf: edit conflicted files
-  ecf = !nvim -p `git ls-files --unmerged | cut -f2 | sort -u`
+  ecf = !vi -p `git ls-files --unmerged | cut -f2 | sort -u`
   # add conflicted file on merge
   add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
   # open repo in browser
@@ -58,6 +74,11 @@
   sp  = !git stash pop `git stash list | awk -F':' '{print $1}' | fzf --preview 'git -c color.ui=always stash show -p {}'`
   sd  = !git stash drop `git stash list | awk -F':' '{print $1}' | fzf --preview 'git -c color.ui=always stash show -p {}'`
   fixup = "!f() { SHA=`git rev-parse "$1"`; git commit --fixup "$SHA" && GIT_SEQUENCE_EDITOR=true git rebase --interactive --autosquash "$SHA^"; }; f"
+
+  # nice logs
+  lg = log --color --graph --pretty=format:'%C(yellow)%h%Creset %s %C(bold green)%aI%Creset %C(bold blue)%an%Creset%C(bold red)%d%Creset' -n 16
+  lines = ! git ls-files | xargs cat | wc -l
+  la = lg --all
   changelog = "!_() { t=$(git describe --abbrev=0 --tags); git log ${t}..HEAD --no-merges --pretty=format:'* %s'; }; _"
 
   # list files which have changed since REVIEW_BASE
@@ -66,25 +87,16 @@
   # Open all files changed since REVIEW_BASE in Vim tabs
   # Then, run fugitive's :Gdiff in each tab, and finally
   # tell vim-gitgutter to show +/- for changes since REVIEW_BASE
-  review = !nvim -p $(git files) +\"tabdo Gvdiffsplit! $REVIEW_BASE\" +\"let g:gitgutter_diff_base = '$REVIEW_BASE'\"
+  review = !vi -p $(git files) +\"tabdo Gvdiffsplit! $REVIEW_BASE\" +\"let g:gitgutter_diff_base = '$REVIEW_BASE'\"
   # Same as the above, except specify names of files as arguments,
   # instead of opening all files:
   # git reviewone foo.js bar.js
-  reviewone = !nvim -p +\"tabdo Gvdiffsplit! $REVIEW_BASE\" +\"let g:gitgutter_diff_base = '$REVIEW_BASE'\"
-
-  # Interactive rebase with the given number of latest commits
-  rebase-branch = "!r() { git rebase -i HEAD~$1; }; r"
-
-  # respond to PR feedback
-  pr =!git commit --amend --reuse-message=HEAD --no-edit && git push --force-with-lease
+  reviewone = !vi -p +\"tabdo Gvdiffsplit! $REVIEW_BASE\" +\"let g:gitgutter_diff_base = '$REVIEW_BASE'\"
 
   # interactive sync your current branch with master
   sync = !git fetch origin && git rebase --interactive origin/master
   # interactive sync your current branch with master
   syncu = !git fetch upstream && git rebase --interactive upstream/master
-
-  # Pull in remote changes for the current repository and all its submodules
-  up = !git pull --rebase --prune $@ && git submodule update --init --recursive
 
   # Switch to a branch, creating it if necessary
   go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
@@ -92,20 +104,11 @@
   # Checkout a pull request from origin (of a github repository)
   f = !"pr() { git fetch origin pull/$1/head:pr-$1; git checkout pr-$1; }; pr"
 
-  unpushed = log --branches --not --remotes --no-walk --decorate --oneline
-
-  conflicts = diff --name-only --diff-filter=U
-  # nice logs
-  lg = log --color --graph --pretty=format:'%C(yellow)%h%Creset %s %C(bold green)%aI%Creset %C(bold blue)%an%Creset%C(bold red)%d%Creset' -n 16
-  lines = ! git ls-files | xargs cat | wc -l
-  la = lg --all
-
   # requires FZF
   autofixup = "!f() { COMMIT=$(git log --pretty=oneline | fzf | awk '{print $1}'); git commit --fixup $COMMIT; GIT_SEQUENCE_EDITOR=: git rebase --autostash --autosquash -i $COMMIT^; }; f"
 
   # commit all with an message (which need not be quoted)
   cm = "!f() { git commit -a -m \"$*\" ; }; f"
-
   save = "!git add -A && git commit -m 'SAVEPOINT'"
   wipe = "!git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard"
 
@@ -115,7 +118,6 @@
   # List aliases
   aliases = config --get-regexp alias
 
-
 [url "git@github.com:"]
   insteadOf = git://github.com/
   insteadOf = gh:
@@ -124,7 +126,9 @@
   ui = auto
 [merge]
   defaultToUpstream = true
+[mergetool]
+  keepBackup = false
 [push]
   default = simple
 [diff]
-	tool = nvim -d -O
+  tool = vi -d -O
