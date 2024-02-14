@@ -2,16 +2,18 @@
 
 # Buscar un archivo con find
 # Obtiene los parámetros de la función
-local file="$1"
+file="$1"
 shift
-local dir="$1"
-shift
-local extras=$@
+dir="$1"
 
 # Si no se especifica el directorio objetivo, lo establece en el directorio actual
-if [ -z "$dir" ]; then
+if [ -z "$dir" ] || [ ! -d "$dir" ] ; then
   dir="."
+else
+  shift
 fi
+
+extras=$@
 
 # Si no se especifica el directorio objetivo, lo establece en el directorio actual
 if [ -z "$extras" ]; then
@@ -19,5 +21,6 @@ if [ -z "$extras" ]; then
 fi
 
 # Realiza la búsqueda con find
+echo "find '${dir}' -name '${file}' ${extras}"
 find "$dir" -name "$file" $extras
 
