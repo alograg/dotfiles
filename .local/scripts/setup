@@ -245,14 +245,14 @@ setup_gdrive () {
 setup_suckless () {
   install build-essential libx11-dev libxft-dev libxinerama-dev libfreetype6-dev libfontconfig1-dev xorg
   sudo apt purge gnome-shell-*
-  setup_dwm_rebuild 
+  setup_suckless_rebuild
   if [ ! -f $HOME/.xinitrc ]; then
     echo "$(which dwm)" >> $HOME/.xinitrc
   fi
   return 0
 }
 
-setup_dwm_rebuild () {
+setup_suckless_rebuild () {
   sucklessApps=('dwm' 'st' 'dmenu')
   for appSuckless in "${sucklessApps[@]}"
     do
@@ -267,6 +267,61 @@ setup_nix () {
   if [ ! -d /nix] ; then
     sh <(curl -L https://nixos.org/nix/install) --daemon
   fi
+}
+
+setup_partitions () {
+  # Solicitar dispositivo al usuario
+  echo "Introduzca el nombre del dispositivo (por ejemplo, /dev/sdb):"
+  read DEVICE
+
+  # Validar que el dispositivo exista
+  if [ ! -b $DEVICE ]; then
+    echo "**Error:** El dispositivo '$DEVICE' no existe."
+    exit 1
+  fi
+
+  # Fórmula para calcular el tamaño de la partición swap en MiB
+
+  # Obtener la cantidad de memoria RAM en MiB
+  ram_mib=$(free | grep Mem: | awk '{print $2}')
+
+  # Si la memoria RAM es menor o igual a 2GB, usar el doble de RAM como tamaño de swap
+  if [[ $ram_mib -le 2048 ]]; then
+    swap_mib=$((2 * ram_mib))
+  # Si la memoria RAM es mayor a 2GB, usar 1GB adicional por cada GB de RAM por encima de 2GB
+  else
+    swap_mib=$((2048 + ((ram_mib - 2048) / 1024)))
+  fi
+
+  endBooting = $((512 + swap_mib))
+
+  # Crear tabla de particiones GPT
+  parted -s $DEVICE -- mklabel gpt
+
+  # Crear partición principal
+  parted -s $DEVICE "mkpart root ext4 ${endBooting}MiB 35%"
+
+  # Crear particiones de datos
+  parted -s $DEVICE -- mkpart nix-storage ext4 35% 50%
+  parted -s $DEVICE -- mkpart docker-storage ext4 50% 70%
+  parted -s $DEVICE -- mkpart homes ext4 70% 80%
+  parted -s $DEVICE -- mkpart work ext4 80% 100%
+
+  # Crear partcicion boot
+  parted -s $DEVICE "mkpart ESP fat32 ${swap_mib}MiB ${endBooting}MiB"
+  parted -s $DEVICE -- set 7 esp on
+
+  # Crear espacio swap
+  parted -s $DEVICE "mkpart swap linux-swap 1MiB ${swap_mib}MiB"
+
+  # Formatear particiones
+  mkfs.ext4 -L root ${DEVICE}1
+  mkfs.ext4 -L nix-storage ${DEVICE}2
+  mkfs.ext4 -L docker-storage ${DEVICE}3
+  mkfs.ext4 -L homes ${DEVICE}4
+  mkfs.ext4 -L work ${DEVICE}5
+  mkfs.fat -F 32 -n boot ${DEVICE}6
+  mkswap -L swap ${DEVICE}7
 }
 
 run_setup () {
@@ -286,17 +341,20 @@ run_setup () {
     "neovim")
       setup_neovim
     ;;
-    "dwm")
+    "suckless")
       setup_suckless
     ;;
-    "rebuildDwm")
-     setup_dwm_rebuild
+    "rebuild")
+      setup_suckless_rebuild
     ;;
-    "setup_gdrive")
+    "gdrive")
       setup_gdrive
     ;;
-    "setup_nix")
+    "nix")
       setup_nix
+    ;;
+    "partitions")
+      setup_partitions
     ;;
     "all")
       setup_git
