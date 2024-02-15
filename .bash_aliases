@@ -34,7 +34,7 @@ alias takeIt="sudo chown -R $USER"
 alias historian='history | grep'
 
 # bare git repo alias for dotfiles
-alias config="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
+alias config="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 
 # adding flags
 alias dsize='du -sh'                      # Summary human-readable sizes of the folder
