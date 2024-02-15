@@ -144,7 +144,7 @@ setup_config () {
   # Configuracion de respaldo de configuracion
   if [ "$(type -t config)" = "" ]; then
     config() {
-      /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree="$HOME" $@
+      git --git-dir=$HOME/.dotfiles/ --work-tree="$HOME" $@
     }
   fi
 
