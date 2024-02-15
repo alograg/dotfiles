@@ -73,6 +73,8 @@ xterm*|rxvt*)
 esac
 
 set -o vi
+export EDITOR=vi
+export VISUAL=less
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
