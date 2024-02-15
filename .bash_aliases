@@ -88,6 +88,9 @@ fi
 alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
 
 # Add tool scripts
+if [ -d ~/.local/scripts ] ; then
+  export PATH="~/.local/scripts:$PATH"
+fi
 if [ -d ~/.local/tools ] ; then
   for file in ~/.local/tools/*; do
     if [ -f "$file" ] && [ -r "$file" ]; then
