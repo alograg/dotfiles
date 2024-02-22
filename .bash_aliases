@@ -93,6 +93,10 @@ if which nix > /dev/null 2>&1 ; then
     alias nix-search='nix --extra-experimental-features "nix-command flakes" search nixpkgs'
 fi
 
+if which nixos-rebuild > /dev/null 2>&1 ; then
+    alias nix-alograg="sudo nixos-rebuild boot -I nixos-config=$HOME/.config/nix/alograg.nix"
+fi
+
 # Kill all the tabs in Chrome to free up memory
 # [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
 alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"

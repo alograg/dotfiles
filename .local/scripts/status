@@ -22,11 +22,11 @@ update_weather() {
 }
 
 update_bat() {
-  if [[ -e /sys/class/power_supply/BAT0/status ]]; then
-    bat_status=$(< /sys/class/power_supply/BAT0/status)
-    if [[ -e /sys/class/power_supply/BAT0/capacity ]]; then
-      bat_capacity=$(< /sys/class/power_supply/BAT0/capacity)
-      bat="$bat_status $bat_capacity%"
+  if [[ -e /sys/class/power_supply/BAT1/status ]]; then
+    bat_status=$(< /sys/class/power_supply/BAT1/status)
+    if [[ -e /sys/class/power_supply/BAT1/capacity ]]; then
+      bat_capacity=$(< /sys/class/power_supply/BAT1/capacity)
+      bat=" $bat_capacity%"
     else
       bat="$bat_status"
     fi
@@ -51,8 +51,8 @@ update_backlight() {
 display() {
   status=""
   [[ -n "$bat" ]] && status+="$bat "
-  [[ -n "$backlight" ]] && status+="$backlight "
-  [[ -n "$vol" ]] && status+="$vol "
+#  [[ -n "$backlight" ]] && status+="$backlight "
+#  [[ -n "$vol" ]] && status+="$vol "
   [[ -n "$time" ]] && status+="$time"
   xsetroot -name "$status"
 }
@@ -63,8 +63,8 @@ trap "update_backlight; display" "RTMIN+1"
 trap "update_bat; display" "RTMIN+2"
 
 # Initial updates
-update_vol
-update_backlight
+#update_vol
+#update_backlight
 
 # Main loop
 while true; do
@@ -74,9 +74,9 @@ while true; do
     0) update_bat;;
     [1-5]) 
       update_time
-      update_vol
+      #update_vol
       display
       ;;
   esac
-done
+done &
 
