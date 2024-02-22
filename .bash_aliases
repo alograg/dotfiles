@@ -1,5 +1,15 @@
 #!/usr/bin/sh
 
+# Add personal bin to path
+if [ -d ~/.local/bin ] ; then
+  export PATH="~/.local/bin:$PATH"
+fi
+
+# Add scripts to path
+if [ -d ~/.local/scripts ] ; then
+  export PATH="~/.local/scripts:$PATH"
+fi
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -53,7 +63,7 @@ alias addall='git add .'
 alias branch='git branch'
 alias checkout='git checkout'
 alias clone='git clone'
-if [ ! -f "$HOME/.local/bin/commit" ]; then
+if [ ! -f "$HOME/.local/scripts/commit" ]; then
   alias commit='git commit -m'
 fi
 alias fetch='git fetch'
@@ -88,9 +98,6 @@ fi
 alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
 
 # Add tool scripts
-if [ -d ~/.local/scripts ] ; then
-  export PATH="~/.local/scripts:$PATH"
-fi
 if [ -d ~/.local/tools ] ; then
   for file in ~/.local/tools/*; do
     if [ -f "$file" ] && [ -r "$file" ]; then

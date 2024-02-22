@@ -1,5 +1,5 @@
-#!/usr/bin/sh
+#!/usr/bin/env bash
 
 MESSAGE="$(commit -t)"
-git --git-dir="${HOME}/dotfiles" --work-tree="${HOME}" commit -m "$MESSAGE"
+git --git-dir="${HOME}/.dotfiles" --work-tree="${HOME}" commit -m "$MESSAGE"
 

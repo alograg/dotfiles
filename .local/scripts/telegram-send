@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # enviroment GROUP_ID=<group_id>
 # enviroment BOT_TOKEN=<bot_token>

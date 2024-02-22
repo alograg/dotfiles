@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 set -Eeu
 trap 'cleanup 130' INT
@@ -234,8 +234,13 @@ setup_gdrive () {
     msg "cURL requiered"
     install cURL
   fi
+  if ! command -v jq >/dev/null 2>&1 ; then
+    msg "jq requiered"
+    install jq
+  fi
   [ ! -d $HOME/.local/bin ] || mkdir -p $HOME/.local/bin
-  curl -L https://github.com/glotlabs/gdrive/releases/download/latest/gdrive_linux-x64.tar.gz -o $HOME/.local/bin/gdrive.tar.gz
+  release_url=$(curl -s https://api.github.com/repos/glotlabs/gdrive/releases/latest | jq -r '.assets[] | select(.name | test(".*linux.*"; "i")).browser_download_url')
+  curl -L "$release_url" -o "$HOME/.local/bin/gdrive.tar.gz"
   cd $HOME/.local/bin/
   tar -xzvf gdrive.tar.gz
   rm gdrive.tar.gz
