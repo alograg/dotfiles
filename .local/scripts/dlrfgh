@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+# Script para descargar el último release de un repositorio de GitHub
+# Parámetros: 
+# - $1: la URL del repositorio de GitHub
+# - $2: el directorio donde se quiere guardar el release
+
+# Comprobar si se pasaron los parámetros
+if [ $# -ne 2 ]; then
+  echo "Uso: $0 'user/repo' directorio"
+  exit 1
+fi
+
+# Obtener la URL del último release desde la API de GitHub
+release_url=$(curl -LsI "https://github.com/${1}/releases/latest" | grep 'location' | awk '{print $2}')
+
+# Descargar el release usando wget
+wget -O "${2}/release.zip" "${release_url}"
+
+# Descomprimir el release
+unzip "${2}/release.zip" -d "${2}"
+
+# Eliminar el archivo zip
+rm $2/release.zip
+
+# Mostrar un mensaje de éxito
+echo "Se ha descargado el último release de $1 en $2"
