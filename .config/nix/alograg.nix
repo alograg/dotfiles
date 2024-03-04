@@ -84,6 +84,11 @@
                 src = /home/alograg/.sources/dwm;
               });
       })
+      (final: prev: {
+        st = prev.st.overrideAttrs (old: {
+                src = /home/alograg/.sources/st;
+              });
+      })
     ];
 
   # Enable CUPS to print documents.
@@ -104,6 +109,7 @@
       pacvim
       nb
       vscode
+      translate-shell
       # mdbook
       # iamb
       # litemdview
