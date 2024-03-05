@@ -94,7 +94,8 @@ if which nix > /dev/null 2>&1 ; then
 fi
 
 if which nixos-rebuild > /dev/null 2>&1 ; then
-    alias nix-alograg="sudo nixos-rebuild boot -I nixos-config=$HOME/.config/nix/alograg.nix"
+    alias nix-alograg="sudo nixos-rebuild boot -I nixos-config=$HOME/.config/nix/$USER.nix"
+    alias nix-alograg-switch="sudo nixos-rebuild switch -I nixos-config=$HOME/.config/nix/$USER.nix"
 fi
 
 # Kill all the tabs in Chrome to free up memory
