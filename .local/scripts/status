@@ -47,9 +47,13 @@ update_backlight() {
   fi
 }
 
+update_layouty() {
+  layout=$(setxkbmap -query | awk '/layout*/ { print $2 }')
+}
 # Display function
 display() {
   status=""
+  [[ -n "$layout" ]] && status+="$layout "
   [[ -n "$bat" ]] && status+="$bat "
 #  [[ -n "$backlight" ]] && status+="$backlight "
 #  [[ -n "$vol" ]] && status+="$vol "
@@ -71,7 +75,10 @@ while true; do
   sleep 1
   sec=$((sec + 1))
   case $((sec % 60)) in
-    0) update_bat;;
+    0)
+      update_layout
+      update_bat
+      ;;
     [1-5]) 
       update_time
       #update_vol
