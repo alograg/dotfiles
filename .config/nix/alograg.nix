@@ -110,6 +110,7 @@
       nb
       vscode
       translate-shell
+      telegram-desktop
       # mdbook
       # iamb
       # litemdview
