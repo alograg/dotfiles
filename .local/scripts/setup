@@ -329,6 +329,32 @@ setup_partitions () {
   mkswap -L swap ${DEVICE}7
 }
 
+setup_chrome_apps () {
+  # Directorio de origen
+  appsDir="$HOME/.local/share/applications"
+  echo "Looking $appsDir"
+  
+  # Iterar sobre todos los archivos .desktop en el directorio
+  for desktopApp in $appsDir/*.desktop; do
+      # Verificar si el archivo es un archivo .desktop
+      if [ -f "$desktopApp" ] && [[ "$desktopApp" == *.desktop ]]; then
+          # Obtener los valores de Name y Exec
+          appName=$(awk '/Name=/ { print substr($0, 6) }' "$desktopApp")
+	  execCmd=$(awk '/Exec=/ { print substr($0, 6) }' "$desktopApp")
+  
+          # Verificar si se encontraron valores válidos
+          if [ -n "$appName" ] && [ -n "$execCmd" ]; then
+              # Crear un nuevo archivo con el nombre de ValorName y contenido de ValorExec
+              echo "#!/usr/bin/env bash" > "$appsDir/$appName"
+	      echo "" >> "$appsDir/$appName"
+              echo "$execCmd" >> "$appsDir/$appName"
+              chmod 700 "$appsDir/$appName"
+              echo "Se ha creado el archivo: $appName"
+          fi
+      fi
+  done
+}
+
 run_setup () {
   case $1 in
     "config")
@@ -361,6 +387,9 @@ run_setup () {
     "partitions")
       setup_partitions
     ;;
+    "chrome_apps")
+      setup_chrome_apps
+    ;;
     "all")
       setup_git
       setup_config
@@ -376,7 +405,7 @@ run_setup () {
 
 if [ ${#args} -eq 0 ] ; then
   PS3="Setup what?: "
-  option="$(menu_from_array config git dev_tools vifm neovim dwm rebuildDwm all)"
+  option="$(menu_from_array config git dev_tools vifm neovim suckless rebuild gdrive nix partitions chrome_apps all)"
   run_setup "$option"
 else
   run_setup "${args[0]}"

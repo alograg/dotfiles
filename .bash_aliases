@@ -10,6 +10,11 @@ if [ -d ~/.local/scripts ] ; then
   export PATH="~/.local/scripts:$PATH"
 fi
 
+# Add desktopapps to path
+if [ -d ~/.local/share/applications ] ; then
+  export PATH="~/.local/share/applications:$PATH"
+fi
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
