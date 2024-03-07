@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+set -e
+
+SERVIS=$(echo "$1" | awk '{ print toupper($0) }')
+USE_CONNECTION="SSH_TO_${SERVIS}_CONNECTION"
+RSA_FILE="$HOME/.ssh/$1"
+
+clear
+
+if [ ! -f "$RSA_FILE" ]; then
+    ssh-keygen -t rsa -b 4096 -N "" -f "$RSA_FILE"
+    USE_PASSWORD="SSH_TO_${SERVIS}_PASSWORD"
+    echo "Pass: ${!USE_PASSWORD}"
+    ssh-copy-id -i "$RSA_FILE" "${!USE_CONNECTION}"
+fi
+
+ssh -i "$RSA_FILE" "${!USE_CONNECTION}"
+

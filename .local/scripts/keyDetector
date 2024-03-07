@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+read -s -n 1 key
+    echo "You pressed '${key}'."
+
