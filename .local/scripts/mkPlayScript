@@ -1,0 +1,15 @@
+#!/bin/sh
+
+[ "$1" ] || exit 1
+
+TARGET_FILE="play${1}"
+
+cat > $TARGET_FILE << EOF
+#!/bin/sh
+
+ffplay -nodisp '${2}'
+
+EOF
+
+chmod +x "$TARGET_FILE"
+
