@@ -56,6 +56,9 @@ alias dsize='du -sh'                      # Summary human-readable sizes of the 
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 
+# Enviroment
+alias lt="env | awk 'BEGIN { FS = \"=\" } /GIT.*_TOKEN/ { print \$1 \" \" \$2 }'"
+
 # ps
 alias psa="ps auxf"
 alias psgrep="ps aux | grep -v grep | grep -i -e VSZ -e"
