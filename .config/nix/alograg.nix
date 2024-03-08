@@ -10,6 +10,14 @@
       /etc/nixos/hardware-configuration.nix
     ];
 
+  nix.settings.auto-optimise-store = true;
+  nix.optimise.automatic = true;
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+  };
+
   nixpkgs = {
     config = {
       allowUnfree = true;
@@ -186,10 +194,18 @@
     allowReboot = true;
   };
 
-  virtualisation.docker.enable = true;
-  virtualisation.docker.rootless = {
+  virtualisation.docker = {
     enable = true;
-    setSocketVariable = true;
+    #rootless = {
+    #  enable = true;
+    #  setSocketVariable = true;
+    #  daemon.settings = {
+    #    data-root = "/var/lib/docker";
+    #  };
+    #};
+    daemon.settings = {
+      data-root = "/var/lib/docker";
+    };
   };
 
   # This option defines the first version of NixOS you have installed on this particular machine,
