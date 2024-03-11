@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+### Creat and enter dir
+# usage: mkcd <path>
+
+mkcd () {
+  mkdir -p $1
+  cd "$1" || exit
+}
+

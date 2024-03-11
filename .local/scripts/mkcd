@@ -1,5 +1,0 @@
-#!/bin/sh
-### Creat and enter dir
-# usage: mkcd <path>
-mkdir -p $1
-cd "$1" || exit
