@@ -1,3 +1,13 @@
 #!/usr/bin/env bash
 
-amixer -q set Master "10%$1"
+TIMES=${2:-1}
+
+if ! [[ $TIMES =~ ^[0-9]+$ ]]; then
+  echo "Error: Times need by a number."
+  exit 1
+fi
+
+for (( i=0; i<$TIMES; i++ )); do
+  amixer -q set Master "10%$1"
+done
+
