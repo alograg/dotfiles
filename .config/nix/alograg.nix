@@ -109,7 +109,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.alograg = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "docker" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "docker" "audio" ]; # Enable ‘sudo’ for the user.
     hashedPassword = "$y$j9T$Tz1a/Jg9uplohlqI2feNM0$ViNydv62C93etkpd17Cl8rt7nV38G5PWKVMYRh4/AsA";
     packages = with pkgs; [
       google-chrome
