@@ -45,9 +45,6 @@ alias weather='curl wttr.in'
 # SUDO allias
 alias takeIt="sudo chown -R $USER"
 
-# History tool
-alias historian='history | grep'
-
 # bare git repo alias for dotfiles
 alias config="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 

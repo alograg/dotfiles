@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+HISTCONTROL=ignoreboth
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+export HISTSIZE=-1
+export HISTFILESIZE=-1
+
+HISTORIAN_DIR="${HOME}/.config/historian"
+
+[ ! -d "$HISTORIAN_DIR/$(date +%Y%m%d)" ] && mkdir -p "$HISTORIAN_DIR/$(date +%Y%m%d)"
+
+HISTORIAN_LOG="${HISTORIAN_DIR}/$(date +%Y%m%d)/${$}.log"
+
+[ ! -f "$HISTORIAN_LOG" ] && touch "$HISTORIAN_LOG"
+
+export HISTFILE="$HISTORIAN_LOG"
+
+export HISTORIAN_HELPERS="${HOME}/.local/tools/historian_helpers"
+
+refresh-historian-stats () {
+  [ -d "$HISTORIAN_DIR" ] && awk -f "$HISTORIAN_HELPERS/count_commands.awk" $HISTORIAN_DIR/*/*.log | sort -rg | head  > "$HISTORIAN_DIR/command_used_stats"
+  [ -f "$HISTORIAN_DIR/command_used_stats" ] && awk -f "$HISTORIAN_HELPERS/count_instruction.awk" "$HISTORIAN_DIR/command_used_stats" $HISTORIAN_DIR/*/*.log | sort -rg | head  > "$HISTORIAN_DIR/instructions_used_stats"
+  [ -f "$HISTORIAN_DIR/instructions_used_stats" ] && awk -F':' '{ sub(/^[ \t]+/, "", $2); sub(/[ \t]+$/, "", $2); print $2 }' "$HISTORIAN_DIR/instructions_used_stats" > "$HISTORIAN_DIR/instructions_most_used"
+}
+# History tool
+alias historian='history | grep'
+alias add-historian="history -n $HISTORIAN_DIR/instructions_most_used"
+alias clean-historian="rm -fR $HISTORIAN_DIR/*"
+alias exit-historian='clean-historian && exit'
+
