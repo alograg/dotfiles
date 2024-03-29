@@ -5,19 +5,21 @@
 #https://github.com/kevinschoon/pomo
 #sleep 300 && notify-send "back to work"  # a short, 5-minute break
 #sleep 900 && notify-send "back to work"  # a long, 15-minute break
-arg1=$1
-shift
-args="$*"
 
-min=${arg1:?Example: pomo 15 Take a break}
+min=${1:-${POMODORO_MIN:-25}}
+shift
 sec=$((min * 60))
-msg="${args:?Example: pomo 15 Take a break}"
+timeBreak=$((sec / 5))
+msgBreakTime="${*:-'Pomodoro: Take a break'} ($((timeBreak / 60)) min)"
+msgWorkTime="Pomodoro: Back to work; Better, faster, stronger!"
+
+echo "Pomodoro active: ${min} min and repo $((timeBreak / 60)) min"
 
 while true; do
-    date '+%H:%M' &&
-    sleep "${sec:?}" &&
-    notify-send -u critical -t 0 -a pomo "${msg:?}"
-    #spd-say "${msg:?}"
-done
+    sleep "${sec:?1}"
+    notify-send -u low -t "$((timeBreak * 750))" -a pomo "${msgBreakTime}"
+    sleep "${timeBreak:?1}"
+    notify-send -u normal -t "$((timeBreak * 750))" -a pomo "${msgWorkTime}"
+    exit 0
+done &
 
-#nohup pomo 20 &
