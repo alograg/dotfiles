@@ -113,6 +113,7 @@
     hashedPassword = "$y$j9T$Tz1a/Jg9uplohlqI2feNM0$ViNydv62C93etkpd17Cl8rt7nV38G5PWKVMYRh4/AsA";
     packages = with pkgs; [
       google-chrome
+      chromium
       vitetris
       pacvim
       nb

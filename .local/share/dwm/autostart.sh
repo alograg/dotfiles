@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 source "${HOME}/.local/scripts/status"
-source "${HOME}/.local/scripts/pomodoro"
+[ -z "${POMODORO_MIN}" ] && source "${HOME}/.local/scripts/pomodoro"
 
 find ~/.local/share/applications/ -type f -perm /u=x -exec basename {} \; >> ~/.cache/dmenu_run
 sort -ubf ~/.cache/dmenu_run|tee ~/.cache/dmenu_run
