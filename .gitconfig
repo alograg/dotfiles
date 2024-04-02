@@ -60,6 +60,7 @@
 
   # ecf: edit conflicted files
   ecf = !vi -p `git ls-files --unmerged | cut -f2 | sort -u`
+  edit = !$EDITOR $(git status --short | awk '$1 ~ /^M|A|U/ {print $2}' )
   # add conflicted file on merge
   add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
   # open repo in browser
