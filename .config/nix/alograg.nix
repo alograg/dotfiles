@@ -142,6 +142,7 @@
     fuseiso
     git
     git-lfs
+    glab
     htop-vim
     jq
     libnotify
@@ -173,6 +174,7 @@
   services.clipmenu.enable = true;
   #services.dunst.enable = true;
   services.devmon.enable = true;
+  services.printing.cups-pdf.enable = true;
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
@@ -225,7 +227,7 @@
   # and migrated your data accordingly.
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
-  system.stateVersion = "23.11"; # Did you read the comment?
+  system.stateVersion = "24.05"; # Did you read the comment?
 
 }
 

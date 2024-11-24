@@ -133,3 +133,5 @@
   default = simple
 [diff]
   tool = vi -d -O
+[credential "https://gitlab.com"]
+	username = alograg
