@@ -120,6 +120,7 @@
       vscode
       translate-shell
       telegram-desktop
+      passh
       # mdbook
       # iamb
       # litemdview

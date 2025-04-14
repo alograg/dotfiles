@@ -116,3 +116,16 @@ if [ -d ~/.local/tools ] ; then
     fi
   done
 fi
+
+function bandit() {
+    /run/current-system/sw/bin/stat ~/.bandit_progress
+    source ~/.bandit_progress
+    printf "Last bandit level %i with password %s \n" ${BANDIT_LEVEL:=0} ${BANDIT_PASSWORD:=bandit0}
+    passh -p "$BANDIT_PASSWORD" ssh -p 2220 "bandit${BANDIT_LEVEL:0}@bandit.labs.overthewire.org" $@
+    read -p 'Set new password and level ? ' NEW_BANDIT_PASSWORD
+    if [[ -n $NEW_BANDIT_PASSWORD ]] then
+        sed -i "/BANDIT_LEVEL/ s/[[:digit:]]*/$((++BANDIT_LEVEL))/" ~/.bandit_progress
+        sed -i "/BANDIT_PASSWORD/ s/\".*\"/\"$NEW_BANDIT_PASSWORD\"/" ~/.bandit_progress
+        passh -p "$NEW_BANDIT_PASSWORD" ssh -p 2220 "bandit${BANDIT_LEVEL:0}@bandit.labs.overthewire.org" wechall
+    fi
+}
