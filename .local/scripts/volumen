@@ -1,13 +1,11 @@
 #!/usr/bin/env bash
 
-TIMES=${2:-1}
+VOLUMEN=${1:50}
 
-if ! [[ $TIMES =~ ^[0-9]+$ ]]; then
+if ! [[ $VOLUMEN =~ ^[0-9]+$ ]]; then
   echo "Error: Times need by a number."
   exit 1
 fi
 
-for (( i=0; i<$TIMES; i++ )); do
-  amixer -q set Master "10%$1"
-done
+wpctl set-volume @DEFAULT_AUDIO_SINK@ <<< $VOLUMEN
 

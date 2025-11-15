@@ -102,10 +102,6 @@
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
-  # Enable sound.
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.alograg = {
     isNormalUser = true;
@@ -160,6 +156,7 @@
     wget
     xorg.xinit
     xorg.xrdb
+    hardinfo2
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -228,7 +225,7 @@
   # and migrated your data accordingly.
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
-  system.stateVersion = "24.05"; # Did you read the comment?
+  system.stateVersion = "25.05";
 
 }
 
