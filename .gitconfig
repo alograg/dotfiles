@@ -135,3 +135,5 @@
   tool = vi -d -O
 [credential "https://gitlab.com"]
 	username = alograg
+[safe]
+	directory = /home/alograg/tmp

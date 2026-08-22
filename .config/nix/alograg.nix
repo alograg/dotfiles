@@ -1,32 +1,18 @@
 # Edit this configuration file to define what should be installed on
 # your system. Help is available in the configuration.nix(5) man page, on
-# https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
+# https://nixos.org and in the NixOS manual (`nixos-help`).
 
 { config, lib, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      /etc/nixos/hardware-configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    /etc/nixos/hardware-configuration.nix
+  ];
 
-  nix.settings.auto-optimise-store = true;
-  nix.optimise.automatic = true;
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 30d";
-  };
-
-  nixpkgs = {
-    config = {
-      allowUnfree = true;
-    };
-  };
-
-  # Use the systemd-boot EFI boot loader.
+  # --- CONFIGURACIÓN DEL KERNEL Y SISTEMA ---
   boot = {
-    kernelParams = ["nohibernate"];
+    kernelParams = [ "nohibernate" ];
     tmp.cleanOnBoot = true;
     loader = {
       efi.canTouchEfiVariables = true;
@@ -34,7 +20,36 @@
     };
   };
 
+  # Corrección para el error de Zygote Sandbox de Chrome y navegadores Chromium
+  boot.kernel.sysctl."kernel.unprivileged_userns_clone" = 1;
 
+  # --- OPTIMIZACIÓN Y MANTENIMIENTO DEL SISTEMA ---
+  nix = {
+    settings.auto-optimise-store = true;
+    optimise.automatic = true;
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 30d";
+    };
+  };
+
+  nixpkgs.config.allowUnfree = true;
+
+  # --- HARDWARE Y ACELERACIÓN GRÁFICA ---
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+    # Extra packs para solucionar definitivamente el error 'vaInitialize failed' de Chrome
+    extraPackages = with pkgs; [
+      intel-media-driver
+      intel-vaapi-driver
+      libva-vdpau-driver
+      libvdpau-va-gl
+    ];
+  };
+
+  # --- REDES ---
   networking = {
     hostName = "alograg-nixos";
     networkmanager.enable = true;
@@ -42,70 +57,65 @@
     firewall.enable = false;
   };
 
-  # Set your time zone.
+  # --- LOCALIZACIÓN Y ENTORNO ---
   time.timeZone = "Europe/Paris";
-
-  # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
-  console = {
-    useXkbConfig = true; # use xkb.options in tty.
-  };
+  console.useXkbConfig = true;
 
-
-  # services.xserver.windowManager.dwm =
-  #   if builtins.pathExists "/home/alograg/.sources/dwm"
-  #   then {
-  #     package =  pkgs.dwm.overrideAttrs {
-  #       conf = "/home/alograg/.sources/dwm/config.h";
-  #       # src = pkgs.fetchFromGitHub {
-  #       #         owner = "alograg";
-  #       #         repo = "dwm";
-  #       #         rev = "refs/tags/v6.4.0-alograg";
-  #       #         hash = "";
-  #       #       };
-  #     };
-  #     enable = true;
-  #   }
-  #   else {
-  #     enable = true;
-  #   };
- 
-  services = {
-    xserver = {
-      enable = true;
-      wacom.enable = true;
-      windowManager.dwm.enable = true;
-      xkb = {
-        layout = "latam,fr";
-        options = "grp:shift_caps_toggle,grp:shift_caps_toggle";
-      };
-      displayManager = {
-        lightdm.enable = true;
-        startx.enable = true;
-      };
+  # --- SERVICIOS XORG Y ENTORNO DE ESCRITORIO ---
+  services.xserver = {
+    enable = true;
+    wacom.enable = true;
+    windowManager.dwm.enable = true;
+    xkb = {
+      layout = "latam,fr";
+      options = "grp:shift_caps_toggle"; # Limpiado el duplicado
+    };
+    displayManager = {
+      lightdm.enable = true;
+      startx.enable = true;
     };
   };
 
+  # --- OVERLAYS (Compilación local de dwm y st) ---
   nixpkgs.overlays = [
-      (final: prev: {
-        dwm = prev.dwm.overrideAttrs (old: {
-                src = /home/alograg/.sources/dwm;
-              });
-      })
-      (final: prev: {
-        st = prev.st.overrideAttrs (old: {
-                src = /home/alograg/.sources/st;
-              });
-      })
-    ];
+    (final: prev: {
+      dwm = prev.dwm.overrideAttrs (old: {
+        src = /home/alograg/.sources/dwm;
+      });
+    })
+    (final: prev: {
+      st = prev.st.overrideAttrs (old: {
+        src = /home/alograg/.sources/st;
+      });
+    })
+  ];
 
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
+  # --- SERVICIOS DEL SISTEMA ---
+  services.clipmenu.enable = true;
+  services.devmon.enable = true;
+  services.printing.cups-pdf.enable = true;
+  services.upower.enable = true; # Resuelve el aviso de DisplayDevice en Chrome
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  security.sudo.wheelNeedsPassword = false;
+
+  system.autoUpgrade = {
+    enable = true;
+    allowReboot = true;
+  };
+
+  # --- VIRTUALIZACIÓN ---
+  virtualisation.docker = {
+    enable = true;
+    daemon.settings = {
+      data-root = "/var/lib/docker";
+    };
+  };
+
+  # --- CONFIGURACIÓN DE USUARIO Y PAQUETES ---
   users.users.alograg = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "docker" "audio" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "docker" "audio" ];
     hashedPassword = "$y$j9T$Tz1a/Jg9uplohlqI2feNM0$ViNydv62C93etkpd17Cl8rt7nV38G5PWKVMYRh4/AsA";
     packages = with pkgs; [
       google-chrome
@@ -117,15 +127,9 @@
       translate-shell
       telegram-desktop
       passh
-      # mdbook
-      # iamb
-      # litemdview
-      # vimpc
     ];
   };
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
     clipmenu
     curl
@@ -154,78 +158,10 @@
     vifm
     vim
     wget
-    xorg.xinit
-    xorg.xrdb
+    xinit
+    xrdb
     hardinfo2
   ];
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  services.clipmenu.enable = true;
-  #services.dunst.enable = true;
-  services.devmon.enable = true;
-  services.printing.cups-pdf.enable = true;
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
-  # Copy the NixOS configuration file and link it from the resulting system
-  # (/run/current-system/configuration.nix). This is useful in case you
-  # accidentally delete configuration.nix.
-  # system.copySystemConfiguration = true;
-
-  security.sudo.wheelNeedsPassword = false;
-
-  system.autoUpgrade = {
-    enable = true;
-    allowReboot = true;
-  };
-
-  virtualisation.docker = {
-    enable = true;
-    #rootless = {
-    #  enable = true;
-    #  setSocketVariable = true;
-    #  daemon.settings = {
-    #    data-root = "/var/lib/docker";
-    #  };
-    #};
-    daemon.settings = {
-      data-root = "/var/lib/docker";
-    };
-  };
-
-  # This option defines the first version of NixOS you have installed on this particular machine,
-  # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
-  #
-  # Most users should NEVER change this value after the initial install, for any reason,
-  # even if you've upgraded your system to a new NixOS release.
-  #
-  # This value does NOT affect the Nixpkgs version your packages and OS are pulled from,
-  # so changing it will NOT upgrade your system.
-  #
-  # This value being lower than the current NixOS release does NOT mean your system is
-  # out of date, out of support, or vulnerable.
-  #
-  # Do NOT change this value unless you have manually inspected all the changes it would make to your configuration,
-  # and migrated your data accordingly.
-  #
-  # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
-  system.stateVersion = "25.05";
-
+  system.stateVersion = "26.05";
 }
-
